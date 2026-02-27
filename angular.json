@@ -2,11 +2,12 @@
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
   "cli": {
-    "packageManager": "npm"
+    "packageManager": "npm",
+    "analytics": "44df87f9-89a8-440f-a9de-ac0b3941cd5e"
   },
   "newProjectRoot": "projects",
   "projects": {
-    "kaptar-landing": {
+    "kore-landing": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -43,8 +44,8 @@
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "4kB",
-                  "maximumError": "8kB"
+                  "maximumWarning": "20kB",
+                  "maximumError": "40kB"
                 }
               ],
               "outputHashing": "all"
@@ -61,10 +62,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "kaptar-landing:build:production"
+              "buildTarget": "kore-landing:build:production"
             },
             "development": {
-              "buildTarget": "kaptar-landing:build:development"
+              "buildTarget": "kore-landing:build:development"
             }
           },
           "defaultConfiguration": "development"

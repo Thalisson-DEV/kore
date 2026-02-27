@@ -1,0 +1,102 @@
+:host {
+  display: block;
+}
+
+/* Custom Scrollbar for Kore Dark Mode */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0f172a;
+}
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3b82f6;
+}
+
+.dragging {
+  opacity: 0.4;
+  transform: scale(0.95) translateY(10px);
+  cursor: grabbing;
+}
+
+/* Particle Burst for Kore High Contrast */
+.particle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 4px;
+  height: 4px;
+  border-radius: 1px;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 20;
+}
+
+@keyframes particle-burst {
+  0% {
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(var(--x), var(--y)) rotate(var(--r));
+    opacity: 0;
+  }
+}
+
+.particle.p1 { background: #3b82f6; --x: -30px; --y: -30px; --r: 45deg; animation: particle-burst 0.6s ease-out forwards; }
+.particle.p2 { background: #60a5fa; --x: 30px; --y: -25px; --r: -45deg; animation: particle-burst 0.6s 0.05s ease-out forwards; }
+.particle.p3 { background: #2563eb; --x: 0px; --y: -40px; --r: 90deg; animation: particle-burst 0.6s 0.02s ease-out forwards; }
+.particle.p4 { background: #3b82f6; --x: -25px; --y: 10px; --r: 180deg; animation: particle-burst 0.6s 0.07s ease-out forwards; }
+.particle.p5 { background: #60a5fa; --x: 25px; --y: 15px; --r: 220deg; animation: particle-burst 0.6s 0.04s ease-out forwards; }
+.particle.p6 { background: #2563eb; --x: 0px; --y: 35px; --r: -90deg; animation: particle-burst 0.6s 0.09s ease-out forwards; }
+
+/* Dashboard Entrance Animation */
+@keyframes dashboard-fade-in {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.container > * {
+  animation: dashboard-fade-in 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* Modal Scale Animation */
+.scale-in-center {
+  animation: scale-in-center 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+@keyframes scale-in-center {
+  0% {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Glassmorphism Refined */
+.backdrop-blur-xl {
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+}
+
+.backdrop-blur-sm {
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+/* Glow Pulse for Active Elements */
+@keyframes glow-pulse {
+  0%, 100% { box-shadow: 0 0 20px -5px rgba(59, 130, 246, 0.1); }
+  50% { box-shadow: 0 0 25px 0px rgba(59, 130, 246, 0.3); }
+}
+
+.animate-glow {
+  animation: glow-pulse 3s infinite;
+}

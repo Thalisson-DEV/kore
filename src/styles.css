@@ -1,3 +1,95 @@
-/* You can add global styles to this file, and also import other style files */
-
 @import "tailwindcss";
+
+@theme {
+  --color-kore-slate: #0F172A;
+  --color-kore-blue: #3B82F6;
+  --color-kore-steel: #94A3B8;
+  --color-kore-ice: #F8FAFC;
+  --color-kore-zinc: #18181B;
+
+  --font-heading: "Bricolage Grotesque", "Fraunces", serif;
+  --font-body: "Inter", "Geist Sans", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+}
+
+@layer utilities {
+  .font-elegant {
+    font-family: var(--font-serif);
+    font-style: italic;
+  }
+
+  .animate-progress-timer {
+    animation: notification-progress 4s linear forwards;
+  }
+
+  .animate-shimmer {
+    animation: shimmer 2s linear infinite;
+  }
+
+  .tactical-divider {
+    @apply w-full h-px bg-gradient-to-r from-transparent via-kore-steel/20 to-transparent relative my-16;
+  }
+
+  .tactical-divider::after {
+    content: 'KORE_SYSTEM';
+    @apply absolute left-1/2 -translate-x-1/2 -translate-y-1/2 bg-kore-ice dark:bg-kore-slate px-4 text-[8px] font-mono font-bold text-kore-steel/40 uppercase tracking-[0.4em];
+  }
+
+  .nav-link {
+    @apply text-[11px] font-bold text-kore-steel hover:text-kore-slate dark:hover:text-kore-ice transition-all cursor-pointer uppercase tracking-widest opacity-70 hover:opacity-100 relative py-1;
+  }
+
+  .active-nav {
+    @apply !text-kore-blue !opacity-100;
+  }
+
+  .active-nav::after {
+    content: '';
+    @apply absolute -bottom-1 left-0 w-full h-0.5 bg-kore-blue rounded-full shadow-[0_0_8px_rgba(59,130,246,0.5)];
+  }
+
+  .bg-tactical-grid {
+    background-image: radial-gradient(circle at 2px 2px, rgba(59, 130, 246, 0.15) 1px, transparent 0);
+    background-size: 40px 40px;
+  }
+
+  .animate-scan-line {
+    animation: scan-vertical 3s linear infinite;
+  }
+
+  /* Roadmap Path Reveal */
+  #roadmap.revealed #roadmap-path {
+    stroke-dashoffset: 0 !important;
+    opacity: 1 !important;
+  }
+}
+
+@keyframes scan-vertical {
+  0% { top: -10%; opacity: 0; }
+  50% { opacity: 0.5; }
+  100% { top: 110%; opacity: 0; }
+}
+
+@keyframes notification-progress {
+  from { width: 100%; }
+  to { width: 0%; }
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(300%); }
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-kore-ice text-kore-slate font-body antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading tracking-tight;
+  }
+}
