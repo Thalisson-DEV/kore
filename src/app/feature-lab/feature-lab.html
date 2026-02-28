@@ -11,40 +11,40 @@
   <div class="w-full max-w-[1800px] mx-auto px-4 md:px-10 relative z-10">
 
     <!-- Dashboard Top Bar -->
-    <div class="flex flex-col xl:flex-row xl:items-center justify-between mb-10 gap-6 border-b border-kore-steel/10 pb-8">
-      <div class="flex flex-col gap-2">
-        <div class="flex items-center gap-3 mb-1">
+    <div class="flex flex-col xl:flex-row xl:items-center justify-between mb-8 lg:mb-10 gap-6 border-b border-kore-steel/10 pb-8">
+      <div class="flex flex-col gap-2 text-center xl:text-left">
+        <div class="flex items-center justify-center xl:justify-start gap-3 mb-1">
           <div class="flex items-center gap-1.5 px-2 py-0.5 bg-emerald-500/10 border border-emerald-500/20 rounded text-[9px] font-mono font-bold text-emerald-500 uppercase tracking-widest">
             <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
             Sistema_Live
           </div>
-          <span class="font-mono text-[10px] uppercase tracking-[0.3em] text-kore-steel dark:text-slate-500">// KORE_EVOLUTION_RADAR_V2.0</span>
+          <span class="font-mono text-[9px] md:text-[10px] uppercase tracking-[0.3em] text-kore-steel dark:text-slate-500">// KORE_EVOLUTION_RADAR</span>
         </div>
         <h1 class="text-3xl md:text-4xl font-bold text-kore-slate dark:text-white tracking-tighter uppercase italic">
           Feature <span class="text-kore-blue">Lab</span>
         </h1>
-        <p class="text-kore-steel dark:text-slate-400 text-sm font-medium">
+        <p class="text-kore-steel dark:text-slate-400 text-xs md:text-sm font-medium">
           Priorize os recursos de autonomia. Vote nas ferramentas que você quer ver em produção.
         </p>
       </div>
 
-      <div class="flex items-center gap-4">
+      <div class="flex flex-wrap items-center justify-center gap-3 md:gap-4">
         <!-- Stats Mini Dashboard -->
-        <div class="hidden lg:flex items-center gap-6 px-6 py-3 bg-white/50 dark:bg-kore-zinc/50 border border-kore-steel/10 rounded-2xl backdrop-blur-sm mr-4">
+        <div class="flex items-center gap-4 md:gap-6 px-4 md:px-6 py-3 bg-white/50 dark:bg-kore-zinc/50 border border-kore-steel/10 rounded-2xl backdrop-blur-sm">
           <div class="flex flex-col">
-            <span class="text-[9px] font-bold text-kore-steel uppercase">Votos</span>
-            <span class="text-xl font-bold text-kore-blue font-mono">{{ totalVotes() }}</span>
+            <span class="text-[8px] md:text-[9px] font-bold text-kore-steel uppercase">Votos</span>
+            <span class="text-lg md:text-xl font-bold text-kore-blue font-mono">{{ totalVotes() }}</span>
           </div>
           <div class="w-px h-8 bg-kore-steel/10"></div>
           <div class="flex flex-col">
-            <span class="text-[9px] font-bold text-kore-steel uppercase">Concluídas</span>
-            <span class="text-xl font-bold text-emerald-500 font-mono">{{ completedFeatures() }}</span>
+            <span class="text-[8px] md:text-[9px] font-bold text-kore-steel uppercase">Concluídas</span>
+            <span class="text-lg md:text-xl font-bold text-emerald-500 font-mono">{{ completedFeatures() }}</span>
           </div>
         </div>
 
-        <button (click)="showSuggestionForm.set(true)" class="px-6 py-3 bg-kore-blue text-white rounded-xl font-bold hover:scale-105 transition-all flex items-center gap-2 shadow-xl shadow-kore-blue/20">
-          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
-          Nova Sugestão
+        <button (click)="showSuggestionForm.set(true)" class="px-5 md:px-6 py-3 bg-kore-blue text-white rounded-xl font-bold hover:scale-105 transition-all flex items-center gap-2 shadow-xl shadow-kore-blue/20 text-xs md:text-sm">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+          Sugerir
         </button>
         
         <button (click)="toggleAdminMode()" class="p-3 bg-white dark:bg-kore-zinc text-kore-steel border border-kore-steel/20 rounded-xl hover:text-kore-blue transition-all group" title="Root Access">
@@ -54,7 +54,7 @@
     </div>
 
     <!-- Kanban Dashboard - High Density -->
-    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 min-h-[calc(100vh-350px)]">
+    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 min-h-[calc(100vh-350px)] pb-10">
       @for (col of columns; track col.key) {
         <div class="flex flex-col h-full bg-white/30 dark:bg-kore-zinc/30 rounded-[1.5rem] border border-kore-steel/10 p-4 group/col transition-all hover:bg-white/50 dark:hover:bg-kore-zinc/50 backdrop-blur-xs"
              (dragover)="onDragOver($event)"
@@ -148,30 +148,30 @@
 
     <!-- Modal Suggestion -->
     @if (showSuggestionForm()) {
-      <div class="fixed inset-0 z-[100] flex items-center justify-center p-6 bg-kore-slate/90 backdrop-blur-xl animate-in fade-in duration-300">
-        <div class="bg-white dark:bg-kore-zinc rounded-[2rem] p-8 md:p-10 w-full max-w-lg shadow-2xl border border-kore-steel/10 scale-in-center">
-          <div class="flex items-center justify-between mb-10">
+      <div class="fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-6 bg-kore-slate/90 backdrop-blur-xl animate-in fade-in duration-300">
+        <div class="bg-white dark:bg-kore-zinc rounded-[1.5rem] md:rounded-[2rem] p-6 md:p-10 w-full max-w-lg shadow-2xl border border-kore-steel/10 scale-in-center overflow-y-auto max-h-[90vh]">
+          <div class="flex items-center justify-between mb-6 md:mb-10">
             <div>
-              <h2 class="text-3xl font-bold text-kore-slate dark:text-white tracking-tighter uppercase italic">Nova Sugestão</h2>
-              <p class="text-kore-steel dark:text-slate-500 text-sm mt-1 font-medium">Adicione novos requisitos ao roadmap Kore.</p>
+              <h2 class="text-2xl md:text-3xl font-bold text-kore-slate dark:text-white tracking-tighter uppercase italic">Nova Sugestão</h2>
+              <p class="text-kore-steel dark:text-slate-500 text-xs md:text-sm mt-1 font-medium">Adicione novos requisitos ao roadmap.</p>
             </div>
             <button (click)="showSuggestionForm.set(false)" class="p-2 bg-kore-ice dark:bg-kore-slate rounded-lg text-kore-steel hover:text-kore-blue transition-colors border border-kore-steel/10">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
             </button>
           </div>
 
-          <div class="space-y-6">
+          <div class="space-y-4 md:space-y-6">
             <div>
-              <label class="block text-[10px] font-bold text-kore-steel dark:text-slate-500 uppercase tracking-[0.2em] mb-3">ID_Título</label>
-              <input [(ngModel)]="newTitle" type="text" placeholder="Ex: Analisador de Sentimento de Vaga"
-                     class="w-full bg-kore-ice dark:bg-kore-slate border border-kore-steel/20 rounded-xl px-5 py-4 text-kore-slate dark:text-white focus:outline-none focus:ring-2 focus:ring-kore-blue/50 transition-all font-bold placeholder:text-kore-steel/40">
+              <label class="block text-[9px] md:text-[10px] font-bold text-kore-steel dark:text-slate-500 uppercase tracking-[0.2em] mb-2 md:mb-3">ID_Título</label>
+              <input [(ngModel)]="newTitle" type="text" placeholder="Ex: Analisador de Sentimento"
+                     class="w-full bg-kore-ice dark:bg-kore-slate border border-kore-steel/20 rounded-xl px-4 md:px-5 py-3 md:py-4 text-sm md:text-base text-kore-slate dark:text-white focus:outline-none focus:ring-2 focus:ring-kore-blue/50 transition-all font-bold placeholder:text-kore-steel/40">
             </div>
             <div>
-              <label class="block text-[10px] font-bold text-kore-steel dark:text-slate-500 uppercase tracking-[0.2em] mb-3">Especificação_Estratégica</label>
-              <textarea [(ngModel)]="newDescription" rows="4" placeholder="Descreva a utilidade para o ecossistema..."
-                        class="w-full bg-kore-ice dark:bg-kore-slate border border-kore-steel/20 rounded-xl px-5 py-4 text-kore-slate dark:text-white focus:outline-none focus:ring-2 focus:ring-kore-blue/50 transition-all font-bold placeholder:text-kore-steel/40"></textarea>
+              <label class="block text-[9px] md:text-[10px] font-bold text-kore-steel dark:text-slate-500 uppercase tracking-[0.2em] mb-2 md:mb-3">Especificação</label>
+              <textarea [(ngModel)]="newDescription" rows="4" placeholder="Descreva a utilidade..."
+                        class="w-full bg-kore-ice dark:bg-kore-slate border border-kore-steel/20 rounded-xl px-4 md:px-5 py-3 md:py-4 text-sm md:text-base text-kore-slate dark:text-white focus:outline-none focus:ring-2 focus:ring-kore-blue/50 transition-all font-bold placeholder:text-kore-steel/40"></textarea>
             </div>
-            <button (click)="submitSuggestion()" class="w-full py-5 bg-kore-blue text-white rounded-xl font-bold shadow-xl shadow-kore-blue/30 hover:bg-blue-600 transition-all active:scale-[0.98] uppercase tracking-[0.2em] text-xs">
+            <button (click)="submitSuggestion()" class="w-full py-4 md:py-5 bg-kore-blue text-white rounded-xl font-bold shadow-xl shadow-kore-blue/30 hover:bg-blue-600 transition-all active:scale-[0.98] uppercase tracking-[0.2em] text-[10px] md:text-xs">
               Publicar Sugestão
             </button>
           </div>

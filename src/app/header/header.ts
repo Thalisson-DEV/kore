@@ -9,13 +9,14 @@ import { filter } from 'rxjs/operators';
   imports: [CommonModule, RouterLink],
   template: `
     <nav class="fixed top-3 left-1/2 -translate-x-1/2 z-50 w-[95%] max-w-6xl">
-      <div class="bg-black/40 backdrop-blur-3xl border border-white/10 rounded-2xl px-8 py-4 flex items-center justify-between shadow-[0_8px_32px_rgba(0,0,0,0.5),inset_0_1px_1px_rgba(255,255,255,0.05)] transition-all duration-500">
+      <div class="bg-black/40 backdrop-blur-3xl border border-white/10 rounded-2xl px-4 md:px-8 py-4 flex items-center justify-between shadow-[0_8px_32px_rgba(0,0,0,0.5),inset_0_1px_1px_rgba(255,255,255,0.05)] transition-all duration-500">
         <div class="flex items-center gap-2">
           <span class="text-2xl font-bold tracking-tighter text-white cursor-pointer flex items-center select-none group" routerLink="/">
             KORE<span class="text-kore-blue group-hover:text-kore-cyan transition-colors animate-blink">_</span>
           </span>
         </div>
 
+        <!-- Desktop Links -->
         <div class="hidden xl:flex items-center gap-8">
           <a (click)="navigateAndScroll('#lab')" [class.active-nav]="activeSection() === 'lab'" class="nav-link !text-[10px]">Simulador</a>
           <a (click)="navigateAndScroll('#command-center')" [class.active-nav]="activeSection() === 'command-center'" class="nav-link !text-[10px]">Vagas</a>

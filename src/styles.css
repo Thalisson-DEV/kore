@@ -100,12 +100,6 @@
   .animate-scan-line {
     animation: scan-vertical 3s linear infinite;
   }
-
-  /* Roadmap Path Reveal */
-  #roadmap.revealed #roadmap-path {
-    stroke-dashoffset: 0 !important;
-    opacity: 1 !important;
-  }
 }
 
 @keyframes scan-vertical {

@@ -1,50 +1,50 @@
 <app-header></app-header>
 
-<main class="min-h-screen pt-10 pb-20 overflow-x-hidden transition-colors duration-500 flex flex-col items-center">
+<main class="min-h-screen pt-24 lg:pt-10 pb-20 overflow-x-hidden transition-colors duration-500 flex flex-col items-center">
 
   <!-- Hero Section -->
-  <section id="hero" class="container mx-auto px-6 min-h-[85vh] flex items-center reveal-trigger relative" #revealTrigger>
+  <section id="hero" class="container mx-auto px-6 min-h-0 lg:min-h-[100vh] flex items-center reveal-trigger relative" #revealTrigger>
 
-    <div class="grid lg:grid-cols-2 gap-16 items-center w-full">
+    <div class="grid lg:grid-cols-2 gap-2 lg:gap-16 items-center w-full">
       <!-- Left: Content -->
-      <div class="text-left relative z-10 py-12">
-        <span class="inline-block py-1.5 px-4 rounded-full bg-kore-blue/10 text-kore-blue text-[10px] font-bold tracking-[0.2em] uppercase mb-10 border border-kore-blue/20">
+      <div class="text-center lg:text-left relative z-10 py-2 lg:py-12">
+        <span class="inline-block py-1.5 px-4 rounded-full bg-kore-blue/10 text-kore-blue text-[9px] md:text-[10px] font-bold tracking-[0.2em] uppercase mb-6 lg:mb-10 border border-kore-blue/20">
           Kore. Inteligência na raiz. Tecnologia no topo.
         </span>
 
-        <h1 class="text-6xl md:text-8xl font-bold text-white tracking-tighter mb-8 leading-[0.85] text-balance">
+        <h1 class="text-5xl md:text-7xl lg:text-8xl font-bold text-white tracking-tighter mb-8 lg:mb-8 leading-[0.95] lg:leading-[0.85] text-balance">
           Vença os filtros <br class="hidden lg:block"> com uma <span class="text-transparent bg-clip-text bg-gradient-to-r from-kore-blue via-kore-cyan to-white animate-shimmer" style="background-size: 200% auto;">IA Estratégica.</span>
         </h1>
 
-        <p class="text-xl text-slate-400 mb-12 max-w-xl leading-relaxed text-balance font-medium">
+        <p class="text-lg md:text-xl text-slate-400 mb-10 lg:mb-12 max-w-xl mx-auto lg:mx-0 leading-relaxed text-balance font-medium">
           A Kore é a sua central de inteligência estratégica para vencer filtros ATS e gerenciar sua carreira de forma sólida.
         </p>
 
-        <div class="flex flex-col sm:flex-row items-center justify-start gap-6">
-          <button (click)="scrollTo('#cta')" class="w-full sm:w-auto px-12 py-5 bg-white text-black rounded-2xl font-bold shadow-[0_0_30px_rgba(255,255,255,0.1)] hover:-translate-y-1 transition-all active:scale-95 uppercase text-[11px] tracking-widest">
+        <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 lg:gap-6">
+          <button (click)="scrollTo('#cta')" class="w-full sm:w-auto px-8 lg:px-12 py-4 lg:py-5 bg-white text-black rounded-2xl font-bold shadow-[0_0_30px_rgba(255,255,255,0.1)] hover:-translate-y-1 transition-all active:scale-95 uppercase text-[10px] lg:text-[11px] tracking-widest">
             Começar Agora
           </button>
-          <a routerLink="/feature-lab" class="w-full sm:w-auto px-12 py-5 bg-kore-blue/20 text-kore-cyan border border-kore-blue/40 rounded-2xl font-bold hover:bg-kore-blue hover:text-white transition-all text-center uppercase text-[11px] tracking-widest">
+          <a routerLink="/feature-lab" class="w-full sm:w-auto px-8 lg:px-12 py-4 lg:py-5 bg-kore-blue/20 text-kore-cyan border border-kore-blue/40 rounded-2xl font-bold hover:bg-kore-blue hover:text-white transition-all text-center uppercase text-[10px] lg:text-[11px] tracking-widest">
             Feature Lab
           </a>
         </div>
 
-        <div class="mt-20 flex items-center gap-4">
+        <div class="mt-6 lg:mt-20 flex items-center justify-center lg:justify-start gap-4">
           <div class="h-px w-8 bg-kore-blue/40"></div>
-          <div class="font-mono text-[10px] text-kore-blue font-bold uppercase tracking-[0.4em]">
+          <div class="font-mono text-[9px] lg:text-[10px] text-kore-blue font-bold uppercase tracking-[0.4em]">
             SISTEMA_02 // LIVE_RADAR
           </div>
         </div>
       </div>
 
       <!-- Right: 3D Asset Container -->
-      <div class="relative flex justify-center lg:justify-end py-12">
+      <div class="relative flex justify-center lg:justify-end py-2 lg:py-12">
         <!-- Visual Halo for the 3D asset (Centered on the asset) -->
-        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[500px] aspect-square bg-kore-blue/10 blur-[120px] rounded-full pointer-events-none opacity-40 animate-pulse-slow"></div>
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150%] md:w-full max-w-[500px] aspect-square bg-kore-blue/10 blur-[80px] lg:blur-[120px] rounded-full pointer-events-none opacity-40 animate-pulse-slow"></div>
 
-        <div class="w-full max-w-[600px] aspect-square relative group">
+        <div class="w-full max-w-[280px] md:max-w-[450px] lg:max-w-[600px] aspect-video lg:aspect-square relative group">
           <!-- O vídeo com blend mode para transparência perfeita sobre o preto -->
-          <video class="w-full h-full object-contain pointer-events-none drop-shadow-[0_0_80px_rgba(0,112,255,0.2)] relative z-10 mix-blend-screen"
+          <video class="w-full h-full object-contain pointer-events-none drop-shadow-[0_0_50px_rgba(0,112,255,0.2)] lg:drop-shadow-[0_0_80px_rgba(0,112,255,0.2)] relative z-10 mix-blend-screen"
                  autoplay loop muted playsinline>
             <source src="assets/3d/hero-resumes.webm" type="video/webm">
           </video>
@@ -53,50 +53,50 @@
     </div>
   </section>
 
-  <div class="section-divider"></div>
+  <div class="section-divider !my-4 lg:!my-16"></div>
 
   <!-- The Lab (Simulador) -->
-  <section id="lab" class="container mx-auto px-6 mb-48 pt-20 reveal-trigger" #revealTrigger>
-    <div class="grid lg:grid-cols-2 gap-16 items-center">
-      <div>
-        <h2 class="text-3xl font-bold text-kore-slate dark:text-white mb-6 uppercase tracking-tighter italic">O Coração da Inteligência</h2>
-        <p class="text-lg text-kore-steel dark:text-slate-400 mb-8 leading-relaxed">
+  <section id="lab" class="container mx-auto px-6 mb-24 lg:mb-48 pt-0 lg:pt-20 reveal-trigger" #revealTrigger>
+    <div class="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+      <div class="text-center lg:text-left">
+        <h2 class="text-2xl lg:text-3xl font-bold text-kore-slate dark:text-white mb-4 lg:mb-6 uppercase tracking-tighter italic">The Lab: O Coração da Inteligência</h2>
+        <p class="text-base lg:text-lg text-kore-steel dark:text-slate-400 mb-8 leading-relaxed max-w-2xl mx-auto lg:mx-0">
           Nossa IA não apenas escreve, ela analisa. Ela lê a descrição da vaga como um recrutador e aplica as keywords estratégicas no seu currículo em milissegundos.
         </p>
-        <div class="grid gap-4">
+        <div class="grid gap-4 text-left">
           <div class="p-4 bg-white dark:bg-kore-zinc border border-kore-steel/10 rounded-2xl flex items-center gap-4">
-            <div class="w-10 h-10 bg-kore-blue/10 flex items-center justify-center rounded-lg">
+            <div class="w-10 h-10 bg-kore-blue/10 flex items-center justify-center rounded-lg shrink-0">
               <svg class="w-5 h-5 text-kore-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
             </div>
-            <span class="text-kore-slate dark:text-slate-200 font-bold text-sm">Bypass total em sistemas ATS (Workday, Greenhouse)</span>
+            <span class="text-kore-slate dark:text-slate-200 font-bold text-xs lg:text-sm">Bypass total em sistemas ATS (Workday, Greenhouse)</span>
           </div>
           <div class="p-4 bg-white dark:bg-kore-zinc border border-kore-steel/10 rounded-2xl flex items-center gap-4">
-            <div class="w-10 h-10 bg-kore-blue/10 flex items-center justify-center rounded-lg">
+            <div class="w-10 h-10 bg-kore-blue/10 flex items-center justify-center rounded-lg shrink-0">
               <svg class="w-5 h-5 text-kore-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
             </div>
-            <span class="text-kore-slate dark:text-slate-200 font-bold text-sm">Injeção semântica de habilidades técnicas</span>
+            <span class="text-kore-slate dark:text-slate-200 font-bold text-xs lg:text-sm">Injeção semântica de habilidades técnicas</span>
           </div>
         </div>
       </div>
 
       <!-- Bento Card Simulator -->
-      <div class="relative group">
+      <div class="relative group max-w-[500px] mx-auto w-full">
         <div class="absolute -inset-1 bg-gradient-to-r from-kore-blue to-blue-600 rounded-2xl blur opacity-25 group-hover:opacity-40 transition duration-1000 group-hover:duration-200"></div>
-        <div class="relative bg-white dark:bg-kore-zinc border border-kore-steel/20 rounded-2xl p-8 shadow-2xl overflow-hidden min-h-[400px]">
-          <div class="flex items-center justify-between mb-10 border-b border-kore-steel/10 pb-4">
+        <div class="relative bg-white dark:bg-kore-zinc border border-kore-steel/20 rounded-2xl p-6 lg:p-8 shadow-2xl overflow-hidden min-h-[350px] lg:min-h-[400px]">
+          <div class="flex items-center justify-between mb-8 lg:mb-10 border-b border-kore-steel/10 pb-4">
             <div class="flex gap-2">
-              <div class="w-3 h-3 rounded-full bg-red-400"></div>
-              <div class="w-3 h-3 rounded-full bg-amber-400"></div>
-              <div class="w-3 h-3 rounded-full bg-emerald-400"></div>
+              <div class="w-2.5 h-2.5 rounded-full bg-red-400"></div>
+              <div class="w-2.5 h-2.5 rounded-full bg-amber-400"></div>
+              <div class="w-2.5 h-2.5 rounded-full bg-emerald-400"></div>
             </div>
-            <div class="text-[10px] font-mono text-kore-blue font-bold tracking-[0.2em] uppercase">KORE_ENGINE_V2.0</div>
+            <div class="text-[9px] lg:text-[10px] font-mono text-kore-blue font-bold tracking-[0.2em] uppercase">KORE_ENGINE_V2.0</div>
           </div>
 
           <div class="space-y-6">
             <!-- Step: Idle / Waiting -->
             @if (currentStep() === 'IDLE') {
-              <div class="text-center py-10 animate-pulse">
-                <div class="text-kore-steel text-sm font-mono tracking-tighter uppercase mb-2">Aguardando URL da vaga...</div>
+              <div class="text-center py-6 lg:py-10 animate-pulse">
+                <div class="text-kore-steel text-[10px] lg:text-sm font-mono tracking-tighter uppercase mb-2">Aguardando URL da vaga...</div>
                 <div class="w-full h-1 bg-kore-steel/10 rounded-full overflow-hidden">
                   <div class="h-full bg-kore-steel/30 w-1/3 animate-[shimmer_2s_infinite]"></div>
                 </div>
@@ -105,7 +105,7 @@
 
             <!-- Step: Scanner -->
             <div [class.opacity-100]="currentStep() === 'SCANNING'" [class.opacity-30]="currentStep() !== 'SCANNING'" [class.hidden]="currentStep() === 'IDLE'" class="transition-all duration-500 relative">
-              <div class="flex items-center gap-3 mb-2 text-[10px] font-bold text-kore-blue tracking-widest uppercase">
+              <div class="flex items-center gap-3 mb-2 text-[9px] lg:text-[10px] font-bold text-kore-blue tracking-widest uppercase">
                 <span class="animate-pulse">●</span> Scanner de Vaga Ativo
               </div>
               <div class="h-2 bg-kore-ice dark:bg-kore-slate rounded-full overflow-hidden relative border border-kore-steel/10">
@@ -119,20 +119,20 @@
 
             <!-- Step: Optimization -->
             <div [class.opacity-100]="currentStep() === 'OPTIMIZING'" [class.opacity-30]="currentStep() !== 'OPTIMIZING'" [class.hidden]="currentStep() === 'IDLE'" class="transition-all duration-500">
-              <div class="flex items-center gap-3 mb-4 text-[10px] font-bold text-kore-blue tracking-widest uppercase">
+              <div class="flex items-center gap-3 mb-4 text-[9px] lg:text-[10px] font-bold text-kore-blue tracking-widest uppercase">
                 <span class="animate-pulse">●</span> Aplicando Vetores Semânticos
               </div>
               <div class="flex flex-wrap gap-2 font-mono">
-                <span class="px-3 py-1 bg-kore-blue/10 text-kore-blue text-[10px] rounded-md border border-kore-blue/20">+ Angular Signals</span>
-                <span class="px-3 py-1 bg-kore-blue/10 text-kore-blue text-[10px] rounded-md border border-kore-blue/20">+ JIT Decryption</span>
-                <span class="px-3 py-1 bg-kore-blue/10 text-kore-blue text-[10px] rounded-md border border-kore-blue/20">+ Tech-Mineral UI</span>
+                <span class="px-2 py-0.5 lg:px-3 lg:py-1 bg-kore-blue/10 text-kore-blue text-[9px] lg:text-[10px] rounded-md border border-kore-blue/20">+ Angular Signals</span>
+                <span class="px-2 py-0.5 lg:px-3 lg:py-1 bg-kore-blue/10 text-kore-blue text-[9px] lg:text-[10px] rounded-md border border-kore-blue/20">+ JIT Decryption</span>
+                <span class="px-2 py-0.5 lg:px-3 lg:py-1 bg-kore-blue/10 text-kore-blue text-[9px] lg:text-[10px] rounded-md border border-kore-blue/20">+ Tech-Mineral UI</span>
               </div>
             </div>
 
             <!-- Step: Match Score -->
             <div [class.opacity-100]="currentStep() === 'SUCCESS'" [class.opacity-30]="currentStep() !== 'SUCCESS'" [class.hidden]="currentStep() === 'IDLE'" class="transition-all duration-500 text-center pt-4 border-t border-kore-steel/10">
-              <div class="text-7xl font-bold text-kore-blue mb-2 font-mono">{{matchScore()}}%</div>
-              <div class="text-[10px] font-bold text-kore-steel uppercase tracking-[0.3em]">Score de Compatibilidade Kore</div>
+              <div class="text-5xl lg:text-7xl font-bold text-kore-blue mb-2 font-mono">{{matchScore()}}%</div>
+              <div class="text-[9px] lg:text-[10px] font-bold text-kore-steel uppercase tracking-[0.3em]">Score de Compatibilidade Kore</div>
             </div>
           </div>
         </div>
@@ -140,18 +140,18 @@
     </div>
   </section>
 
-  <div class="section-divider"></div>
+  <div class="section-divider !my-4 lg:!my-16"></div>
 
   <!-- Interactive Kanban -->
-  <section id="command-center" class="container mx-auto px-6 mb-48 pt-10 reveal-trigger" #revealTrigger>
-    <div class="text-center mb-16">
-      <h2 class="text-3xl font-bold text-kore-slate dark:text-white mb-4 tracking-tighter uppercase italic">Workspace</h2>
-      <p class="text-kore-steel dark:text-slate-400">Arraste as vagas para simular o fluxo de otimização e candidatura.</p>
+  <section id="command-center" class="container mx-auto px-6 mb-24 lg:mb-48 pt-10 reveal-trigger" #revealTrigger>
+    <div class="text-center mb-10 lg:mb-16">
+      <h2 class="text-2xl lg:text-3xl font-bold text-kore-slate dark:text-white mb-4 tracking-tighter uppercase italic">Workspace</h2>
+      <p class="text-sm lg:text-base text-kore-steel dark:text-slate-400">Arraste as vagas para simular o fluxo de otimização e candidatura.</p>
     </div>
 
-    <div class="grid md:grid-cols-3 gap-8 min-h-[500px]">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
       @for (col of columns; track col) {
-        <div class="bg-white/50 dark:bg-kore-zinc/40 rounded-[2rem] p-4 border border-kore-steel/10 flex flex-col backdrop-blur-sm shadow-inner"
+        <div class="bg-white/50 dark:bg-kore-zinc/40 rounded-[2rem] p-5 lg:p-4 border border-kore-steel/10 flex flex-col backdrop-blur-sm shadow-inner"
              (dragover)="onDragOver($event)"
              (drop)="onDrop($event, col)">
 
@@ -256,24 +256,24 @@
   <div class="section-divider"></div>
 
   <!-- The Vault (Security) -->
-  <section id="byok" class="py-32 overflow-hidden relative pt-20 reveal-trigger" #revealTrigger>
+  <section id="byok" class="py-16 lg:py-32 overflow-hidden relative pt-10 lg:pt-20 reveal-trigger" #revealTrigger>
     <!-- Background Glow for Separation -->
-    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-6xl aspect-square bg-kore-blue/5 blur-[180px] rounded-full pointer-events-none opacity-40"></div>
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-6xl aspect-square bg-kore-blue/5 blur-[120px] lg:blur-[180px] rounded-full pointer-events-none opacity-40"></div>
 
     <div class="container mx-auto px-6 relative z-10">
-      <div class="glass-card p-12 md:p-20 flex flex-col md:flex-row items-center gap-16 overflow-hidden relative">
+      <div class="glass-card p-8 lg:p-20 flex flex-col lg:flex-row items-center gap-10 lg:gap-16 overflow-hidden relative">
         <!-- Strategic Grid Overlay inside the card -->
         <div class="absolute inset-0 bg-strategic-grid opacity-10 pointer-events-none"></div>
 
-        <div class="flex-1 relative z-10">
-          <div class="w-16 h-16 bg-white/5 backdrop-blur-xl rounded-2xl flex items-center justify-center mb-8 border border-white/10 shadow-[0_0_20px_rgba(0,112,255,0.2)]">
+        <div class="flex-1 relative z-10 text-center lg:text-left">
+          <div class="w-16 h-16 bg-white/5 backdrop-blur-xl rounded-2xl flex items-center justify-center mb-6 lg:mb-8 border border-white/10 shadow-[0_0_20px_rgba(0,112,255,0.2)] mx-auto lg:mx-0">
             <svg class="w-8 h-8 text-kore-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
           </div>
-          <h2 class="text-4xl font-bold text-white mb-6 tracking-tighter uppercase italic">Autonomia e Privacidade</h2>
-          <p class="text-slate-400 text-lg mb-8 leading-relaxed font-medium">
+          <h2 class="text-2xl lg:text-4xl font-bold text-white mb-4 lg:text-6xl tracking-tighter uppercase italic">Autonomia e Privacidade</h2>
+          <p class="text-slate-400 text-base lg:text-lg mb-8 leading-relaxed font-medium">
             Sua chave, seu controle. Na Kore, o modelo <span class="text-kore-cyan font-bold tracking-widest uppercase text-sm">BYOK</span> garante que sua inteligência nunca saia do seu controle total.
           </p>
-          <div class="space-y-4 font-mono text-[11px] tracking-widest">
+          <div class="space-y-4 font-mono text-[9px] lg:text-[11px] tracking-widest text-left inline-block lg:block">
             <div class="flex items-center gap-3">
               <div class="w-1 h-4 bg-kore-blue"></div>
               <span class="text-white font-bold uppercase">Criptografia Local-first (AES-256-GCM)</span>
@@ -285,11 +285,11 @@
           </div>
         </div>
         <div class="flex-1 flex justify-center relative z-10">
-          <div class="w-72 h-72 border border-white/10 rounded-full flex items-center justify-center relative bg-black/20 backdrop-blur-sm">
-            <div class="absolute top-0 -translate-y-1/2 bg-kore-blue text-white px-4 py-1 border border-kore-cyan/30 rounded-full text-[9px] font-mono font-bold tracking-widest shadow-[0_0_15px_rgba(0,112,255,0.3)] uppercase">Secure_Core_V2</div>
-            <div class="w-56 h-56 border border-white/5 rounded-full flex items-center justify-center animate-pulse-slow">
-              <div class="w-32 h-32 bg-kore-blue/10 rounded-full flex items-center justify-center blur-2xl"></div>
-              <svg class="absolute w-16 h-16 text-kore-cyan drop-shadow-[0_0_15px_rgba(0,209,255,0.5)]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.040L3 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622l-.382-3.016z"></path></svg>
+          <div class="w-56 h-56 lg:w-72 lg:h-72 border border-white/10 rounded-full flex items-center justify-center relative bg-black/20 backdrop-blur-sm">
+            <div class="absolute top-0 -translate-y-1/2 bg-kore-blue text-white px-4 py-1 border border-kore-cyan/30 rounded-full text-[8px] lg:text-[9px] font-mono font-bold tracking-widest shadow-[0_0_15px_rgba(0,112,255,0.3)] uppercase">Secure_Core_V2</div>
+            <div class="w-40 h-40 lg:w-56 lg:h-56 border border-white/5 rounded-full flex items-center justify-center animate-pulse-slow">
+              <div class="w-24 h-24 lg:w-32 lg:h-32 bg-kore-blue/10 rounded-full flex items-center justify-center blur-2xl"></div>
+              <svg class="absolute w-12 h-12 lg:w-16 lg:h-16 text-kore-cyan drop-shadow-[0_0_15px_rgba(0,209,255,0.5)]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.040L3 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622l-.382-3.016z"></path></svg>
             </div>
             <!-- Decorative Orbit -->
             <div class="absolute inset-0 border border-kore-blue/20 rounded-full animate-[spin_20s_linear_infinite]">
@@ -301,21 +301,21 @@
     </div>
   </section>
 
-  <div class="section-divider"></div>
+  <div class="section-divider !my-4 lg:!my-16"></div>
 
   <!-- Pricing Section -->
-  <section id="pricing" class="container mx-auto px-6 py-40 pt-20 reveal-trigger" #revealTrigger>
-    <div class="text-center mb-20">
-      <h2 class="text-4xl font-bold text-kore-slate dark:text-white mb-4 tracking-tighter uppercase italic">Insights de Alta Performance</h2>
-      <p class="text-kore-steel dark:text-slate-400 mb-2 font-medium">Escolha o nível de suporte para sua escalada profissional.</p>
+  <section id="pricing" class="container mx-auto px-6 py-20 lg:py-40 pt-10 lg:pt-20 reveal-trigger" #revealTrigger>
+    <div class="text-center mb-12 lg:mb-20">
+      <h2 class="text-2xl lg:text-4xl font-bold text-kore-slate dark:text-white mb-4 tracking-tighter uppercase italic">Insights de Alta Performance</h2>
+      <p class="text-sm lg:text-base text-kore-steel dark:text-slate-400 mb-2 font-medium">Escolha o nível de suporte para sua escalada profissional.</p>
     </div>
 
-    <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+    <div class="grid lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
       <!-- Free Plan -->
-      <div class="bg-white dark:bg-kore-zinc border border-kore-steel/10 rounded-[2.5rem] p-10 flex flex-col hover:border-kore-blue transition-all hover:shadow-2xl">
-        <div class="mb-8">
-          <h3 class="text-lg font-bold text-kore-slate dark:text-white mb-2 uppercase tracking-tight">Gratuito (BYOK)</h3>
-          <p class="text-kore-steel dark:text-slate-400 text-sm font-medium">Autonomia total.</p>
+      <div class="bg-white dark:bg-kore-zinc border border-kore-steel/10 rounded-[2.5rem] p-8 lg:p-10 flex flex-col hover:border-kore-blue transition-all hover:shadow-2xl">
+        <div class="mb-6 lg:mb-8">
+          <h3 class="text-base lg:text-lg font-bold text-kore-slate dark:text-white mb-2 uppercase tracking-tight">Gratuito (BYOK)</h3>
+          <p class="text-kore-steel dark:text-slate-400 text-xs lg:text-sm font-medium">Autonomia total.</p>
         </div>
         <div class="mb-8">
           <span class="text-4xl font-bold text-kore-slate dark:text-white font-mono">R$ 0</span>
@@ -402,78 +402,77 @@
   <div class="section-divider"></div>
 
   <!-- Roadmap Section -->
-  <section id="roadmap" class="container mx-auto px-6 py-40 pt-20 overflow-hidden reveal-trigger" #revealTrigger>
-    <div class="text-center mb-32">
-      <h2 class="text-4xl font-bold text-kore-slate dark:text-white mb-4 tracking-tighter uppercase italic">A Trilha da Evolução</h2>
-      <p class="text-kore-steel dark:text-slate-400 font-medium text-lg">Cronograma de evolução do ecossistema estratégico Kore.</p>
+  <section id="roadmap" class="container mx-auto px-6 py-20 lg:py-40 pt-10 lg:pt-20 reveal-trigger relative z-10 border-none" #revealTrigger>
+    <div class="text-center mb-16 lg:mb-32 relative z-20">
+      <h2 class="text-3xl lg:text-4xl font-bold text-kore-slate dark:text-white mb-4 tracking-tighter uppercase italic">A Trilha da Evolução</h2>
+      <p class="text-base lg:text-lg text-kore-steel dark:text-slate-400 font-medium max-w-2xl mx-auto">Cronograma de evolução do ecossistema estratégico Kore.</p>
     </div>
 
-    <div class="max-w-5xl mx-auto relative">
-      <!-- The Winding Path Line (SVG) - Precise Alignment -->
-      <div class="absolute inset-0 pointer-events-none hidden md:block">
-        <svg class="w-full h-full" viewBox="0 0 800 1200" fill="none" preserveAspectRatio="none">
-          <path id="roadmap-path"
-                d="M400 0V150C400 250 100 250 100 450C100 650 700 650 700 850C700 1050 400 1050 400 1200"
-                stroke="currentColor" stroke-width="3" stroke-dasharray="12 12"
-                class="text-kore-blue/30 transition-all duration-[3000ms] ease-in-out"
-                style="stroke-dashoffset: 2500; stroke-dasharray: 2500;"/>
-        </svg>
-      </div>
+    <div class="max-w-4xl mx-auto relative z-20 border-none">
+      <!-- Central Vertical Line (Desktop only) -->
+      <div class="absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-kore-blue/20 to-transparent hidden md:block pointer-events-none"></div>
 
-      <div class="space-y-48">
+      <div class="space-y-12 md:space-y-32">
         <!-- Phase 1: ATUAL -->
-        <div class="relative flex flex-col md:flex-row items-center reveal-trigger" #revealTrigger>
-          <div class="md:w-1/2 md:pr-24 md:text-right mb-12 md:mb-0">
-            <div class="inline-block px-4 py-1.5 bg-kore-blue/10 text-kore-blue text-[10px] font-bold rounded-full mb-4 uppercase tracking-[0.2em] border border-kore-blue/20 animate-pulse">
+        <div class="relative flex flex-col md:flex-row items-center justify-center">
+          <div class="w-full md:w-1/2 md:pr-16 text-center md:text-right z-10">
+            <div class="inline-block px-4 py-1.5 bg-kore-blue/10 text-kore-blue text-[9px] md:text-[10px] font-bold rounded-full mb-4 uppercase tracking-[0.2em] border border-kore-blue/20 animate-pulse">
               Sistema_Ativo
             </div>
-            <h3 class="text-2xl font-bold text-kore-slate dark:text-white mb-4 uppercase tracking-tight">Fase 1: Fundação Estratégica</h3>
-            <p class="text-kore-steel dark:text-slate-400 text-sm leading-relaxed mb-6 font-medium">Desenvolvimento do motor de otimização ATS e arquitetura de privacidade BYOK.</p>
+            <h3 class="text-xl md:text-2xl font-bold text-kore-slate dark:text-white mb-4 uppercase tracking-tight">Fase 1: Fundação Estratégica</h3>
+            <p class="text-sm md:text-base text-kore-steel dark:text-slate-400 leading-relaxed mb-6 font-medium">Desenvolvimento do motor de otimização ATS e arquitetura de privacidade BYOK.</p>
             <div class="font-mono text-kore-blue text-[10px] font-bold uppercase tracking-widest">
               // STATUS: EM_EXECUÇÃO
             </div>
           </div>
-          <div class="absolute left-1/2 -translate-x-1/2 hidden md:flex w-14 h-14 bg-kore-slate dark:bg-white border-4 border-kore-blue rounded-2xl items-center justify-center z-10 shadow-[0_0_30px_rgba(59,130,246,0.4)] rotate-45">
+
+          <div class="w-12 h-12 bg-kore-slate dark:bg-white border-4 border-kore-blue rounded-2xl flex items-center justify-center z-20 my-6 md:my-0 md:absolute md:left-1/2 md:-translate-x-1/2 rotate-45 shadow-[0_0_20px_rgba(0,112,255,0.3)]">
             <span class="text-xs font-bold text-white dark:text-kore-slate font-mono -rotate-45">01</span>
           </div>
-          <div class="md:w-1/2"></div>
+
+          <div class="hidden md:block md:w-1/2"></div>
         </div>
 
         <!-- Phase 2: FUTURO -->
-        <div class="relative flex flex-col md:flex-row-reverse items-center reveal-trigger" #revealTrigger>
-          <div class="md:w-1/2 md:pl-24 mb-12 md:mb-0">
-            <div class="inline-block px-3 py-1 bg-kore-steel/10 text-kore-steel text-[10px] font-bold rounded-full mb-4 uppercase tracking-widest">Q2 2026</div>
-            <h3 class="text-2xl font-bold text-kore-slate dark:text-white mb-4 uppercase tracking-tight">Expansão de Recursos</h3>
-            <p class="text-kore-steel dark:text-slate-400 text-sm leading-relaxed mb-6 font-medium">Integração do CRM de Vagas Estratégico e suporte a múltiplas personas simultâneas.</p>
+        <div class="relative flex flex-col md:flex-row-reverse items-center justify-center">
+          <div class="w-full md:w-1/2 md:pl-16 text-center md:text-left z-10">
+            <div class="inline-block px-3 py-1 bg-kore-steel/10 text-kore-steel text-[9px] md:text-[10px] font-bold rounded-full mb-4 uppercase tracking-widest">Q2 2026</div>
+            <h3 class="text-xl md:text-2xl font-bold text-kore-slate dark:text-white mb-4 uppercase tracking-tight">Expansão de Recursos</h3>
+            <p class="text-sm md:text-base text-kore-steel dark:text-slate-400 leading-relaxed mb-6 font-medium">Integração do CRM de Vagas Estratégico e suporte a múltiplas personas simultâneas.</p>
           </div>
-          <div class="absolute left-1/2 -translate-x-1/2 hidden md:flex w-12 h-12 bg-white dark:bg-kore-slate border-4 border-kore-steel/20 rounded-xl items-center justify-center z-10 rotate-45">
+
+          <div class="w-12 h-12 bg-white dark:bg-kore-slate border-4 border-kore-steel/20 rounded-2xl flex items-center justify-center z-20 my-6 md:my-0 md:absolute md:left-1/2 md:-translate-x-1/2 rotate-45">
             <span class="text-xs font-bold text-kore-steel font-mono -rotate-45">02</span>
           </div>
-          <div class="md:w-1/2"></div>
+
+          <div class="hidden md:block md:w-1/2"></div>
         </div>
 
         <!-- Phase 3: FUTURO -->
-        <div class="relative flex flex-col md:flex-row items-center reveal-trigger" #revealTrigger>
-          <div class="md:w-1/2 md:pr-24 md:text-right mb-12 md:mb-0">
-            <div class="inline-block px-3 py-1 bg-kore-steel/10 text-kore-steel text-[10px] font-bold rounded-full mb-4 uppercase tracking-widest">Q3 2026</div>
-            <h3 class="text-2xl font-bold text-kore-slate dark:text-white mb-4 uppercase tracking-tight">Sincronização de Rede</h3>
-            <p class="text-kore-steel dark:text-slate-400 text-sm leading-relaxed mb-6 font-medium">Módulo de auto-candidatura autônoma e rede de inteligência avançada.</p>
+        <div class="relative flex flex-col md:flex-row items-center justify-center">
+          <div class="w-full md:w-1/2 md:pr-16 text-center md:text-right z-10">
+            <div class="inline-block px-3 py-1 bg-kore-steel/10 text-kore-steel text-[9px] md:text-[10px] font-bold rounded-full mb-4 uppercase tracking-widest">Q3 2026</div>
+            <h3 class="text-xl md:text-2xl font-bold text-kore-slate dark:text-white mb-4 uppercase tracking-tight">Sincronização de Rede</h3>
+            <p class="text-sm md:text-base text-kore-steel dark:text-slate-400 leading-relaxed mb-6 font-medium">Módulo de auto-candidatura autônoma e rede de inteligência avançada.</p>
           </div>
-          <div class="absolute left-1/2 -translate-x-1/2 hidden md:flex w-12 h-12 bg-white dark:bg-kore-slate border-4 border-kore-steel/20 rounded-xl items-center justify-center z-10 rotate-45">
+
+          <div class="w-12 h-12 bg-white dark:bg-kore-slate border-4 border-kore-steel/20 rounded-2xl flex items-center justify-center z-20 my-6 md:my-0 md:absolute md:left-1/2 md:-translate-x-1/2 rotate-45">
             <span class="text-xs font-bold text-kore-steel font-mono -rotate-45">03</span>
           </div>
-          <div class="md:w-1/2"></div>
+
+          <div class="hidden md:block md:w-1/2"></div>
         </div>
 
         <!-- Phase 4: FINAL -->
-        <div class="relative flex flex-col items-center reveal-trigger" #revealTrigger>
-          <div class="max-w-lg text-center">
-            <div class="inline-block px-4 py-1 bg-emerald-500/10 text-emerald-500 text-[10px] font-bold rounded-full mb-6 uppercase tracking-[0.3em] border border-emerald-500/20">Marco Global</div>
-            <h3 class="text-3xl font-bold text-kore-slate dark:text-white mb-6 uppercase tracking-tighter italic">Referência no Setor</h3>
-            <p class="text-kore-steel dark:text-slate-400 text-sm leading-relaxed mb-10 font-medium">Consolidação da Kore como o padrão global de gestão de carreira.</p>
+        <div class="relative flex flex-col items-center justify-center text-center">
+          <div class="max-w-lg z-10">
+            <div class="inline-block px-4 py-1 bg-emerald-500/10 text-emerald-500 text-[9px] md:text-[10px] font-bold rounded-full mb-6 uppercase tracking-[0.3em] border border-emerald-500/20">Marco Global</div>
+            <h3 class="text-2xl md:text-3xl font-bold text-kore-slate dark:text-white mb-6 uppercase tracking-tighter italic">Referência no Setor</h3>
+            <p class="text-sm md:text-base text-kore-steel dark:text-slate-400 leading-relaxed mb-10 font-medium">Consolidação da Kore como o padrão global de gestão de carreira.</p>
           </div>
-          <div class="flex w-20 h-20 bg-kore-slate dark:bg-white rounded-[2rem] items-center justify-center z-10 shadow-[0_0_50px_rgba(59,130,246,0.5)] border border-kore-blue/30">
-            <svg class="w-10 h-10 text-kore-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+
+          <div class="flex w-16 h-16 md:w-20 md:h-20 bg-kore-slate dark:bg-white rounded-2xl items-center justify-center z-20 shadow-[0_0_50px_rgba(59,130,246,0.5)] border border-kore-blue/30 rotate-45">
+            <svg class="w-8 h-8 md:w-10 md:h-10 text-kore-blue -rotate-45" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
           </div>
         </div>
       </div>
@@ -524,8 +523,8 @@
   <div class="section-divider"></div>
 
   <!-- Final CTA: Ação Estratégica -->
-  <section id="cta" class="container mx-auto px-6 mb-32 reveal-trigger" #revealTrigger>
-    <div class="bg-kore-slate dark:bg-kore-zinc rounded-[3.5rem] p-12 md:p-24 text-center relative overflow-hidden shadow-[0_0_80px_-20px_rgba(59,130,246,0.3)] border border-kore-blue/20">
+  <section id="cta" class="container mx-auto px-6 mb-24 lg:mb-32 reveal-trigger" #revealTrigger>
+    <div class="bg-kore-slate dark:bg-kore-zinc rounded-[2.5rem] lg:rounded-[3.5rem] p-8 md:p-16 lg:p-24 text-center relative overflow-hidden shadow-[0_0_80px_-20px_rgba(59,130,246,0.3)] border border-kore-blue/20">
 
       <!-- Strategic Background Layers -->
       <div class="absolute inset-0 bg-strategic-grid opacity-20 pointer-events-none"></div>
@@ -543,38 +542,38 @@
 
       <div class="relative z-10 text-center flex flex-col items-center">
         <!-- Live Status Badge -->
-        <div class="flex items-center gap-2 px-4 py-1.5 bg-emerald-500/10 border border-emerald-500/20 rounded-full mb-10">
+        <div class="flex items-center gap-2 px-4 py-1.5 bg-emerald-500/10 border border-emerald-500/20 rounded-full mb-8 lg:mb-10">
           <span class="relative flex h-2 w-2">
             <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
             <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
           </span>
-          <span class="text-[10px] font-mono font-bold text-emerald-500 uppercase tracking-[0.2em]">Status_Live: 14 Vagas Disponíveis</span>
+          <span class="text-[9px] lg:text-[10px] font-mono font-bold text-emerald-500 uppercase tracking-[0.2em]">Status_Live: 14 Vagas Disponíveis</span>
         </div>
 
-        <h2 class="text-4xl md:text-7xl font-bold text-white mb-8 tracking-tighter uppercase italic leading-[0.9]">
+        <h2 class="text-3xl md:text-5xl lg:text-7xl font-bold text-white mb-6 lg:mb-8 tracking-tighter uppercase italic leading-[1.1] lg:leading-[0.9]">
           Sua Evolução <br class="md:hidden"> <span class="text-kore-blue">Começa Agora.</span>
         </h2>
 
-        <p class="text-kore-steel dark:text-slate-300 text-xl mb-12 max-w-2xl mx-auto leading-relaxed font-medium">
+        <p class="text-slate-300 text-base lg:text-xl mb-10 lg:mb-12 max-w-2xl mx-auto leading-relaxed font-medium">
           Não seja apenas mais um no algoritmo. Torne-se a referência que as empresas não conseguem ignorar.
         </p>
 
-        <form class="max-w-xl w-full flex flex-col sm:flex-row gap-4 p-2 bg-white/5 backdrop-blur-md border border-white/10 rounded-[2rem] shadow-2xl">
+        <form class="max-w-xl w-full flex flex-col sm:flex-row gap-3 lg:gap-4 p-2 bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl lg:rounded-[2rem] shadow-2xl">
           <input type="email" placeholder="seu@email.com"
-                 class="flex-1 bg-transparent px-8 py-5 text-white placeholder:text-slate-500 focus:outline-none font-bold text-lg">
+                 class="flex-1 bg-transparent px-6 lg:px-8 py-4 lg:py-5 text-white placeholder:text-slate-500 focus:outline-none font-bold text-base lg:text-lg w-full">
           <button type="submit"
-                  class="bg-kore-blue text-white py-1 px-4 rounded-[1.5rem] font-bold hover:bg-blue-600 transition-all shadow-xl shadow-kore-blue/40 active:scale-95 uppercase tracking-widest text-[11px] group flex items-center justify-center gap-2">
-            Garantir Acesso Antecipado
+                  class="bg-kore-blue text-white py-4 px-6 rounded-xl lg:rounded-[1.5rem] font-bold hover:bg-blue-600 transition-all shadow-xl shadow-kore-blue/40 active:scale-95 uppercase tracking-widest text-[10px] lg:text-[11px] group flex items-center justify-center gap-2 w-full sm:w-auto whitespace-nowrap">
+            Garantir Acesso
             <svg class="group-hover:translate-x-1 transition-transform" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </button>
         </form>
 
-        <div class="mt-12 flex flex-wrap justify-center gap-8 opacity-40">
+        <div class="mt-10 lg:mt-12 flex flex-wrap justify-center gap-6 lg:gap-8 opacity-40">
           <div class="flex items-center gap-2">
-            <span class="text-[9px] font-bold text-white uppercase tracking-widest font-mono">Encrypted_Connection</span>
+            <span class="text-[8px] lg:text-[9px] font-bold text-white uppercase tracking-widest font-mono">Encrypted_Connection</span>
           </div>
           <div class="flex items-center gap-2">
-            <span class="text-[9px] font-bold text-white uppercase tracking-widest font-mono">Zero_Log_Policy</span>
+            <span class="text-[8px] lg:text-[9px] font-bold text-white uppercase tracking-widest font-mono">Zero_Log_Policy</span>
           </div>
         </div>
       </div>
@@ -585,34 +584,33 @@
 
 <!-- Demo Notification Toast (STRATEGIC DASHBOARD STYLE) -->
 @if (showDemoNotification()) {
-  <div class="fixed bottom-12 left-1/2 z-[100] w-[calc(100%-3rem)] md:max-w-2xl origin-bottom"
+  <div class="fixed bottom-6 lg:bottom-12 left-1/2 -translate-x-1/2 z-[100] w-[calc(100%-2rem)] md:max-w-2xl origin-bottom"
        [class.animate-slide-up]="!isExitingDemoNotification()"
        [class.animate-slide-down]="isExitingDemoNotification()">
 
     <div class="bg-kore-slate border-2 border-kore-blue/30 rounded-2xl p-1 shadow-[0_0_50px_rgba(59,130,246,0.3)] overflow-hidden">
-      <div class="bg-kore-slate dark:bg-kore-zinc p-6 flex flex-col md:flex-row items-center gap-6 relative overflow-hidden transition-colors">
+      <div class="bg-kore-slate dark:bg-kore-zinc p-5 lg:p-6 flex flex-col md:flex-row items-center gap-4 lg:gap-6 relative overflow-hidden transition-colors">
         <!-- Progress Timer Bar (Dynamic) -->
         <div class="absolute top-0 left-0 w-full h-1 bg-kore-blue/10">
           <div class="h-full bg-kore-blue animate-progress-timer shadow-[0_0_10px_rgba(59,130,246,1)]"></div>
         </div>
 
-        <div class="w-16 h-16 bg-kore-blue/10 rounded-xl flex items-center justify-center shrink-0 border border-kore-blue/20">
-          <svg class="w-8 h-8 text-kore-blue animate-pulse" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+        <div class="w-12 h-12 lg:w-16 lg:h-16 bg-kore-blue/10 rounded-xl flex items-center justify-center shrink-0 border border-kore-blue/20">
+          <svg class="w-6 h-6 lg:w-8 lg:h-8 text-kore-blue animate-pulse" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
         </div>
 
-        <div class="flex-1 space-y-1">
-          <h4 class="text-white font-bold text-lg tracking-tighter uppercase italic flex items-center gap-2">
-            Acesso Restrito: Modo Demo
-            <span class="text-[10px] bg-kore-blue/20 text-kore-blue px-2 py-0.5 rounded border border-kore-blue/30 not-italic tracking-widest font-mono">PRO</span>
+        <div class="flex-1 space-y-1 text-center md:text-left">
+          <h4 class="text-white font-bold text-base lg:text-lg tracking-tighter uppercase italic flex items-center justify-center md:justify-start gap-2">
+            Acesso Restrito
+            <span class="text-[9px] bg-kore-blue/20 text-kore-blue px-2 py-0.5 rounded border border-kore-blue/30 not-italic tracking-widest font-mono uppercase">Demo</span>
           </h4>
-          <p class="text-kore-steel text-sm leading-relaxed max-w-lg font-medium">
-            Simulações estratégicas em fase final de calibração. Inscreva-se para obter credenciais de acesso prioritário.
-            <a (click)="scrollTo('#cta')"><span class="text-kore-blue font-bold block mt-1 cursor-pointer hover:underline uppercase text-[10px] tracking-widest font-mono">> INICIAR PROCESSO DE ACESSO</span></a>
+          <p class="text-kore-steel text-xs lg:text-sm leading-relaxed max-w-lg font-medium">
+            Simulações estratégicas em calibração. Inscreva-se para obter acesso prioritário.
           </p>
         </div>
 
         <button (click)="closeDemoNotification()" class="absolute top-4 right-4 md:static text-kore-steel hover:text-white transition-colors p-2 hover:bg-white/10 rounded-lg">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
         </button>
       </div>
     </div>

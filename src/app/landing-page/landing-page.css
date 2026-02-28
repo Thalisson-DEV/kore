@@ -55,25 +55,6 @@
   user-select: none;
 }
 
-/* Roadmap Road Style */
-#roadmap .relative::before {
-  content: '';
-  position: absolute;
-  left: 31px; /* Center with the 8x8 circles on mobile */
-  top: 0;
-  bottom: 0;
-  width: 2px;
-  background: linear-gradient(to bottom, transparent, #e4e4e7 10%, #e4e4e7 90%, transparent);
-  z-index: 0;
-}
-
-@media (min-width: 768px) {
-  #roadmap .relative::before {
-    left: 50%;
-    transform: translateX(-50%);
-  }
-}
-
 #roadmap .group:hover .w-8 {
   border-color: #6366f1;
   box-shadow: 0 0 15px rgba(99, 102, 241, 0.3);
