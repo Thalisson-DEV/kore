@@ -1,33 +1,54 @@
 <app-header></app-header>
 
-<main class="bg-kore-ice dark:bg-kore-slate min-h-screen pt-32 pb-20 overflow-x-hidden transition-colors duration-500">
+<main class="min-h-screen pt-10 pb-20 overflow-x-hidden transition-colors duration-500 flex flex-col items-center">
 
   <!-- Hero Section -->
-  <section id="hero" class="container mx-auto px-6 mb-32 pt-10 reveal-trigger" #revealTrigger>
-    <div class="max-w-4xl mx-auto text-center">
-      <span class="inline-block py-1.5 px-4 rounded-full bg-kore-blue/10 text-kore-blue text-[10px] font-bold tracking-[0.2em] uppercase mb-8 border border-kore-blue/20">
-        Kore. Inteligência na raiz. Tecnologia no topo.
-      </span>
-      <h1 class="text-5xl md:text-7xl font-bold text-kore-slate dark:text-white tracking-tight mb-8 leading-[1.1]">
-        Vença os filtros das empresas com uma <span class="text-transparent bg-clip-text bg-gradient-to-r from-kore-blue to-blue-400">IA de Contra-Ataque.</span>
-      </h1>
-      <p class="text-xl text-kore-steel dark:text-slate-400 mb-10 max-w-2xl mx-auto leading-relaxed text-balance">
-        A Kore é o seu centro de comando tático para vencer filtros ATS e gerenciar sua carreira de forma sólida.
-      </p>
-      <div class="font-mono text-[14px] text-kore-blue dark:text-blue-400 mb-12 opacity-90 font-bold uppercase tracking-tighter">
-        // [STATUS: OPERACIONAL] -- PROTOCOLO DE SOBERANIA ATIVO
+  <section id="hero" class="container mx-auto px-6 min-h-[85vh] flex items-center reveal-trigger relative" #revealTrigger>
+
+    <div class="grid lg:grid-cols-2 gap-16 items-center w-full">
+      <!-- Left: Content -->
+      <div class="text-left relative z-10 py-12">
+        <span class="inline-block py-1.5 px-4 rounded-full bg-kore-blue/10 text-kore-blue text-[10px] font-bold tracking-[0.2em] uppercase mb-10 border border-kore-blue/20">
+          Kore. Inteligência na raiz. Tecnologia no topo.
+        </span>
+
+        <h1 class="text-6xl md:text-8xl font-bold text-white tracking-tighter mb-8 leading-[0.85] text-balance">
+          Vença os filtros <br class="hidden lg:block"> com uma <span class="text-transparent bg-clip-text bg-gradient-to-r from-kore-blue via-kore-cyan to-white animate-shimmer" style="background-size: 200% auto;">IA de Contra-Ataque.</span>
+        </h1>
+
+        <p class="text-xl text-slate-400 mb-12 max-w-xl leading-relaxed text-balance font-medium">
+          A Kore é o seu centro de comando tático para vencer filtros ATS e gerenciar sua carreira de forma sólida.
+        </p>
+
+        <div class="flex flex-col sm:flex-row items-center justify-start gap-6">
+          <button (click)="scrollTo('#cta')" class="w-full sm:w-auto px-12 py-5 bg-white text-black rounded-2xl font-bold shadow-[0_0_30px_rgba(255,255,255,0.1)] hover:-translate-y-1 transition-all active:scale-95 uppercase text-[11px] tracking-widest">
+            Começar Agora
+          </button>
+          <a routerLink="/feature-lab" class="w-full sm:w-auto px-12 py-5 bg-kore-blue/20 text-kore-cyan border border-kore-blue/40 rounded-2xl font-bold hover:bg-kore-blue hover:text-white transition-all text-center uppercase text-[11px] tracking-widest">
+            Feature Lab
+          </a>
+        </div>
+
+        <div class="mt-20 flex items-center gap-4">
+          <div class="h-px w-8 bg-kore-blue/40"></div>
+          <div class="font-mono text-[10px] text-kore-blue font-bold uppercase tracking-[0.4em]">
+            PROTOCOLO_S_02 // SYSTEM_LIVE
+          </div>
+        </div>
       </div>
-      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-        <button (click)="scrollTo('#cta')" class="w-full sm:w-auto px-8 py-4 bg-kore-slate dark:bg-white text-white dark:text-kore-slate rounded-xl font-bold shadow-2xl shadow-kore-blue/20 hover:-translate-y-1 transition-all">
-          Começar Agora — É Grátis
-        </button>
-        <a routerLink="/feature-lab" routerLinkActive="active-nav" class="w-full sm:w-auto px-8 py-4 bg-kore-blue text-white rounded-xl font-bold shadow-xl shadow-kore-blue/30 hover:-translate-y-1 transition-all active:scale-95 animate-pulse-slow text-center">
-          Feature Lab
-        </a>
-        <button (click)="triggerDemoNotification()" class="w-full sm:w-auto px-8 py-4 bg-white/50 dark:bg-kore-zinc/50 text-kore-slate dark:text-white border border-kore-steel/30 rounded-xl font-bold flex items-center justify-center gap-2 hover:bg-white dark:hover:bg-kore-zinc transition-all group backdrop-blur-sm">
-          <svg class="group-hover:translate-x-1 transition-transform text-kore-blue" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
-          Ver Demo
-        </button>
+
+      <!-- Right: 3D Asset Container -->
+      <div class="relative flex justify-center lg:justify-end py-12">
+        <!-- Visual Halo for the 3D asset (Centered on the asset) -->
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[500px] aspect-square bg-kore-blue/10 blur-[120px] rounded-full pointer-events-none opacity-40 animate-pulse-slow"></div>
+
+        <div class="w-full max-w-[600px] aspect-square relative group">
+          <!-- O vídeo com blend mode para transparência perfeita sobre o preto -->
+          <video class="w-full h-full object-contain pointer-events-none drop-shadow-[0_0_80px_rgba(0,112,255,0.2)] relative z-10 mix-blend-screen"
+                 autoplay loop muted playsinline>
+            <source src="assets/3d/hero-resumes.webm" type="video/webm">
+          </video>
+        </div>
       </div>
     </div>
   </section>
@@ -235,38 +256,44 @@
   <div class="tactical-divider"></div>
 
   <!-- The Vault (Security) -->
-  <section id="byok" class="bg-kore-slate py-32 overflow-hidden relative pt-20 reveal-trigger" #revealTrigger>
-    <div class="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
-      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-kore-blue rounded-full blur-[120px]"></div>
-    </div>
+  <section id="byok" class="py-32 overflow-hidden relative pt-20 reveal-trigger" #revealTrigger>
+    <!-- Background Glow for Separation -->
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-6xl aspect-square bg-kore-blue/5 blur-[180px] rounded-full pointer-events-none opacity-40"></div>
 
     <div class="container mx-auto px-6 relative z-10">
-      <div class="max-w-4xl mx-auto flex flex-col md:flex-row items-center gap-16">
-        <div class="flex-1">
-          <div class="w-16 h-16 bg-kore-zinc rounded-2xl flex items-center justify-center mb-8 border border-kore-steel/20">
-            <svg class="w-8 h-8 text-kore-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+      <div class="glass-card p-12 md:p-20 flex flex-col md:flex-row items-center gap-16 overflow-hidden relative">
+        <!-- Tactical Grid Overlay inside the card -->
+        <div class="absolute inset-0 bg-tactical-grid opacity-10 pointer-events-none"></div>
+
+        <div class="flex-1 relative z-10">
+          <div class="w-16 h-16 bg-white/5 backdrop-blur-xl rounded-2xl flex items-center justify-center mb-8 border border-white/10 shadow-[0_0_20px_rgba(0,112,255,0.2)]">
+            <svg class="w-8 h-8 text-kore-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
           </div>
-          <h2 class="text-4xl font-bold text-white mb-6 tracking-tight uppercase italic">The Vault: Soberania Técnica</h2>
+          <h2 class="text-4xl font-bold text-white mb-6 tracking-tighter uppercase italic">The Vault: Soberania Técnica</h2>
           <p class="text-slate-400 text-lg mb-8 leading-relaxed font-medium">
-            Sua chave, sua soberania. Na Kore, o modelo <span class="text-kore-blue font-bold">BYOK (Bring Your Own Key)</span> garante que sua inteligência nunca saia do seu controle.
+            Sua chave, sua soberania. Na Kore, o modelo <span class="text-kore-cyan font-bold tracking-widest uppercase text-sm">BYOK</span> garante que sua inteligência nunca saia do seu controle tático.
           </p>
-          <div class="space-y-4">
+          <div class="space-y-4 font-mono text-[11px] tracking-widest">
             <div class="flex items-center gap-3">
-              <div class="w-1.5 h-1.5 rounded-full bg-kore-blue"></div>
-              <span class="text-kore-ice font-bold">Criptografia Local-first (AES-256-GCM)</span>
+              <div class="w-1 h-4 bg-kore-blue"></div>
+              <span class="text-white font-bold uppercase">Criptografia Local-first (AES-256-GCM)</span>
             </div>
             <div class="flex items-center gap-3">
-              <div class="w-1.5 h-1.5 rounded-full bg-kore-blue"></div>
-              <span class="text-kore-ice font-bold">Zero retenção de chaves em nuvem</span>
+              <div class="w-1 h-4 bg-kore-cyan"></div>
+              <span class="text-white font-bold uppercase">Zero retenção de chaves em nuvem</span>
             </div>
           </div>
         </div>
-        <div class="flex-1 flex justify-center">
-          <div class="w-64 h-64 border-2 border-kore-steel/20 rounded-full flex items-center justify-center relative ">
-            <div class="absolute top-0 -translate-y-1/2 bg-kore-slate px-4 py-1 border border-kore-steel/20 rounded-full text-[10px] font-mono text-kore-steel">AES-256-GCM</div>
-            <div class="w-48 h-48 border border-kore-steel/10 rounded-full flex items-center justify-center">
-              <div class="w-32 h-32 bg-kore-blue/20 rounded-full flex items-center justify-center blur-sm"></div>
-              <svg class="absolute w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.040L3 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622l-.382-3.016z"></path></svg>
+        <div class="flex-1 flex justify-center relative z-10">
+          <div class="w-72 h-72 border border-white/10 rounded-full flex items-center justify-center relative bg-black/20 backdrop-blur-sm">
+            <div class="absolute top-0 -translate-y-1/2 bg-kore-blue text-white px-4 py-1 border border-kore-cyan/30 rounded-full text-[9px] font-mono font-bold tracking-widest shadow-[0_0_15px_rgba(0,112,255,0.3)] uppercase">Secure_Core_V2</div>
+            <div class="w-56 h-56 border border-white/5 rounded-full flex items-center justify-center animate-pulse-slow">
+              <div class="w-32 h-32 bg-kore-blue/10 rounded-full flex items-center justify-center blur-2xl"></div>
+              <svg class="absolute w-16 h-16 text-kore-cyan drop-shadow-[0_0_15px_rgba(0,209,255,0.5)]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.040L3 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622l-.382-3.016z"></path></svg>
+            </div>
+            <!-- Decorative Orbit -->
+            <div class="absolute inset-0 border border-kore-blue/20 rounded-full animate-[spin_20s_linear_infinite]">
+              <div class="absolute top-0 left-1/2 -translate-x-1/2 w-2 h-2 bg-kore-cyan rounded-full shadow-[0_0_10px_rgba(0,209,255,1)]"></div>
             </div>
           </div>
         </div>
@@ -445,7 +472,7 @@
             <h3 class="text-3xl font-bold text-kore-slate dark:text-white mb-6 uppercase tracking-tighter italic">Dominação de Setor</h3>
             <p class="text-kore-steel dark:text-slate-400 text-sm leading-relaxed mb-10 font-medium">Consolidação da Kore como o padrão global de soberania de carreira.</p>
           </div>
-          <div class="flex w-20 h-20 bg-kore-slate dark:bg-white rounded-[2rem] items-center justify-center z-10 shadow-[0_0_50px_rgba(59,130,246,0.5)] border border-kore-blue/30 animate-bounce">
+          <div class="flex w-20 h-20 bg-kore-slate dark:bg-white rounded-[2rem] items-center justify-center z-10 shadow-[0_0_50px_rgba(59,130,246,0.5)] border border-kore-blue/30">
             <svg class="w-10 h-10 text-kore-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
           </div>
         </div>

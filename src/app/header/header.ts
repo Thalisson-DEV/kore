@@ -1,35 +1,35 @@
 import { Component, inject, signal, PLATFORM_ID, AfterViewInit } from '@angular/core';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
-import { Router, RouterLink, RouterLinkActive, NavigationEnd } from '@angular/router';
+import { Router, RouterLink, NavigationEnd } from '@angular/router';
 import { filter } from 'rxjs/operators';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [CommonModule, RouterLink, RouterLinkActive],
+  imports: [CommonModule, RouterLink],
   template: `
-    <nav class="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-[95%] max-w-6xl">
-      <div class="bg-white/80 dark:bg-kore-slate/80 backdrop-blur-xl border border-kore-steel/20 rounded-2xl px-6 py-3 flex items-center justify-between shadow-2xl shadow-kore-blue/5 transition-colors duration-500">
+    <nav class="fixed top-3 left-1/2 -translate-x-1/2 z-50 w-[95%] max-w-6xl">
+      <div class="bg-black/40 backdrop-blur-3xl border border-white/10 rounded-2xl px-8 py-4 flex items-center justify-between shadow-[0_8px_32px_rgba(0,0,0,0.5),inset_0_1px_1px_rgba(255,255,255,0.05)] transition-all duration-500">
         <div class="flex items-center gap-2">
-          <span class="text-2xl font-bold tracking-tighter text-kore-slate dark:text-kore-ice cursor-pointer flex items-center select-none" routerLink="/">
-            KORE<span class="text-kore-blue animate-blink">_</span>
+          <span class="text-2xl font-bold tracking-tighter text-white cursor-pointer flex items-center select-none group" routerLink="/">
+            KORE<span class="text-kore-blue group-hover:text-kore-cyan transition-colors animate-blink">_</span>
           </span>
         </div>
 
-        <div class="hidden xl:flex items-center gap-6">
-          <a (click)="navigateAndScroll('#lab')" [class.active-nav]="activeSection() === 'lab'" class="nav-link">Simulador</a>
-          <a (click)="navigateAndScroll('#command-center')" [class.active-nav]="activeSection() === 'command-center'" class="nav-link">Vagas</a>
-          <a (click)="navigateAndScroll('#features')" [class.active-nav]="activeSection() === 'features'" class="nav-link">Arsenal</a>
-          <a (click)="navigateAndScroll('#byok')" [class.active-nav]="activeSection() === 'byok'" class="nav-link">Segurança</a>
-          <a (click)="navigateAndScroll('#pricing')" [class.active-nav]="activeSection() === 'pricing'" class="nav-link">Preços</a>
-          <a (click)="navigateAndScroll('#roadmap')" [class.active-nav]="activeSection() === 'roadmap'" class="nav-link">Roadmap</a>
+        <div class="hidden xl:flex items-center gap-8">
+          <a (click)="navigateAndScroll('#lab')" [class.active-nav]="activeSection() === 'lab'" class="nav-link !text-[10px]">Simulador</a>
+          <a (click)="navigateAndScroll('#command-center')" [class.active-nav]="activeSection() === 'command-center'" class="nav-link !text-[10px]">Vagas</a>
+          <a (click)="navigateAndScroll('#features')" [class.active-nav]="activeSection() === 'features'" class="nav-link !text-[10px]">Arsenal</a>
+          <a (click)="navigateAndScroll('#byok')" [class.active-nav]="activeSection() === 'byok'" class="nav-link !text-[10px]">Segurança</a>
+          <a (click)="navigateAndScroll('#pricing')" [class.active-nav]="activeSection() === 'pricing'" class="nav-link !text-[10px]">Preços</a>
+          <a (click)="navigateAndScroll('#roadmap')" [class.active-nav]="activeSection() === 'roadmap'" class="nav-link !text-[10px]">Roadmap</a>
 
-          <div class="w-px h-4 bg-kore-steel/30 mx-1"></div>
-          <a routerLink="/feature-lab" routerLinkActive="active-nav" class="nav-link font-bold text-kore-blue/80">Feature Lab</a>
+          <div class="w-px h-4 bg-white/10 mx-1"></div>
+          <a routerLink="/feature-lab" class="nav-link !text-[10px] font-bold text-kore-blue !opacity-100 hover:text-kore-cyan transition-colors">Feature Lab</a>
         </div>
 
         <div class="flex items-center gap-3">
-          <button (click)="navigateAndScroll('#cta')" class="bg-kore-slate dark:bg-white text-white dark:text-kore-slate text-[10px] font-bold px-5 py-2.5 rounded-xl hover:scale-105 transition-all uppercase tracking-tighter shadow-lg shadow-kore-blue/10">
+          <button (click)="navigateAndScroll('#cta')" class="bg-white text-black text-[10px] font-bold px-6 py-3 rounded-xl hover:scale-105 transition-all uppercase tracking-widest shadow-[0_0_20px_rgba(255,255,255,0.15)] active:scale-95">
             Acesso VIP
           </button>
         </div>

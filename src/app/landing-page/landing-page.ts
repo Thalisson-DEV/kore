@@ -2,12 +2,12 @@ import { Component, signal, effect, ElementRef, viewChildren, AfterViewInit, inj
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { HeaderComponent } from '../header/header';
 import { FooterComponent } from '../footer/footer';
-import { Router, RouterLink, RouterLinkActive } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-landing-page',
   standalone: true,
-  imports: [CommonModule, HeaderComponent, FooterComponent, RouterLink, RouterLinkActive],
+  imports: [CommonModule, HeaderComponent, FooterComponent, RouterLink],
   templateUrl: './landing-page.html',
   styleUrl: './landing-page.css',
 })

@@ -30,39 +30,38 @@ Este documento é a "Single Source of Truth" para o projeto **Kore**. Ele deve s
 
 ---
 
-## 3. Identidade Visual (Design System Tech-Mineral)
+## 3. Identidade Visual (Design System Cyber-Tactical)
 
-### 3.1 Paleta de Cores (Configuração Tailwind)
-* `kore-slate`: `#0F172A` (Background Dark / Autoridade)
-* `kore-blue`: `#3B82F6` (Primary CTA / Inteligência Artificial)
-* `kore-steel`: `#94A3B8` (Bordas, ícones secundários / Solidez)
-* `kore-ice`: `#F8FAFC` (Background Light / Clareza)
-* `kore-zinc`: `#18181B` (Cards e componentes internos)
+### 3.1 Paleta de Cores (Configuração Tailwind v4)
+* `kore-slate`: `#0A0F1A` (Deep Black / Fundo Primário)
+* `kore-blue`: `#0070FF` (Electric Blue / Destaques e Botões)
+* `kore-cyan`: `#00D1FF` (Neon Cyan / Alertas e Glows)
+* `white`: `#FFFFFF` (Headings e CTAs Primários)
+* `kore-zinc`: `#111827` (Cards e Componentes Internos)
 
 ### 3.2 Tipografia
-* **Headings (H1-H4):** `Bricolage Grotesque` ou `Fraunces` (Mistura orgânico/geométrico).
+* **Headings (H1-H4):** `Bricolage Grotesque` (Peso 800+, tracking-tighter).
 * **Body & UI:** `Inter` ou `Geist Sans` (Legibilidade técnica).
-* **Data & Code:** `JetBrains Mono` (Usado em comentários de código e disclaimer técnicos).
+* **Data & Code:** `JetBrains Mono` (Essencial para labels técnicos, status e disclaimers).
 
-### 3.3 UI Patterns
-* **Bento Grid:** Layout de cards com tamanhos variados para dashboards.
-* **Glassmorphism:** `backdrop-blur-md` em Navbars e modais.
-* **Bordas:** `border-radius: 12px` (Mais sólido que o padrão).
-* **Magnetic Hover:** Botões devem ter uma transição de escala suave (1.02x).
+### 3.3 UI Patterns (Elite Tech)
+* **Glassmorphism 3.0:** `backdrop-blur-3xl` com bordas semitransparentes (`white/10`) e `inner-glow`.
+* **Deep Depth:** Uso de `mesh-blobs` animados em opacidade baixíssima (5-8%) para profundidade infinita.
+* **Magnetic Interactions:** Botões com escala reativa e transições ultra-rápidas (150ms).
+* **Halo Effect:** Brilhos concentrados atrás de assets 3D para criar foco central.
 
 ---
 
 ## 4. Especificações de Componentes (Frontend)
 
-### 4.1 Navbar Flutuante (`HeaderComponent`)
-* **Comportamento:** Sticky com transparência dinâmica ao scroll.
-* **Elementos:** Logo `KORE_` (com cursor piscante), Links (Ataque, Defesa, BYOK), Botão "Beta VIP".
-* **Offset Scroll:** Implementar lógica de 120px de respiro para IDs de âncora.
+### 4.1 Navbar Ultra-Black (`HeaderComponent`)
+* **Comportamento:** Sticky com transparência dinâmica (`bg-black/40`).
+* **Elementos:** Logo `KORE_` (com cursor azul pulsante), Botão "Acesso VIP" em branco sólido.
 
-### 4.2 Hero Section (`HeroComponent`)
-* **H1:** Título massivo com gradiente linear sutil.
-* **Interação:** O cursor do mouse deve influenciar levemente um gradiente de fundo (efeito lanterna).
-* **Copy:** Focar na "Base sólida para o contra-ataque".
+### 4.2 Hero Section Split-View (`HeroComponent`)
+* **Layout:** 2 colunas. Texto à esquerda (`text-left`), Asset 3D à direita.
+* **H1:** Texto massivo com gradiente `blue -> cyan -> white`.
+* **3D Asset:** Vídeo WebM transparente (`assets/3d/hero-resumes.webm`) com sombra de contato neon.
 
 ### 4.3 The Lab (`AILabSimulatorComponent`)
 * **Lógica de Estado (Signals):**
