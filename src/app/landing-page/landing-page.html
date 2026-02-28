@@ -7,7 +7,7 @@
 
     <div class="grid lg:grid-cols-2 gap-2 lg:gap-16 items-center w-full">
       <!-- Left: Content -->
-      <div class="text-center lg:text-left relative z-10 py-2 lg:py-12">
+      <div class="text-center lg:text-left relative z-10 py-10 lg:py-12">
         <span class="inline-block py-1.5 px-4 rounded-full bg-kore-blue/10 text-kore-blue text-[9px] md:text-[10px] font-bold tracking-[0.2em] uppercase mb-6 lg:mb-10 border border-kore-blue/20">
           Kore. Inteligência na raiz. Tecnologia no topo.
         </span>
@@ -412,71 +412,70 @@
       <!-- Central Vertical Line (Desktop only) -->
       <div class="absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-kore-blue/20 to-transparent hidden md:block pointer-events-none"></div>
 
-      <div class="space-y-12 md:space-y-32">
-        <!-- Phase 1: ATUAL -->
-        <div class="relative flex flex-col md:flex-row items-center justify-center">
-          <div class="w-full md:w-1/2 md:pr-16 text-center md:text-right z-10">
-            <div class="inline-block px-4 py-1.5 bg-kore-blue/10 text-kore-blue text-[9px] md:text-[10px] font-bold rounded-full mb-4 uppercase tracking-[0.2em] border border-kore-blue/20 animate-pulse">
-              Sistema_Ativo
-            </div>
-            <h3 class="text-xl md:text-2xl font-bold text-kore-slate dark:text-white mb-4 uppercase tracking-tight">Fase 1: Fundação Estratégica</h3>
-            <p class="text-sm md:text-base text-kore-steel dark:text-slate-400 leading-relaxed mb-6 font-medium">Desenvolvimento do motor de otimização ATS e arquitetura de privacidade BYOK.</p>
-            <div class="font-mono text-kore-blue text-[10px] font-bold uppercase tracking-widest">
-              // STATUS: EM_EXECUÇÃO
-            </div>
-          </div>
+            <div class="space-y-12 md:space-y-32 relative">
+              <!-- Phase 1: ATUAL -->
+              <div class="relative flex flex-col md:flex-row items-center justify-center reveal-trigger" #revealTrigger>
+                <div class="w-full md:w-1/2 md:pr-16 text-center md:text-right z-10">
+                  <div class="inline-block px-4 py-1.5 bg-kore-blue/10 text-kore-blue text-[9px] md:text-[10px] font-bold rounded-full mb-4 uppercase tracking-[0.2em] border border-kore-blue/20 animate-pulse">
+                    Sistema_Ativo
+                  </div>
+                  <h3 class="text-xl md:text-2xl font-bold text-kore-slate dark:text-white mb-4 uppercase tracking-tight">Fase 1: Fundação Estratégica</h3>
+                  <p class="text-sm md:text-base text-kore-steel dark:text-slate-400 leading-relaxed mb-6 font-medium">Desenvolvimento do motor de otimização ATS e arquitetura de privacidade BYOK.</p>
+                  <div class="font-mono text-kore-blue text-[10px] font-bold uppercase tracking-widest">
+                    // STATUS: EM_EXECUÇÃO
+                  </div>
+                </div>
 
-          <div class="w-12 h-12 bg-kore-slate dark:bg-white border-4 border-kore-blue rounded-2xl flex items-center justify-center z-20 my-6 md:my-0 md:absolute md:left-1/2 md:-translate-x-1/2 rotate-45 shadow-[0_0_20px_rgba(0,112,255,0.3)]">
-            <span class="text-xs font-bold text-white dark:text-kore-slate font-mono -rotate-45">01</span>
-          </div>
+                <div class="w-12 h-12 bg-kore-slate dark:bg-white border-4 border-kore-blue rounded-2xl flex items-center justify-center z-20 my-6 md:my-0 md:absolute md:left-1/2 md:-translate-x-1/2 rotate-45 shadow-[0_0_20px_rgba(0,112,255,0.3)]">
+                  <span class="text-xs font-bold text-white dark:text-kore-slate font-mono -rotate-45">01</span>
+                </div>
 
-          <div class="hidden md:block md:w-1/2"></div>
-        </div>
+                <div class="hidden md:block md:w-1/2"></div>
+              </div>
 
-        <!-- Phase 2: FUTURO -->
-        <div class="relative flex flex-col md:flex-row-reverse items-center justify-center">
-          <div class="w-full md:w-1/2 md:pl-16 text-center md:text-left z-10">
-            <div class="inline-block px-3 py-1 bg-kore-steel/10 text-kore-steel text-[9px] md:text-[10px] font-bold rounded-full mb-4 uppercase tracking-widest">Q2 2026</div>
-            <h3 class="text-xl md:text-2xl font-bold text-kore-slate dark:text-white mb-4 uppercase tracking-tight">Expansão de Recursos</h3>
-            <p class="text-sm md:text-base text-kore-steel dark:text-slate-400 leading-relaxed mb-6 font-medium">Integração do CRM de Vagas Estratégico e suporte a múltiplas personas simultâneas.</p>
-          </div>
+              <!-- Phase 2: FUTURO -->
+              <div class="relative flex flex-col md:flex-row-reverse items-center justify-center reveal-trigger" #revealTrigger>
+                <div class="w-full md:w-1/2 md:pl-16 text-center md:text-left z-10">
+                  <div class="inline-block px-3 py-1 bg-kore-steel/10 text-kore-steel text-[9px] md:text-[10px] font-bold rounded-full mb-4 uppercase tracking-widest">Q2 2026</div>
+                  <h3 class="text-xl md:text-2xl font-bold text-kore-slate dark:text-white mb-4 uppercase tracking-tight">Expansão de Recursos</h3>
+                  <p class="text-sm md:text-base text-kore-steel dark:text-slate-400 leading-relaxed mb-6 font-medium">Integração do CRM de Vagas Estratégico e suporte a múltiplas personas simultâneas.</p>
+                </div>
 
-          <div class="w-12 h-12 bg-white dark:bg-kore-slate border-4 border-kore-steel/20 rounded-2xl flex items-center justify-center z-20 my-6 md:my-0 md:absolute md:left-1/2 md:-translate-x-1/2 rotate-45">
-            <span class="text-xs font-bold text-kore-steel font-mono -rotate-45">02</span>
-          </div>
+                <div class="w-12 h-12 bg-white dark:bg-kore-slate border-4 border-kore-steel/20 rounded-2xl flex items-center justify-center z-20 my-6 md:my-0 md:absolute md:left-1/2 md:-translate-x-1/2 rotate-45">
+                  <span class="text-xs font-bold text-kore-steel font-mono -rotate-45">02</span>
+                </div>
 
-          <div class="hidden md:block md:w-1/2"></div>
-        </div>
+                <div class="hidden md:block md:w-1/2"></div>
+              </div>
 
-        <!-- Phase 3: FUTURO -->
-        <div class="relative flex flex-col md:flex-row items-center justify-center">
-          <div class="w-full md:w-1/2 md:pr-16 text-center md:text-right z-10">
-            <div class="inline-block px-3 py-1 bg-kore-steel/10 text-kore-steel text-[9px] md:text-[10px] font-bold rounded-full mb-4 uppercase tracking-widest">Q3 2026</div>
-            <h3 class="text-xl md:text-2xl font-bold text-kore-slate dark:text-white mb-4 uppercase tracking-tight">Sincronização de Rede</h3>
-            <p class="text-sm md:text-base text-kore-steel dark:text-slate-400 leading-relaxed mb-6 font-medium">Módulo de auto-candidatura autônoma e rede de inteligência avançada.</p>
-          </div>
+              <!-- Phase 3: FUTURO -->
+              <div class="relative flex flex-col md:flex-row items-center justify-center reveal-trigger" #revealTrigger>
+                <div class="w-full md:w-1/2 md:pr-16 text-center md:text-right z-10">
+                  <div class="inline-block px-3 py-1 bg-kore-steel/10 text-kore-steel text-[9px] md:text-[10px] font-bold rounded-full mb-4 uppercase tracking-widest">Q3 2026</div>
+                  <h3 class="text-xl md:text-2xl font-bold text-kore-slate dark:text-white mb-4 uppercase tracking-tight">Sincronização de Rede</h3>
+                  <p class="text-sm md:text-base text-kore-steel dark:text-slate-400 leading-relaxed mb-6 font-medium">Módulo de auto-candidatura autônoma e rede de inteligência avançada.</p>
+                </div>
 
-          <div class="w-12 h-12 bg-white dark:bg-kore-slate border-4 border-kore-steel/20 rounded-2xl flex items-center justify-center z-20 my-6 md:my-0 md:absolute md:left-1/2 md:-translate-x-1/2 rotate-45">
-            <span class="text-xs font-bold text-kore-steel font-mono -rotate-45">03</span>
-          </div>
+                <div class="w-12 h-12 bg-white dark:bg-kore-slate border-4 border-kore-steel/20 rounded-2xl flex items-center justify-center z-20 my-6 md:my-0 md:absolute md:left-1/2 md:-translate-x-1/2 rotate-45">
+                  <span class="text-xs font-bold text-kore-steel font-mono -rotate-45">03</span>
+                </div>
 
-          <div class="hidden md:block md:w-1/2"></div>
-        </div>
+                <div class="hidden md:block md:w-1/2"></div>
+              </div>
 
-        <!-- Phase 4: FINAL -->
-        <div class="relative flex flex-col items-center justify-center text-center">
-          <div class="max-w-lg z-10">
-            <div class="inline-block px-4 py-1 bg-emerald-500/10 text-emerald-500 text-[9px] md:text-[10px] font-bold rounded-full mb-6 uppercase tracking-[0.3em] border border-emerald-500/20">Marco Global</div>
-            <h3 class="text-2xl md:text-3xl font-bold text-kore-slate dark:text-white mb-6 uppercase tracking-tighter italic">Referência no Setor</h3>
-            <p class="text-sm md:text-base text-kore-steel dark:text-slate-400 leading-relaxed mb-10 font-medium">Consolidação da Kore como o padrão global de gestão de carreira.</p>
-          </div>
+              <!-- Phase 4: FINAL -->
+              <div class="relative flex flex-col items-center justify-center text-center reveal-trigger" #revealTrigger>
+                <div class="max-w-lg z-10">
+                  <div class="inline-block px-4 py-1 bg-emerald-500/10 text-emerald-500 text-[9px] md:text-[10px] font-bold rounded-full mb-6 uppercase tracking-[0.3em] border border-emerald-500/20">Marco Global</div>
+                  <h3 class="text-2xl md:text-3xl font-bold text-kore-slate dark:text-white mb-6 uppercase tracking-tighter italic">Referência no Setor</h3>
+                  <p class="text-sm md:text-base text-kore-steel dark:text-slate-400 leading-relaxed mb-10 font-medium">Consolidação da Kore como o padrão global de gestão de carreira.</p>
+                </div>
 
-          <div class="flex w-16 h-16 md:w-20 md:h-20 bg-kore-slate dark:bg-white rounded-2xl items-center justify-center z-20 shadow-[0_0_50px_rgba(59,130,246,0.5)] border border-kore-blue/30 rotate-45">
-            <svg class="w-8 h-8 md:w-10 md:h-10 text-kore-blue -rotate-45" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-          </div>
-        </div>
-      </div>
-    </div>
+                <div class="flex w-16 h-16 md:w-20 md:h-20 bg-kore-slate dark:bg-white rounded-2xl items-center justify-center z-20 shadow-[0_0_50px_rgba(59,130,246,0.5)] border border-kore-blue/30 rotate-45">
+                  <svg class="w-8 h-8 md:w-10 md:h-10 text-kore-blue -rotate-45" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                </div>
+              </div>
+            </div>    </div>
   </section>
 
   <div class="section-divider"></div>
