@@ -21,7 +21,7 @@ import { RouterLink } from '@angular/router';
               KORE<span class="text-kore-blue">_</span>
             </span>
             <p class="text-kore-steel text-sm leading-relaxed max-w-[200px]">
-              Soberania técnica e inteligência para profissionais de elite.
+              Autonomia técnica e inteligência para profissionais de alta performance.
             </p>
             <div class="flex gap-4">
               <!-- Instagram Mock -->
@@ -45,7 +45,7 @@ import { RouterLink } from '@angular/router';
             <ul class="flex flex-col gap-4 text-sm font-medium text-kore-steel">
               <li><a href="#lab" class="hover:text-kore-blue transition-colors">Simulador IA</a></li>
               <li><a href="#command-center" class="hover:text-kore-blue transition-colors">Gestão de Vagas</a></li>
-              <li><a href="#features" class="hover:text-kore-blue transition-colors">Arsenal Tecnológico</a></li>
+              <li><a href="#features" class="hover:text-kore-blue transition-colors">Ecossistema Tecnológico</a></li>
               <li><a href="#roadmap" class="hover:text-kore-blue transition-colors">Trilha de Evolução</a></li>
             </ul>
           </div>
@@ -58,13 +58,13 @@ import { RouterLink } from '@angular/router';
                 Feature Lab <span class="text-[8px] bg-kore-blue/10 px-1.5 py-0.5 rounded border border-kore-blue/20">BETA</span>
               </a></li>
               <li><a href="#" class="hover:text-kore-blue transition-colors opacity-50 cursor-not-allowed">API Docs</a></li>
-              <li><a href="#" class="hover:text-kore-blue transition-colors opacity-50 cursor-not-allowed">Red Team Blog</a></li>
+              <li><a href="#" class="hover:text-kore-blue transition-colors opacity-50 cursor-not-allowed">Security Blog</a></li>
             </ul>
           </div>
 
           <!-- Column 4: Legal -->
           <div>
-            <h4 class="text-kore-slate dark:text-white font-bold text-xs uppercase tracking-[0.2em] mb-6">Soberania</h4>
+            <h4 class="text-kore-slate dark:text-white font-bold text-xs uppercase tracking-[0.2em] mb-6">Privacidade</h4>
             <ul class="flex flex-col gap-4 text-sm font-medium text-kore-steel">
               <li><a href="#" class="hover:text-kore-blue transition-colors">Privacidade de Dados</a></li>
               <li><a href="#" class="hover:text-kore-blue transition-colors">Termos de Serviço</a></li>
@@ -76,7 +76,7 @@ import { RouterLink } from '@angular/router';
 
         <div class="pt-8 border-t border-kore-steel/5 flex flex-col md:flex-row items-center justify-between gap-4">
           <div class="text-kore-steel text-[10px] font-bold tracking-tighter uppercase">
-            © 2026 KORE_ LABS. SISTEMA DE DEFESA DO CANDIDATO ALPHA.
+            © 2026 KORE_ LABS. PLATAFORMA ESTRATÉGICA PARA O PROFISSIONAL GLOBAL.
           </div>
           <div class="flex items-center gap-2">
             <div class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></div>

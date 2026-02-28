@@ -47,11 +47,11 @@
     animation: shimmer 2s linear infinite;
   }
 
-  .tactical-divider {
+  .section-divider {
     @apply w-full h-px bg-gradient-to-r from-transparent via-kore-steel/20 to-transparent relative my-16;
   }
 
-  .tactical-divider::after {
+  .section-divider::after {
     content: 'KORE';
     @apply absolute left-1/2 -translate-x-1/2 -translate-y-1/2 bg-kore-ice dark:bg-kore-slate/10 px-4 text-[8px] font-mono font-bold text-kore-steel/90 uppercase tracking-[0.4em];
   }
@@ -92,7 +92,7 @@
     @apply w-[500px] h-[500px] bg-indigo-600 opacity-[0.04] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 animate-mesh-3;
   }
 
-  .bg-tactical-grid {
+  .bg-strategic-grid {
     background-image: radial-gradient(circle at 1px 1px, rgba(0, 112, 255, 0.1) 1px, transparent 0);
     background-size: 32px 32px;
   }

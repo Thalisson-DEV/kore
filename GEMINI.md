@@ -7,7 +7,7 @@ Este documento é a "Single Source of Truth" para o projeto **Kore**. Ele deve s
 ## 1. Visão Geral e Narrativa
 * **Nome do Projeto:** Kore (antigo Kaptar)
 * **Slogan:** "Kore. Inteligência na raiz. Tecnologia no topo."
-* **Conceito:** Uma "IA de Contra-Ataque". O usuário não é uma vítima do RH; ele usa a Kore como um centro de comando tático para vencer filtros ATS e gerenciar sua carreira de forma sólida.
+* **Conceito:** Uma "IA Estratégica". O usuário assume o controle de sua carreira; ele usa a Kore como uma central de inteligência estratégica para vencer filtros ATS e gerenciar sua trajetória de forma sólida.
 * **Tom de Voz:** Profissional, Autoritário, Técnico (Dev-First) e Seguro.
 
 ---
@@ -30,7 +30,7 @@ Este documento é a "Single Source of Truth" para o projeto **Kore**. Ele deve s
 
 ---
 
-## 3. Identidade Visual (Design System Cyber-Tactical)
+## 3. Identidade Visual (Design System Cyber-Strategic)
 
 ### 3.1 Paleta de Cores (Configuração Tailwind v4)
 * `kore-slate`: `#0A0F1A` (Deep Black / Fundo Primário)
@@ -44,7 +44,7 @@ Este documento é a "Single Source of Truth" para o projeto **Kore**. Ele deve s
 * **Body & UI:** `Inter` ou `Geist Sans` (Legibilidade técnica).
 * **Data & Code:** `JetBrains Mono` (Essencial para labels técnicos, status e disclaimers).
 
-### 3.3 UI Patterns (Elite Tech)
+### 3.3 UI Patterns (High-Performance Tech)
 * **Glassmorphism 3.0:** `backdrop-blur-3xl` com bordas semitransparentes (`white/10`) e `inner-glow`.
 * **Deep Depth:** Uso de `mesh-blobs` animados em opacidade baixíssima (5-8%) para profundidade infinita.
 * **Magnetic Interactions:** Botões com escala reativa e transições ultra-rápidas (150ms).
@@ -111,4 +111,4 @@ Este documento é a "Single Source of Truth" para o projeto **Kore**. Ele deve s
 
 ---
 **Autor:** Thalisson-DEV | **Versão:** 2.0 (Fevereiro 2026)
-**Diretriz Final:** "Codifique como se a Kore fosse o último sistema de defesa do candidato."
+**Diretriz Final:** "Codifique como se a Kore fosse o suporte estratégico definitivo do profissional global."

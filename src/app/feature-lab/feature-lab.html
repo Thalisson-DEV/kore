@@ -2,7 +2,7 @@
 
 <main class="bg-kore-ice dark:bg-kore-slate min-h-screen pt-28 pb-6 overflow-x-hidden text-kore-slate dark:text-kore-ice transition-colors duration-500">
 
-  <!-- Tactical Backdrop -->
+  <!-- Strategic Backdrop -->
   <div class="fixed inset-0 pointer-events-none overflow-hidden opacity-5 dark:opacity-15">
     <div class="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-kore-blue rounded-full blur-[150px]"></div>
   </div>
@@ -24,7 +24,7 @@
           Feature <span class="text-kore-blue">Lab</span>
         </h1>
         <p class="text-kore-steel dark:text-slate-400 text-sm font-medium">
-          Priorize o arsenal de soberania. Vote nas ferramentas que você quer ver em produção.
+          Priorize os recursos de autonomia. Vote nas ferramentas que você quer ver em produção.
         </p>
       </div>
 
@@ -153,7 +153,7 @@
           <div class="flex items-center justify-between mb-10">
             <div>
               <h2 class="text-3xl font-bold text-kore-slate dark:text-white tracking-tighter uppercase italic">Nova Sugestão</h2>
-              <p class="text-kore-steel dark:text-slate-500 text-sm mt-1 font-medium">Injete novos requisitos no radar Kore.</p>
+              <p class="text-kore-steel dark:text-slate-500 text-sm mt-1 font-medium">Adicione novos requisitos ao roadmap Kore.</p>
             </div>
             <button (click)="showSuggestionForm.set(false)" class="p-2 bg-kore-ice dark:bg-kore-slate rounded-lg text-kore-steel hover:text-kore-blue transition-colors border border-kore-steel/10">
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
@@ -167,12 +167,12 @@
                      class="w-full bg-kore-ice dark:bg-kore-slate border border-kore-steel/20 rounded-xl px-5 py-4 text-kore-slate dark:text-white focus:outline-none focus:ring-2 focus:ring-kore-blue/50 transition-all font-bold placeholder:text-kore-steel/40">
             </div>
             <div>
-              <label class="block text-[10px] font-bold text-kore-steel dark:text-slate-500 uppercase tracking-[0.2em] mb-3">Especificação_Tática</label>
-              <textarea [(ngModel)]="newDescription" rows="4" placeholder="Descreva a utilidade para o arsenal..."
+              <label class="block text-[10px] font-bold text-kore-steel dark:text-slate-500 uppercase tracking-[0.2em] mb-3">Especificação_Estratégica</label>
+              <textarea [(ngModel)]="newDescription" rows="4" placeholder="Descreva a utilidade para o ecossistema..."
                         class="w-full bg-kore-ice dark:bg-kore-slate border border-kore-steel/20 rounded-xl px-5 py-4 text-kore-slate dark:text-white focus:outline-none focus:ring-2 focus:ring-kore-blue/50 transition-all font-bold placeholder:text-kore-steel/40"></textarea>
             </div>
             <button (click)="submitSuggestion()" class="w-full py-5 bg-kore-blue text-white rounded-xl font-bold shadow-xl shadow-kore-blue/30 hover:bg-blue-600 transition-all active:scale-[0.98] uppercase tracking-[0.2em] text-xs">
-              Transmitir Protocolo
+              Publicar Sugestão
             </button>
           </div>
         </div>
