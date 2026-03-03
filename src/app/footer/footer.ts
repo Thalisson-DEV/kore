@@ -14,7 +14,7 @@ import { RouterLink } from '@angular/router';
 
       <div class="max-w-6xl mx-auto px-6 relative z-10">
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
-          
+
           <!-- Column 1: Brand & Social -->
           <div class="flex flex-col gap-6">
             <span class="text-2xl font-bold tracking-tighter text-kore-white">
@@ -69,7 +69,7 @@ import { RouterLink } from '@angular/router';
 
         <div class="pt-8 border-t border-kore-steel/5 flex flex-col md:flex-row items-center justify-between gap-4">
           <div class="text-slate-400 text-[10px] font-bold tracking-tighter uppercase">
-            © 2026 KORE_ LABS. PLATAFORMA ESTRATÉGICA PARA O PROFISSIONAL GLOBAL.
+            © 2026 KORE_ LABS.
           </div>
           <div class="flex items-center gap-2">
             <div class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></div>

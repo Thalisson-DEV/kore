@@ -2,19 +2,20 @@
   display: block;
 }
 
-/* Custom Scrollbar for Kore Dark Mode */
+/* Custom Scrollbar theme-aware */
 ::-webkit-scrollbar {
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #0f172a;
+  background: var(--kore-slate);
 }
 ::-webkit-scrollbar-thumb {
-  background: #1e293b;
+  background: var(--kore-steel);
   border-radius: 10px;
+  opacity: 0.5;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #3b82f6;
+  background: var(--color-kore-blue);
 }
 
 .dragging {
