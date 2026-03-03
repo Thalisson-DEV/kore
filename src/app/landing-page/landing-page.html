@@ -542,6 +542,36 @@
             A Kore é gratuita para quem usa BYOK. Para usuários que preferem conveniência total, o plano Pro custará R$ 29/mês com créditos de IA gerenciados inclusos.
           </div>
         </div>
+
+        <div class="border border-kore-steel/10 rounded-2xl bg-kore-zinc overflow-hidden transition-all hover:border-kore-blue shadow-sm font-medium">
+          <button (click)="toggleFaq(2)" class="w-full px-8 py-6 flex items-center justify-between text-left hover:bg-kore-black/5 transition-colors">
+            <span class="font-bold text-kore-white tracking-tight">A Kore armazena meus currículos?</span>
+            <svg class="w-5 h-5 text-slate-400 transition-transform duration-300" [class.rotate-180]="openFaqIndex() === 2" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+          <div class="px-8 pb-6 text-slate-400 leading-relaxed transition-all duration-300" [class.hidden]="openFaqIndex() !== 2">
+            Não. Seus dados são processados localmente e as otimizações são geradas sob demanda. Valorizamos sua privacidade estratégica acima de tudo.
+          </div>
+        </div>
+
+        <div class="border border-kore-steel/10 rounded-2xl bg-kore-zinc overflow-hidden transition-all hover:border-kore-blue shadow-sm font-medium">
+          <button (click)="toggleFaq(3)" class="w-full px-8 py-6 flex items-center justify-between text-left hover:bg-kore-black/5 transition-colors">
+            <span class="font-bold text-kore-white tracking-tight">Posso usar em qualquer site de vagas?</span>
+            <svg class="w-5 h-5 text-slate-400 transition-transform duration-300" [class.rotate-180]="openFaqIndex() === 3" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+          <div class="px-8 pb-6 text-slate-400 leading-relaxed transition-all duration-300" [class.hidden]="openFaqIndex() !== 3">
+            Sim. O motor da Kore foi desenhado para entender descrições de vagas de qualquer plataforma, desde LinkedIn até portais específicos de empresas globais.
+          </div>
+        </div>
+
+        <div class="border border-kore-steel/10 rounded-2xl bg-kore-zinc overflow-hidden transition-all hover:border-kore-blue shadow-sm font-medium">
+          <button (click)="toggleFaq(4)" class="w-full px-8 py-6 flex items-center justify-between text-left hover:bg-kore-black/5 transition-colors">
+            <span class="font-bold text-kore-white tracking-tight">O que é o Match Score?</span>
+            <svg class="w-5 h-5 text-slate-400 transition-transform duration-300" [class.rotate-180]="openFaqIndex() === 4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+          <div class="px-8 pb-6 text-slate-400 leading-relaxed transition-all duration-300" [class.hidden]="openFaqIndex() !== 4">
+            É um índice técnico de 0 a 100 que indica o quão alinhado seu perfil está com os algoritmos de triagem (ATS) daquela vaga específica após nossa otimização.
+          </div>
+        </div>
       </div>
     </div>
   </section>
