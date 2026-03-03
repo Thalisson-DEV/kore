@@ -10,8 +10,8 @@ type Theme = 'light' | 'dark' | 'system';
   standalone: true,
   imports: [CommonModule, RouterLink],
   template: `
-    <nav class="fixed top-2 left-1/2 -translate-x-1/2 z-50 w-[90%] max-w-5xl">
-      <div class="bg-kore-black/40 backdrop-blur-3xl border border-kore-white/10 rounded-xl px-4 md:px-6 py-2.5 flex items-center justify-between shadow-[0_8px_32px_rgba(0,0,0,0.5),inset_0_1px_1px_rgba(255,255,255,0.05)] transition-all duration-500">
+    <nav class="fixed top-2 left-1/2 -translate-x-1/2 z-50 w-full max-w-5xl">
+      <div class="bg-kore-black/30 backdrop-blur-3xl border border-kore-white/10 rounded-xl px-4 md:px-6 py-3 flex items-center justify-between shadow-[0_8px_32px_rgba(0,0,0,0.15),inset_0_1px_1px_rgba(255,255,255,0.03)] transition-all duration-500">
         <div class="flex items-center gap-2">
           <span class="text-xl font-bold tracking-tighter text-kore-white cursor-pointer flex items-center select-none group" routerLink="/">
             KORE<span class="text-kore-blue group-hover:text-kore-cyan transition-colors animate-blink">_</span>
@@ -65,7 +65,7 @@ type Theme = 'light' | 'dark' | 'system';
           </div>
 
           <button (click)="navigateAndScroll('#cta')" class="h-[36px] px-6 bg-kore-white text-kore-black text-[9px] font-bold rounded-lg hover:scale-105 transition-all uppercase tracking-widest shadow-[0_0_20px_rgba(255,255,255,0.15)] active:scale-95 border-none">
-            Acesso Antecipado
+            Quero Testar
           </button>
         </div>
       </div>
