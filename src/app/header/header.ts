@@ -31,7 +31,7 @@ type Theme = 'light' | 'dark' | 'system';
         <div class="flex items-center gap-3">
           <!-- Theme Dropdown -->
           <div class="relative dropdown-container">
-            <button (click)="toggleDropdown($event)" 
+            <button (click)="toggleDropdown($event)"
                     class="h-[36px] px-4 bg-kore-black/20 border border-kore-white/10 text-kore-white rounded-lg font-bold flex items-center gap-2 hover:bg-kore-white/5 transition-all active:scale-95 text-[9px] uppercase tracking-widest min-w-[110px] justify-between">
               <span class="flex items-center gap-2">
                 @if (currentTheme() === 'light') {
@@ -65,7 +65,7 @@ type Theme = 'light' | 'dark' | 'system';
           </div>
 
           <button (click)="navigateAndScroll('#cta')" class="h-[36px] px-6 bg-kore-white text-kore-black text-[9px] font-bold rounded-lg hover:scale-105 transition-all uppercase tracking-widest shadow-[0_0_20px_rgba(255,255,255,0.15)] active:scale-95 border-none">
-            Acesso VIP
+            Acesso Antecipado
           </button>
         </div>
       </div>
@@ -101,7 +101,7 @@ export class HeaderComponent implements AfterViewInit {
   constructor() {
     if (isPlatformBrowser(this.platformId)) {
       this.initTheme();
-      
+
       this.router.events.pipe(
         filter(event => event instanceof NavigationEnd)
       ).subscribe(() => {
