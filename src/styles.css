@@ -9,7 +9,7 @@
   --color-kore-zinc: var(--kore-zinc);
   --color-kore-white: var(--kore-white);
   --color-kore-black: var(--kore-black);
-  
+
   /* Resetting standard white/black to be literals */
   --color-white: #FFFFFF;
   --color-black: #000000;
@@ -49,7 +49,7 @@
     --surface-glass: rgba(255, 255, 255, 0.03);
     --border-glass: rgba(255, 255, 255, 0.08);
     --text-muted: #94a3b8;
-    --bg-gradient: radial-gradient(circle at top right, rgba(0, 112, 255, 0.05), transparent 40%), 
+    --bg-gradient: radial-gradient(circle at top right, rgba(0, 112, 255, 0.05), transparent 40%),
                    radial-gradient(circle at bottom left, rgba(0, 209, 255, 0.02), transparent 40%);
   }
 
@@ -62,7 +62,7 @@
     --surface-glass: rgba(0, 112, 255, 0.03);
     --border-glass: rgba(0, 112, 255, 0.1);
     --text-muted: #475569;
-    --bg-gradient: radial-gradient(circle at top right, rgba(0, 112, 255, 0.03), transparent 40%), 
+    --bg-gradient: radial-gradient(circle at top right, rgba(0, 112, 255, 0.03), transparent 40%),
                    radial-gradient(circle at bottom left, rgba(0, 209, 255, 0.03), transparent 40%);
   }
 
@@ -113,7 +113,7 @@
   }
 
   .section-divider::after {
-    content: 'STRATEGIC_DIVIDER_V2';
+    content: 'KORE';
     @apply bg-kore-slate px-6 py-1 text-[8px] font-mono font-bold text-kore-blue uppercase tracking-[0.5em] border border-kore-blue/20 rounded-full z-10 transition-colors duration-500;
     box-shadow: 0 0 20px rgba(0, 112, 255, 0.1);
   }
