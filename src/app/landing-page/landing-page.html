@@ -61,7 +61,7 @@
       </div>
 
       <!-- Right: 3D Asset Container -->
-      <div class="relative flex justify-center lg:justify-end py-2 lg:py-12">
+      <div class="relative hidden justify-center md:flex lg:flex lg:justify-end py-2 lg:py-12">
         <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150%] md:w-full max-w-[500px] aspect-square bg-kore-blue/10 blur-[80px] lg:blur-[120px] rounded-full pointer-events-none opacity-40 animate-pulse-slow"></div>
         <div class="w-full max-w-[280px] md:max-w-[450px] lg:max-w-[600px] aspect-video lg:aspect-square relative group">
           <video class="w-full h-full object-contain pointer-events-none drop-shadow-[0_0_50px_rgba(0,112,255,0.2)] lg:drop-shadow-[0_0_80px_rgba(0,112,255,0.2)] relative z-10 mix-blend-screen"
@@ -370,7 +370,7 @@
             Gestão de Até 2 Personas
           </li>
         </ul>
-        <button class="w-full py-4 px-6 border border-kore-steel/20 text-kore-white rounded-2xl font-bold hover:bg-kore-blue hover:text-white transition-all uppercase text-[10px] tracking-widest">Em Desenvolvimento</button>
+        <button (click)="scrollTo('#cta')" class="w-full py-4 px-6 border border-kore-steel/20 text-kore-white rounded-2xl font-bold hover:bg-kore-blue hover:text-white transition-all uppercase text-[10px] tracking-widest">Em Desenvolvimento</button>
       </div>
 
       <div class="bg-kore-zinc border-2 border-kore-blue rounded-[2.5rem] p-10 flex flex-col relative shadow-xl shadow-kore-blue/10 md:scale-105 z-10 hover:shadow-2xl transition-all">
@@ -405,7 +405,7 @@
             Tudo do plano Gratuito
           </li>
         </ul>
-        <button class="w-full py-4 px-6 bg-kore-blue !text-white rounded-2xl font-bold hover:bg-blue-600 transition-all shadow-lg shadow-kore-blue/20 uppercase text-[10px] tracking-widest border-none">Garantir Acesso Antecipado</button>
+        <button (click)="scrollTo('#cta')"  class="w-full py-4 px-6 bg-kore-blue !text-white rounded-2xl font-bold hover:bg-blue-600 transition-all shadow-lg shadow-kore-blue/20 uppercase text-[10px] tracking-widest border-none">Garantir Acesso Antecipado</button>
       </div>
 
       <div class="bg-kore-slate border border-kore-steel/10 rounded-[2.5rem] p-10 flex flex-col hover:border-kore-blue transition-all group hover:shadow-2xl shadow-sm">
@@ -435,7 +435,7 @@
             Tudo do plano Pro
           </li>
         </ul>
-        <button class="w-full py-4 px-6 bg-kore-white text-kore-black rounded-2xl font-bold hover:bg-kore-blue hover:text-white transition-all uppercase text-[10px] tracking-widest border-none">Em Desenvolvimento</button>
+        <button (click)="scrollTo('#cta')" class="w-full py-4 px-6 bg-kore-white text-kore-black rounded-2xl font-bold hover:bg-kore-blue hover:text-white transition-all uppercase text-[10px] tracking-widest border-none">Em Desenvolvimento</button>
       </div>
     </div>
   </section>
@@ -462,32 +462,32 @@
             <h3 class="text-xl md:text-2xl font-bold text-kore-white mb-4 uppercase tracking-tight">Fase 1: Fundação Estratégica</h3>
             <p class="text-sm md:text-base text-slate-400 leading-relaxed mb-6 font-medium">Desenvolvimento do motor de otimização ATS e arquitetura de privacidade BYOK.</p>
           </div>
-          <div class="w-12 h-12 bg-kore-zinc border-4 border-kore-blue rounded-2xl flex items-center justify-center z-20 my-6 md:my-0 md:absolute md:left-1/2 md:-translate-x-1/2 rotate-45 shadow-[0_0_20px_rgba(0,112,255,0.3)]">
-            <span class="text-xs font-bold text-kore-white font-mono -rotate-45">01</span>
+          <div class="w-12 h-12 bg-kore-white border-4 border-kore-white/10 rounded-2xl flex items-center justify-center z-20 my-6 md:my-0 md:absolute md:left-1/2 md:-translate-x-1/2 rotate-45 shadow-[0_0_20px_rgba(0,112,255,0.5)] transition-colors duration-500">
+            <span class="text-xs font-bold text-kore-black font-mono -rotate-45">01</span>
           </div>
           <div class="hidden md:block md:w-1/2"></div>
         </div>
 
         <div class="relative flex flex-col md:flex-row-reverse items-center justify-center reveal-trigger" #revealTrigger>
           <div class="w-full md:w-1/2 md:pl-16 text-center md:text-left z-10">
-            <div class="inline-block px-3 py-1 bg-white/10 text-kore-white text-[9px] md:text-[10px] font-bold rounded-full mb-4 uppercase tracking-widest border border-kore-steel/20">Q2 2026</div>
+            <div class="inline-block px-3 py-1 bg-kore-blue/5 text-kore-white text-[9px] md:text-[10px] font-bold rounded-full mb-4 uppercase tracking-widest border border-kore-blue/20">Q2 2026</div>
             <h3 class="text-xl md:text-2xl font-bold text-kore-white mb-4 uppercase tracking-tight">Fase 2: Expansão de Recursos</h3>
             <p class="text-sm md:text-base text-slate-400 leading-relaxed mb-6 font-medium">Integração do CRM de Vagas Estratégico e suporte a múltiplas personas simultâneas.</p>
           </div>
-          <div class="w-12 h-12 bg-white dark:bg-kore-slate border-4 border-white/20 rounded-2xl flex items-center justify-center z-20 my-6 md:my-0 md:absolute md:left-1/2 md:-translate-x-1/2 rotate-45">
-            <span class="text-xs font-bold text-kore-white font-mono -rotate-45">02</span>
+          <div class="w-12 h-12 bg-kore-white border-4 border-kore-white/10 rounded-2xl flex items-center justify-center z-20 my-6 md:my-0 md:absolute md:left-1/2 md:-translate-x-1/2 rotate-45 shadow-sm transition-colors duration-500">
+            <span class="text-xs font-bold text-kore-black font-mono -rotate-45">02</span>
           </div>
           <div class="hidden md:block md:w-1/2"></div>
         </div>
 
         <div class="relative flex flex-col md:flex-row items-center justify-center reveal-trigger" #revealTrigger>
           <div class="w-full md:w-1/2 md:pr-16 text-center md:text-right z-10">
-            <div class="inline-block px-3 py-1 bg-white/10 text-kore-white text-[9px] md:text-[10px] font-bold rounded-full mb-4 uppercase tracking-widest border border-kore-steel/20">Q3 2026</div>
+            <div class="inline-block px-3 py-1 bg-kore-blue/5 text-kore-white text-[9px] md:text-[10px] font-bold rounded-full mb-4 uppercase tracking-widest border border-kore-blue/20">Q3 2026</div>
             <h3 class="text-xl md:text-2xl font-bold text-kore-white mb-4 uppercase tracking-tight">Fase 3: Sincronização de Rede</h3>
             <p class="text-sm md:text-base text-slate-400 leading-relaxed mb-6 font-medium">Módulo de auto-candidatura autônoma e rede de inteligência avançada.</p>
           </div>
-          <div class="w-12 h-12 bg-white dark:bg-kore-slate border-4 border-white/20 rounded-2xl flex items-center justify-center z-20 my-6 md:my-0 md:absolute md:left-1/2 md:-translate-x-1/2 rotate-45">
-            <span class="text-xs font-bold text-kore-white font-mono -rotate-45">03</span>
+          <div class="w-12 h-12 bg-kore-white border-4 border-kore-white/10 rounded-2xl flex items-center justify-center z-20 my-6 md:my-0 md:absolute md:left-1/2 md:-translate-x-1/2 rotate-45 shadow-sm transition-colors duration-500">
+            <span class="text-xs font-bold text-kore-black font-mono -rotate-45">03</span>
           </div>
           <div class="hidden md:block md:w-1/2"></div>
         </div>
@@ -498,7 +498,7 @@
             <h3 class="text-2xl md:text-3xl font-bold text-kore-white mb-6 uppercase tracking-tighter italic">Referência no Setor</h3>
             <p class="text-sm md:text-base text-slate-400 leading-relaxed mb-10 font-medium">Consolidação da Kore como o padrão global de gestão de carreira estratégica.</p>
           </div>
-          <div class="flex w-16 h-16 md:w-20 md:h-20 bg-kore-slate dark:bg-white rounded-2xl items-center justify-center z-20 shadow-[0_0_50px_rgba(59,130,246,0.5)] border border-kore-blue/30 rotate-45">
+          <div class="flex w-16 h-16 md:w-20 md:h-20 bg-white rounded-2xl items-center justify-center z-20 shadow-[0_0_50px_rgba(0,112,255,0.2)] border border-kore-blue/70 rotate-45 transition-colors duration-500">
             <svg class="w-8 h-8 md:w-10 md:h-10 text-kore-blue -rotate-45" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg>
           </div>
         </div>
@@ -622,13 +622,22 @@
           Se você chegou até aqui, é porque teve interesse. Não deixe sua carreira ao acaso. Faça seu cadastro agora e domine o mercado.
         </p>
 
-        <form class="max-w-xl w-full flex flex-col sm:flex-row gap-3 lg:gap-4 p-2 bg-kore-white/5 backdrop-blur-md border border-white/10 rounded-2xl lg:rounded-[2rem] shadow-2xl">
-          <input type="email" placeholder="seu@email.com"
-                 class="flex-1 bg-transparent px-6 lg:px-8 py-4 lg:py-5 text-kore-white placeholder:text-slate-500 focus:outline-none font-bold text-base lg:text-lg w-full">
+        <form class="max-w-2xl w-full flex flex-col sm:flex-row gap-0 p-1.5 bg-kore-zinc/40 backdrop-blur-2xl border border-kore-blue/20 focus-within:border-kore-blue/60 focus-within:shadow-[0_0_60px_rgba(0,112,255,0.15)] rounded-2xl lg:rounded-[2.5rem] shadow-[0_0_50px_rgba(0,112,255,0.1)] relative group/form transition-all duration-300 overflow-hidden">
+          <!-- Inner Glow / Scan Effect -->
+          <div class="absolute inset-0 bg-gradient-to-r from-transparent via-kore-blue/5 to-transparent -translate-x-full group-hover/form:translate-x-full transition-transform duration-1000 pointer-events-none"></div>
+
+          <div class="relative flex-1 flex items-center">
+            <input type="email" placeholder="seu@email.com"
+                   class="flex-1 bg-transparent pl-6 lg:pl-10 pr-6 py-4 lg:py-6 text-kore-white placeholder:text-slate-500/60 focus:outline-none font-bold text-base lg:text-lg w-full transition-all">
+          </div>
+
           <button type="submit"
-                  class="bg-kore-blue !text-white py-4 px-6 rounded-xl lg:rounded-[1.5rem] font-bold hover:bg-blue-600 transition-all shadow-xl shadow-kore-blue/40 active:scale-95 uppercase tracking-widest text-[10px] lg:text-[11px] group flex items-center justify-center gap-2 w-full sm:w-auto whitespace-nowrap border-none">
-            Clique aqui, vamos!
-            <svg class="group-hover:translate-x-1 transition-transform" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                  class="relative overflow-hidden bg-kore-blue text-white py-4 lg:py-6 px-8 lg:px-12 rounded-xl lg:rounded-[2.2rem] font-bold hover:scale-[1.02] transition-all shadow-[0_0_40px_rgba(0,112,255,0.4)] active:scale-95 uppercase tracking-[0.2em] text-[10px] lg:text-[11px] group flex items-center justify-center gap-3 w-full sm:w-auto whitespace-nowrap border-none min-h-[60px] lg:min-h-[72px]">
+            <span class="relative z-10">Vai, clica agora!</span>
+            <svg class="relative z-10 group-hover:translate-x-1.5 transition-transform" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+
+            <!-- Button Shimmer Overlay -->
+            <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:animate-shimmer pointer-events-none"></div>
           </button>
         </form>
       </div>
