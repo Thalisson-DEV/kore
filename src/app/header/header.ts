@@ -10,7 +10,7 @@ type Theme = 'light' | 'dark' | 'system';
   standalone: true,
   imports: [CommonModule, RouterLink],
   template: `
-    <nav class="fixed top-2 left-1/2 -translate-x-1/2 z-50 w-full max-w-5xl">
+    <nav class="fixed top-2 left-1/2 -translate-x-1/2 z-50 w-[100%] max-w-6xl">
       <div class="bg-kore-black/30 backdrop-blur-3xl border border-kore-white/10 rounded-xl px-4 md:px-6 py-3 flex items-center justify-between shadow-[0_8px_32px_rgba(0,0,0,0.15),inset_0_1px_1px_rgba(255,255,255,0.03)] transition-all duration-500">
         <div class="flex items-center gap-2">
           <span class="text-xl font-bold tracking-tighter text-kore-white cursor-pointer flex items-center select-none group" routerLink="/">
@@ -20,12 +20,12 @@ type Theme = 'light' | 'dark' | 'system';
 
         <!-- Desktop Links -->
         <div class="hidden xl:flex items-center gap-6">
-          <a (click)="navigateAndScroll('#lab')" [class.active-nav]="activeSection() === 'lab'" class="nav-link !text-[9px]">Simulador</a>
-          <a (click)="navigateAndScroll('#command-center')" [class.active-nav]="activeSection() === 'command-center'" class="nav-link !text-[9px]">Vagas</a>
-          <a (click)="navigateAndScroll('#features')" [class.active-nav]="activeSection() === 'features'" class="nav-link !text-[9px]">Recursos</a>
-          <a (click)="navigateAndScroll('#byok')" [class.active-nav]="activeSection() === 'byok'" class="nav-link !text-[9px]">Segurança</a>
-          <a (click)="navigateAndScroll('#pricing')" [class.active-nav]="activeSection() === 'pricing'" class="nav-link !text-[9px]">Preços</a>
-          <a (click)="navigateAndScroll('#roadmap')" [class.active-nav]="activeSection() === 'roadmap'" class="nav-link !text-[9px]">Roadmap</a>
+          <a (click)="navigateAndScroll('#lab')" [class.active-nav]="activeSection() === 'lab'" class="nav-link !text-[10px]">Laboratório</a>
+          <a (click)="navigateAndScroll('#features')" [class.active-nav]="activeSection() === 'features'" class="nav-link !text-[10px]">Recursos</a>
+          <a (click)="navigateAndScroll('#byok')" [class.active-nav]="activeSection() === 'byok'" class="nav-link !text-[10px]">Segurança</a>
+          <a (click)="navigateAndScroll('#pricing')" [class.active-nav]="activeSection() === 'pricing'" class="nav-link !text-[10px]">Preços</a>
+          <a (click)="navigateAndScroll('#roadmap')" [class.active-nav]="activeSection() === 'roadmap'" class="nav-link !text-[10px]">Roadmap</a>
+          <a (click)="navigateAndScroll('#faq')" [class.active-nav]="activeSection() === 'faq'" class="nav-link !text-[10px]">Suporte</a>
         </div>
 
         <div class="flex items-center gap-3">
@@ -48,15 +48,15 @@ type Theme = 'light' | 'dark' | 'system';
 
             @if (isDropdownOpen()) {
               <div class="absolute top-full mt-2 right-0 w-full bg-kore-zinc border border-kore-white/10 rounded-lg overflow-hidden shadow-2xl z-[60] backdrop-blur-xl animate-in fade-in slide-in-from-top-2 duration-200">
-                <button (click)="setTheme('light')" class="w-full px-3 py-2 text-left text-[9px] uppercase tracking-widest font-bold text-kore-white hover:bg-kore-blue hover:text-white transition-colors flex items-center gap-2">
+                <button (click)="setTheme('light')" class="w-full px-3 py-2 text-left text-[10px] uppercase tracking-widest font-bold text-kore-white hover:bg-kore-blue hover:text-white transition-colors flex items-center gap-2">
                   <svg class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32l1.41 1.41M2 12h2m16 0h2M6.34 17.66l-1.41 1.41m12.72-12.72l-1.41 1.41"/></svg>
                   Claro
                 </button>
-                <button (click)="setTheme('dark')" class="w-full px-3 py-2 text-left text-[9px] uppercase tracking-widest font-bold text-kore-white hover:bg-kore-blue hover:text-white transition-colors flex items-center gap-2">
+                <button (click)="setTheme('dark')" class="w-full px-3 py-2 text-left text-[10px] uppercase tracking-widest font-bold text-kore-white hover:bg-kore-blue hover:text-white transition-colors flex items-center gap-2">
                   <svg class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
                   Escuro
                 </button>
-                <button (click)="setTheme('system')" class="w-full px-3 py-2 text-left text-[9px] uppercase tracking-widest font-bold text-kore-white hover:bg-kore-blue hover:text-white transition-colors flex items-center gap-2 border-t border-kore-white/5">
+                <button (click)="setTheme('system')" class="w-full px-3 py-2 text-left text-[10px] uppercase tracking-widest font-bold text-kore-white hover:bg-kore-blue hover:text-white transition-colors flex items-center gap-2 border-t border-kore-white/5">
                   <svg class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect width="20" height="14" x="2" r="2"/><path d="M8 21h8m-4-4v4"/></svg>
                   Sistema
                 </button>
@@ -64,7 +64,7 @@ type Theme = 'light' | 'dark' | 'system';
             }
           </div>
 
-          <button (click)="navigateAndScroll('#cta')" class="h-[36px] px-6 bg-kore-white text-kore-black text-[9px] font-bold rounded-lg hover:scale-105 transition-all uppercase tracking-widest shadow-[0_0_20px_rgba(255,255,255,0.15)] active:scale-95 border-none">
+          <button (click)="navigateAndScroll('#cta')" class="h-[36px] px-6 bg-kore-white text-kore-black text-[10px] font-bold rounded-lg hover:scale-105 transition-all uppercase tracking-widest shadow-[0_0_20px_rgba(255,255,255,0.15)] active:scale-95 border-none">
             Quero Testar
           </button>
         </div>
@@ -178,7 +178,7 @@ export class HeaderComponent implements AfterViewInit {
       });
     }, options);
 
-    const sections = ['lab', 'command-center', 'features', 'byok', 'roadmap', 'pricing'];
+    const sections = ['lab', 'command-center', 'features', 'byok', 'roadmap', 'pricing', 'faq'];
     sections.forEach(id => {
       const el = document.getElementById(id);
       if (el) this.observer?.observe(el);
