@@ -1,12 +1,18 @@
 @import "tailwindcss";
 
 @theme {
-  --color-kore-slate: #0A0F1A;
+  --color-kore-slate: var(--kore-slate);
   --color-kore-blue: #0070FF;
   --color-kore-cyan: #00D1FF;
-  --color-kore-steel: #475569;
+  --color-kore-steel: var(--kore-steel);
   --color-kore-ice: #F8FAFC;
-  --color-kore-zinc: #111827;
+  --color-kore-zinc: var(--kore-zinc);
+  --color-kore-white: var(--kore-white);
+  --color-kore-black: var(--kore-black);
+  
+  /* Resetting standard white/black to be literals */
+  --color-white: #FFFFFF;
+  --color-black: #000000;
 
   --font-heading: "Bricolage Grotesque", "Fraunces", serif;
   --font-body: "Inter", "Geist Sans", sans-serif;
@@ -33,6 +39,52 @@
   }
 }
 
+@layer base {
+  :root {
+    --kore-slate: #0A0F1A;
+    --kore-steel: #475569;
+    --kore-zinc: #111827;
+    --kore-white: #FFFFFF;
+    --kore-black: #000000;
+    --surface-glass: rgba(255, 255, 255, 0.03);
+    --border-glass: rgba(255, 255, 255, 0.08);
+    --text-muted: #94a3b8;
+    --bg-gradient: radial-gradient(circle at top right, rgba(0, 112, 255, 0.05), transparent 40%), 
+                   radial-gradient(circle at bottom left, rgba(0, 209, 255, 0.02), transparent 40%);
+  }
+
+  .light {
+    --kore-slate: #F8FAFC;
+    --kore-steel: #64748b;
+    --kore-zinc: #FFFFFF;
+    --kore-white: #0A0F1A;
+    --kore-black: #FFFFFF;
+    --surface-glass: rgba(0, 112, 255, 0.03);
+    --border-glass: rgba(0, 112, 255, 0.1);
+    --text-muted: #475569;
+    --bg-gradient: radial-gradient(circle at top right, rgba(0, 112, 255, 0.03), transparent 40%), 
+                   radial-gradient(circle at bottom left, rgba(0, 209, 255, 0.03), transparent 40%);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-kore-slate text-kore-white font-body antialiased selection:bg-kore-blue/30 selection:text-white transition-colors duration-500 min-h-screen;
+    background-image: var(--bg-gradient);
+    background-attachment: fixed;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading tracking-tight text-kore-white;
+  }
+
+  .text-slate-400, .text-slate-300 {
+    color: var(--text-muted) !important;
+  }
+}
+
 @layer utilities {
   .font-elegant {
     font-family: var(--font-serif);
@@ -48,16 +100,30 @@
   }
 
   .section-divider {
-    @apply w-full h-px bg-gradient-to-r from-transparent via-kore-steel/20 to-transparent relative my-16;
+    @apply w-full h-12 relative my-0 flex items-center justify-center overflow-hidden;
+    background-image: repeating-linear-gradient(
+      -45deg,
+      transparent,
+      transparent 10px,
+      rgba(71, 85, 105, 0.05) 10px,
+      rgba(71, 85, 105, 0.05) 11px
+    );
+    border-top: 1px solid rgba(0, 112, 255, 0.1);
+    border-bottom: 1px solid rgba(0, 112, 255, 0.1);
   }
 
   .section-divider::after {
-    content: 'KORE';
-    @apply absolute left-1/2 -translate-x-1/2 -translate-y-1/2 bg-kore-ice dark:bg-kore-slate/10 px-4 text-[8px] font-mono font-bold text-kore-steel/90 uppercase tracking-[0.4em];
+    content: 'STRATEGIC_DIVIDER_V2';
+    @apply bg-kore-slate px-6 py-1 text-[8px] font-mono font-bold text-kore-blue uppercase tracking-[0.5em] border border-kore-blue/20 rounded-full z-10 transition-colors duration-500;
+    box-shadow: 0 0 20px rgba(0, 112, 255, 0.1);
+  }
+
+  .page-side-borders {
+    @apply fixed inset-y-0 left-6 right-6 pointer-events-none border-x border-kore-blue/5 z-50 hidden lg:block;
   }
 
   .nav-link {
-    @apply text-[11px] font-bold text-kore-steel hover:text-kore-slate dark:hover:text-kore-ice transition-all cursor-pointer uppercase tracking-widest opacity-70 hover:opacity-100 relative py-1;
+    @apply text-[11px] font-bold text-kore-steel hover:text-kore-white transition-all cursor-pointer uppercase tracking-widest opacity-70 hover:opacity-100 relative py-1;
   }
 
   .active-nav {
@@ -69,32 +135,37 @@
   }
 
   .glass-card {
-    @apply bg-white/[0.03] backdrop-blur-2xl border border-white/[0.08] rounded-[2.5rem] shadow-[inset_0_1px_1px_rgba(255,255,255,0.05)];
+    @apply bg-[var(--surface-glass)] backdrop-blur-2xl border border-[var(--border-glass)] rounded-[2.5rem] shadow-[inset_0_1px_1px_rgba(255,255,255,0.05)];
   }
 
   .glow-blue {
     @apply shadow-[0_0_50px_-12px_rgba(0,112,255,0.3)];
   }
 
-  .mesh-blob {
-    @apply absolute rounded-full blur-[160px] mix-blend-screen transition-all duration-1000;
-  }
-
-  .mesh-blob-1 {
-    @apply w-[800px] h-[800px] bg-kore-blue opacity-[0.08] -top-[300px] -left-[200px] animate-mesh-1;
-  }
-
-  .mesh-blob-2 {
-    @apply w-[600px] h-[600px] bg-kore-cyan opacity-[0.05] -bottom-[200px] -right-[100px] animate-mesh-2;
-  }
-
-  .mesh-blob-3 {
-    @apply w-[500px] h-[500px] bg-indigo-600 opacity-[0.04] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 animate-mesh-3;
-  }
-
   .bg-strategic-grid {
     background-image: radial-gradient(circle at 1px 1px, rgba(0, 112, 255, 0.1) 1px, transparent 0);
     background-size: 32px 32px;
+  }
+
+  .animate-text-shimmer {
+    background: linear-gradient(
+      to right,
+      #0070FF 0%,
+      #00D1FF 25%,
+      #ffffff 50%,
+      #00D1FF 75%,
+      #0070FF 100%
+    );
+    background-size: 200% auto;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: text-shimmer 4s linear infinite;
+  }
+
+  @keyframes text-shimmer {
+    from { background-position: 0% center; }
+    to { background-position: 200% center; }
   }
 
   .animate-scan-line {
@@ -118,16 +189,7 @@
   100% { transform: translateX(300%); }
 }
 
-@layer base {
-  html {
-    scroll-behavior: smooth;
-  }
-
-  body {
-    @apply bg-kore-slate text-white font-body antialiased selection:bg-kore-blue/30 selection:text-white;
-  }
-
-  h1, h2, h3, h4, h5, h6 {
-    @apply font-heading tracking-tight text-white;
-  }
+@keyframes beam {
+  0% { transform: translateX(-100%) skewX(-15deg); }
+  100% { transform: translateX(200%) skewX(-15deg); }
 }

@@ -60,7 +60,6 @@ export class LandingPage implements AfterViewInit {
     this.showDemoNotification.set(true);
     this.isExitingDemoNotification.set(false);
 
-    // Show for 4.2 seconds (extra margin for CSS bar completion)
     setTimeout(() => {
       this.closeDemoNotification();
     }, 4200);
@@ -70,16 +69,13 @@ export class LandingPage implements AfterViewInit {
     if (this.isExitingDemoNotification()) return;
 
     this.isExitingDemoNotification.set(true);
-    // Wait 800ms for the slower exit animation to finish
     setTimeout(() => {
       this.showDemoNotification.set(false);
       this.isExitingDemoNotification.set(false);
     }, 800);
   }
 
-  ngAfterViewInit() {
-    // Basic init if needed
-  }
+  ngAfterViewInit() { }
 
   private startSimulator() {
     setInterval(() => {
@@ -180,7 +176,6 @@ export class LandingPage implements AfterViewInit {
   async navigateAndScroll(selector: string) {
     if (this.router.url !== '/') {
       await this.router.navigate(['/']);
-      // Give time for the landing page to render
       setTimeout(() => this.scrollTo(selector), 100);
     } else {
       this.scrollTo(selector);
