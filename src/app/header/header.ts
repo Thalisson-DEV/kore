@@ -20,6 +20,7 @@ type Theme = 'light' | 'dark' | 'system';
 
         <!-- Desktop Links -->
         <div class="hidden xl:flex items-center gap-6">
+          <a (click)="navigateAndScroll('#proposito')" [class.active-nav]="activeSection() === 'proposito'" class="nav-link !text-[10px]">Propósito</a>
           <a (click)="navigateAndScroll('#lab')" [class.active-nav]="activeSection() === 'lab'" class="nav-link !text-[10px]">Laboratório</a>
           <a (click)="navigateAndScroll('#features')" [class.active-nav]="activeSection() === 'features'" class="nav-link !text-[10px]">Recursos</a>
           <a (click)="navigateAndScroll('#byok')" [class.active-nav]="activeSection() === 'byok'" class="nav-link !text-[10px]">Segurança</a>
@@ -86,7 +87,7 @@ export class HeaderComponent implements AfterViewInit {
   private platformId = inject(PLATFORM_ID);
 
   activeSection = signal<string>('');
-  currentTheme = signal<Theme>('dark');
+  currentTheme = signal<Theme>('system');
   isDropdownOpen = signal(false);
   private observer: IntersectionObserver | null = null;
 
@@ -131,7 +132,7 @@ export class HeaderComponent implements AfterViewInit {
     if (savedTheme) {
       this.currentTheme.set(savedTheme);
     } else {
-      this.currentTheme.set('dark');
+      this.currentTheme.set('system');
     }
   }
 
@@ -155,9 +156,11 @@ export class HeaderComponent implements AfterViewInit {
     }
 
     if (isDark) {
+      html.classList.add('dark');
       html.classList.remove('light');
     } else {
       html.classList.add('light');
+      html.classList.remove('dark');
     }
   }
 
@@ -178,7 +181,7 @@ export class HeaderComponent implements AfterViewInit {
       });
     }, options);
 
-    const sections = ['lab', 'command-center', 'features', 'byok', 'roadmap', 'pricing', 'faq'];
+    const sections = ['proposito', 'lab', 'command-center', 'features', 'byok', 'roadmap', 'pricing', 'faq'];
     sections.forEach(id => {
       const el = document.getElementById(id);
       if (el) this.observer?.observe(el);
