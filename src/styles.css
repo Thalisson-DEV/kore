@@ -70,6 +70,10 @@
     scroll-behavior: smooth;
   }
 
+  .no-transitions *, .no-transitions {
+    transition: background 0s !important, background-color 0s !important, color 0s !important, border-color 0s !important;
+  }
+
   body {
     @apply bg-kore-slate text-kore-white font-body antialiased selection:bg-kore-blue/30 selection:text-white transition-colors duration-500 min-h-screen;
     background-image: var(--bg-gradient);

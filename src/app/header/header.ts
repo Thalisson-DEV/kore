@@ -35,14 +35,19 @@ type Theme = 'light' | 'dark' | 'system';
             <button (click)="toggleDropdown($event)"
                     class="h-[36px] px-4 bg-kore-black/20 border border-kore-white/10 text-kore-white rounded-lg font-bold flex items-center gap-2 hover:bg-kore-white/5 transition-all active:scale-95 text-[9px] uppercase tracking-widest min-w-[110px] justify-between">
               <span class="flex items-center gap-2">
-                @if (currentTheme() === 'light') {
-                  <svg class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32l1.41 1.41M2 12h2m16 0h2M6.34 17.66l-1.41 1.41m12.72-12.72l-1.41 1.41"/></svg>
-                } @else if (currentTheme() === 'dark') {
-                  <svg class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+                @if (isHydrated()) {
+                  @if (currentTheme() === 'light') {
+                    <svg class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32l1.41 1.41M2 12h2m16 0h2M6.34 17.66l-1.41 1.41m12.72-12.72l-1.41 1.41"/></svg>
+                  } @else if (currentTheme() === 'dark') {
+                    <svg class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+                  } @else {
+                    <svg class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect width="20" height="14" x="2" rx="2"/><path d="M8 21h8m-4-4v4"/></svg>
+                  }
+                  {{ currentTheme() === 'system' ? 'Sistema' : currentTheme() === 'light' ? 'Claro' : 'Escuro' }}
                 } @else {
-                  <svg class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect width="20" height="14" x="2" r="2"/><path d="M8 21h8m-4-4v4"/></svg>
+                  <div class="w-3 h-3 bg-kore-white/10 rounded-full animate-pulse"></div>
+                  <span>...</span>
                 }
-                {{ currentTheme() === 'system' ? 'Sistema' : currentTheme() === 'light' ? 'Claro' : 'Escuro' }}
               </span>
               <svg class="w-2.5 h-2.5 transition-transform" [class.rotate-180]="isDropdownOpen()" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="m6 9 6 6 6-6"/></svg>
             </button>
@@ -58,7 +63,7 @@ type Theme = 'light' | 'dark' | 'system';
                   Escuro
                 </button>
                 <button (click)="setTheme('system')" class="w-full px-3 py-2 text-left text-[10px] uppercase tracking-widest font-bold text-kore-white hover:bg-kore-blue hover:text-white transition-colors flex items-center gap-2 border-t border-kore-white/5">
-                  <svg class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect width="20" height="14" x="2" r="2"/><path d="M8 21h8m-4-4v4"/></svg>
+                  <svg class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect width="20" height="14" x="2" y="3" rx="2"/><path d="M8 21h8m-4-4v4"/></svg>
                   Sistema
                 </button>
               </div>
@@ -88,6 +93,7 @@ export class HeaderComponent implements AfterViewInit {
 
   activeSection = signal<string>('');
   currentTheme = signal<Theme>('system');
+  isHydrated = signal(false);
   isDropdownOpen = signal(false);
   private observer: IntersectionObserver | null = null;
 
@@ -102,6 +108,7 @@ export class HeaderComponent implements AfterViewInit {
   constructor() {
     if (isPlatformBrowser(this.platformId)) {
       this.initTheme();
+      this.isHydrated.set(true);
 
       this.router.events.pipe(
         filter(event => event instanceof NavigationEnd)
@@ -112,6 +119,11 @@ export class HeaderComponent implements AfterViewInit {
           this.activeSection.set('');
         }
       });
+
+      // Remove no-transitions class after first paint
+      setTimeout(() => {
+        document.documentElement.classList.remove('no-transitions');
+      }, 300);
     }
 
     effect(() => {
