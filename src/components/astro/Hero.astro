@@ -1,0 +1,112 @@
+---
+---
+
+<section class="relative min-h-screen lg:min-h-[100svh] flex items-center overflow-hidden">
+  <!-- 2.4 Gradient Mesh Background -->
+  <div class="absolute inset-0 pointer-events-none -z-10">
+    <div class="blob-1 absolute w-[600px] h-[600px] bg-accent opacity-[0.05] blur-[120px] top-[-10%] left-[-10%]"></div>
+    <div class="blob-2 absolute w-[500px] h-[500px] bg-accent-dim opacity-[0.03] blur-[100px] bottom-[-10%] right-[-10%]"></div>
+  </div>
+
+  <div class="container-kore relative z-10 w-full">
+    <div class="grid lg:grid-cols-2 gap-12 items-center">
+      <!-- Coluna da Esquerda: Conteúdo -->
+      <div class="flex flex-col items-start text-left max-w-2xl">
+        
+        <!-- 2.3 Typing Effect Label -->
+        <div class="hero-label inline-flex items-center gap-2.5 px-3 py-1 bg-surface border border-border rounded-full mb-8 transition-colors duration-300">
+          <span class="w-1 h-1 rounded-full bg-accent/60 shadow-[0_0_8px_rgba(59,130,246,0.3)]"></span>
+          <span id="hero-label-text" class="text-mono text-[9px] md:text-[10px] text-muted tracking-[0.25em] uppercase font-bold" data-type="KORE_ · INFRAESTRUTURA TÉCNICA"></span>
+          <span class="cursor-blink text-accent/80 text-[10px] -ml-1.5 font-light">|</span>
+        </div>
+
+        <h1 class="hero-title text-hero mb-6 tracking-tighter text-balance">
+          Domine o ATS. Eleve sua carreira técnica<span class="text-accent">.</span>
+        </h1>
+
+        <p class="hero-sub text-lg md:text-xl text-muted mb-10 leading-relaxed max-w-xl">
+          Vença filtros algorítmicos com injeção semântica. O controle total da sua narrativa profissional, protegido por criptografia total.
+        </p>
+
+        <div class="hero-ctas flex flex-col sm:flex-row items-center gap-5 w-full sm:w-auto mb-16">
+          <a 
+            href="#acesso" 
+            class="btn-primary w-full sm:w-auto px-10 py-4 text-bg text-body font-bold rounded-sm transition-all text-center shadow-[0_0_30px_rgba(59,130,246,0.2)] uppercase tracking-tighter"
+          >
+            Começar Agora
+          </a>
+          <a 
+            href="#lab" 
+            class="w-full sm:w-auto px-10 py-4 border border-border hover:border-muted text-text text-body font-medium rounded-sm transition-all text-center uppercase tracking-tighter flex items-center justify-center gap-2 group"
+          >
+            Ver o Lab <span class="group-hover:translate-x-1 transition-transform">→</span>
+          </a>
+        </div>
+
+        <!-- Hero Badges -->
+        <div class="hero-badges flex flex-wrap items-center gap-x-8 gap-y-4 pt-10 border-t border-border-subtle w-full transition-colors duration-300">
+          <div class="flex items-center gap-2" data-tooltip="Dados encriptados localmente com AES-256">
+            <span class="text-accent text-[10px]">✓</span>
+            <span class="text-[10px] md:text-[11px] font-mono text-muted uppercase tracking-wider">Criptografia E2E</span>
+          </div>
+          <div class="flex items-center gap-2" data-tooltip="Análise semântica de senioridade">
+            <span class="text-accent text-[10px]">✓</span>
+            <span class="text-[10px] md:text-[11px] font-mono text-muted uppercase tracking-wider">Motor ATS Nativo</span>
+          </div>
+          <div class="flex items-center gap-2" data-tooltip="Bring Your Own Key Model">
+            <span class="text-accent text-[10px]">✓</span>
+            <span class="text-[10px] md:text-[11px] font-mono text-muted uppercase tracking-wider">Soberania BYOK</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Coluna da Direita: Espaço para futura imagem -->
+      <div class="hidden lg:flex justify-end pointer-events-none opacity-0 lg:opacity-100 transition-opacity duration-1000">
+        <!-- Placeholder ou elemento decorativo sutil -->
+        <div class="w-full max-w-md aspect-square bg-gradient-to-tr from-accent/5 to-transparent rounded-full blur-3xl"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* 1.4 Staggered Reveal Animations */
+  .hero-label  { animation: fadeUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both; }
+  .hero-title  { animation: fadeUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.2s both; }
+  .hero-sub    { animation: fadeUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.3s both; }
+  .hero-ctas   { animation: fadeUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.4s both; }
+  .hero-badges { animation: fadeUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) 0.5s both; }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(12px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .cursor-blink {
+    animation: blink 1.2s step-end infinite;
+  }
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+  }
+</style>
+
+<script is:inline>
+  (function() {
+    const el = document.getElementById('hero-label-text');
+    if (!el) return;
+    
+    const fullText = el.getAttribute('data-type');
+    let index = 0;
+    el.textContent = "";
+
+    const type = () => {
+      if (index <= fullText.length) {
+        el.textContent = fullText.slice(0, index);
+        index++;
+        setTimeout(type, 50);
+      }
+    };
+    setTimeout(type, 650);
+  })();
+</script>

@@ -1,0 +1,80 @@
+---
+import TerminalEgg from '../react/TerminalEgg';
+
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="relative py-24 border-t border-border-subtle bg-bg overflow-hidden">
+  <!-- Watermark Background Text -->
+  <div class="absolute bottom-[-5%] right-[-2%] text-[8rem] md:text-[12rem] font-mono font-bold text-text opacity-[0.02] pointer-events-none select-none z-0 tracking-tighter">
+    KORE_
+  </div>
+
+  <div class="container-kore relative z-10">
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-16 lg:gap-12 mb-24">
+      <!-- Coluna 1: Brand -->
+      <div class="col-span-2 lg:col-span-1">
+        <a href="/" class="text-xl font-mono font-bold tracking-tighter mb-8 block hover:text-accent transition-colors group">
+          KORE<span class="text-accent cursor-blink">_</span>
+        </a>
+        <p class="text-caption text-muted max-w-[220px] leading-relaxed">
+          Infraestrutura técnica para soberania de carreira e otimização algorítmica ATS.
+        </p>
+      </div>
+
+<style>
+  .cursor-blink {
+    animation: blink 1.2s step-end infinite;
+  }
+
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+  }
+</style>
+
+      <!-- Coluna 2: Produto -->
+      <div>
+        <h4 class="text-mono text-accent text-[11px] font-bold uppercase tracking-[0.2em] mb-8">Produto</h4>
+        <ul class="space-y-5 text-caption text-muted">
+          <li><a href="#proposito" class="hover:text-text transition-colors tracking-tight">Propósito</a></li>
+          <li><a href="#lab" class="hover:text-text transition-colors tracking-tight">Lab Simulator</a></li>
+          <li><a href="#precos" class="hover:text-text transition-colors tracking-tight">Preços</a></li>
+          <li><a href="#roadmap" class="hover:text-text transition-colors tracking-tight">Roadmap</a></li>
+        </ul>
+      </div>
+
+      <!-- Coluna 3: Empresa -->
+      <div>
+        <h4 class="text-mono text-accent text-[11px] font-bold uppercase tracking-[0.2em] mb-8">Empresa</h4>
+        <ul class="space-y-5 text-caption text-muted">
+          <li><a href="#" class="hover:text-text transition-colors tracking-tight">Sobre</a></li>
+          <li><a href="#" class="hover:text-text transition-colors tracking-tight">Blog</a></li>
+          <li><a href="#" class="hover:text-text transition-colors tracking-tight">Carreiras</a></li>
+          <li><a href="https://github.com/Thalisson-DEV/kore" target="_blank" class="hover:text-text transition-colors tracking-tight">GitHub</a></li>
+        </ul>
+      </div>
+
+      <!-- Coluna 4: Legal -->
+      <div>
+        <h4 class="text-mono text-accent text-[11px] font-bold uppercase tracking-[0.2em] mb-8">Legal</h4>
+        <ul class="space-y-5 text-caption text-muted">
+          <li><a href="#" class="hover:text-text transition-colors tracking-tight">Privacidade</a></li>
+          <li><a href="#" class="hover:text-text transition-colors tracking-tight">Termos</a></li>
+          <li><a href="#" class="hover:text-text transition-colors tracking-tight">Security</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="flex flex-col md:flex-row justify-between items-center gap-6 pt-8 border-t border-border-subtle">
+      <div class="text-[10px] font-mono text-faint uppercase tracking-wider">
+        © {currentYear} KORE_ TODOS OS DIREITOS RESERVADOS.
+      </div>
+      
+      <div class="flex items-center gap-4">
+        <span class="text-[10px] font-mono text-faint uppercase tracking-wider">Global_Status:</span>
+        <TerminalEgg client:visible />
+      </div>
+    </div>
+  </div>
+</footer>

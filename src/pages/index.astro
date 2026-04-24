@@ -1,0 +1,32 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Nav from '../components/astro/Nav.astro';
+import Hero from '../components/astro/Hero.astro';
+import FeatureGrid from '../components/astro/FeatureGrid.astro';
+import Proposal from '../components/astro/Proposal.astro';
+import Security from '../components/astro/Security.astro';
+import Pricing from '../components/react/Pricing';
+import Roadmap from '../components/astro/Roadmap.astro';
+import Faq from '../components/astro/Faq.astro';
+import FooterCta from '../components/astro/FooterCta.astro';
+import Footer from '../components/astro/Footer.astro';
+import LabSimulator from '../components/react/LabSimulator';
+import WorkspaceKanban from '../components/react/WorkspaceKanban';
+---
+
+<BaseLayout>
+	<Nav />
+	<main>
+		<Hero />
+		<FeatureGrid />
+		<Proposal />
+		<LabSimulator client:visible />
+		<WorkspaceKanban client:visible />
+		<Security />
+		<Pricing client:visible />
+		<Roadmap />
+		<Faq />
+		<FooterCta />
+	</main>
+	<Footer />
+</BaseLayout>

@@ -1,0 +1,59 @@
+---
+const faqs = [
+  {
+    q: "O que é BYOK?",
+    a: "Bring Your Own Key. Significa que você pode usar sua própria API Key da OpenAI para processar seus dados. Isso garante que você pague o preço de custo da API e mantenha controle total sobre o motor de IA."
+  },
+  {
+    q: "Como o Motor ATS funciona?",
+    a: "Nós simulamos o comportamento dos principais softwares de recrutamento do mercado (como Workday e Greenhouse). O sistema identifica lacunas semânticas e sugere melhorias estruturais para garantir que seu currículo seja lido corretamente."
+  },
+  {
+    q: "Meus dados estão seguros?",
+    a: "Sim. Utilizamos criptografia AES-256-GCM no lado do cliente. Seus dados são salvos localmente e, se sincronizados, são transmitidos em um túnel criptografado onde nem nós temos a chave de decodificação."
+  },
+  {
+    q: "A Kore faz a candidatura por mim?",
+    a: "No plano Premium Agent, sim. Nosso agente analisa seu perfil, as vagas abertas e realiza candidaturas estratégicas de forma autônoma, respeitando seus critérios de carreira."
+  },
+  {
+    q: "Qual a diferença entre a Kore e um gerador de currículos?",
+    a: "Geradores focam em layout. A Kore foca em infraestrutura técnica e precisão algorítmica para vencer os filtros ATS que barram currículos antes mesmo de serem lidos por humanos."
+  }
+];
+---
+
+<section id="faq" class="section-gap bg-bg reveal">
+  <div class="container-kore">
+    <!-- Separador -->
+    <div class="divider-label mb-24">
+      <span class="w-12 h-[1px] bg-border"></span>
+      FAQ
+      <span class="flex-grow h-[1px] bg-border"></span>
+    </div>
+
+    <h2 class="text-section mb-20 max-w-2xl leading-tight">Dúvidas? Respostas diretas<span class="text-accent">.</span></h2>
+
+    <div class="max-w-3xl space-y-6">
+      {faqs.map(faq => (
+        <details class="group border border-border bg-surface/10 rounded-sm overflow-hidden transition-all hover:border-border-subtle">
+          <summary class="flex items-center justify-between p-8 cursor-pointer list-none hover:bg-surface/30 transition-colors">
+            <span class="text-body font-semibold pr-8 leading-tight">{faq.q}</span>
+            <span class="text-accent text-2xl group-open:rotate-45 transition-transform duration-500 inline-block font-mono">+</span>
+          </summary>
+          <div class="px-8 pb-8 text-caption text-muted leading-relaxed">
+            <div class="pt-6 border-t border-border-subtle">
+              {faq.a}
+            </div>
+          </div>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  summary::-webkit-details-marker {
+    display: none;
+  }
+</style>
