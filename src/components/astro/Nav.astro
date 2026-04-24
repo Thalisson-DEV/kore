@@ -1,0 +1,101 @@
+---
+---
+
+<nav id="main-nav" class="fixed top-0 left-0 w-full z-50 transition-all duration-300 border-b border-transparent">
+  <div class="container-kore h-16 lg:h-20 flex items-center justify-between">
+    <!-- Logo -->
+    <a href="/" class="text-xl font-mono font-bold tracking-tighter hover:text-accent transition-colors group">
+      KORE<span class="text-accent cursor-blink">_</span>
+    </a>
+
+    <!-- Links Centrais (Desktop) -->
+    <div class="hidden md:flex items-center gap-8 text-[11px] font-mono uppercase tracking-widest text-muted">
+      <a href="#proposito" class="hover:text-accent transition-colors">Propósito</a>
+      <a href="#lab" class="hover:text-accent transition-colors">Lab</a>
+      <a href="#precos" class="hover:text-accent transition-colors">Preços</a>
+      <a href="#roadmap" class="hover:text-accent transition-colors">Roadmap</a>
+    </div>
+
+    <div class="flex items-center gap-4">
+      <!-- Theme Toggle Button -->
+      <button 
+        id="theme-toggle" 
+        class="p-2 text-muted hover:text-accent transition-colors focus:outline-none"
+        aria-label="Toggle Theme"
+      >
+        <svg id="sun-icon" class="w-4 h-4 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m12.728 0l-.707-.707M6.343 6.343l-.707-.707M12 8a4 4 0 100 8 4 4 0 000-8z" />
+        </svg>
+        <svg id="moon-icon" class="w-4 h-4 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+        </svg>
+      </button>
+
+      <!-- CTA -->
+      <a 
+        href="#acesso" 
+        class="px-5 py-2 border border-accent text-accent hover:bg-accent hover:text-bg text-[11px] font-bold rounded-sm transition-all uppercase tracking-tighter"
+      >
+        Acesso Antecipado
+      </a>
+    </div>
+  </div>
+</nav>
+
+<style>
+  .cursor-blink {
+    animation: blink 1.2s step-end infinite;
+  }
+
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+  }
+</style>
+
+<script is:inline>
+  // 1.2 Nav Blur ao Scrollar
+  const nav = document.getElementById('main-nav');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 20) {
+      nav.classList.add('bg-bg/80', 'backdrop-blur-md', 'border-border-subtle');
+      nav.classList.remove('border-transparent');
+    } else {
+      nav.classList.remove('bg-bg/80', 'backdrop-blur-md', 'border-border-subtle');
+      nav.classList.add('border-transparent');
+    }
+  }, { passive: true });
+
+  // Theme Toggle Implementation
+  const themeToggle = document.getElementById('theme-toggle');
+  const sunIcon = document.getElementById('sun-icon');
+  const moonIcon = document.getElementById('moon-icon');
+
+  const updateIcons = (theme) => {
+    if (theme === 'light') {
+      sunIcon.classList.add('hidden');
+      moonIcon.classList.remove('hidden');
+    } else {
+      sunIcon.classList.remove('hidden');
+      moonIcon.classList.add('hidden');
+    }
+  };
+
+  const getTheme = () => document.documentElement.getAttribute('data-theme') || 'dark';
+
+  updateIcons(getTheme());
+
+  themeToggle.addEventListener('click', () => {
+    const currentTheme = getTheme();
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    
+    if (newTheme === 'light') {
+      document.documentElement.setAttribute('data-theme', 'light');
+    } else {
+      document.documentElement.removeAttribute('data-theme');
+    }
+    
+    localStorage.setItem('theme', newTheme);
+    updateIcons(newTheme);
+  });
+</script>

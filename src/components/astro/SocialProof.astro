@@ -1,0 +1,56 @@
+---
+---
+
+<section class="py-12 border-y border-border-subtle bg-surface/30 reveal">
+  <div class="container-kore">
+    <div class="divider-label mb-12">
+      <span class="w-12 h-[1px] bg-border"></span>
+      INFRAESTRUTURA_STATS
+      <span class="flex-grow h-[1px] bg-border"></span>
+    </div>
+
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+      <div class="text-center">
+        <p class="text-card font-bold text-accent" data-counter="98" data-suffix="%">0%</p>
+        <p class="text-caption text-muted uppercase tracking-tighter">ATS Score Médio</p>
+      </div>
+      <div class="text-center">
+        <p class="text-card font-bold text-accent" data-counter="0" data-suffix="">0</p>
+        <p class="text-caption text-muted uppercase tracking-tighter">Vazamento de Dados</p>
+      </div>
+      <div class="text-center">
+        <p class="text-card font-bold text-accent" data-counter="256" data-suffix="-BIT">0-BIT</p>
+        <p class="text-caption text-muted uppercase tracking-tighter">Criptografia Local</p>
+      </div>
+      <div class="text-center">
+        <p class="text-card font-bold text-accent" data-counter="100" data-suffix="%">0%</p>
+        <p class="text-caption text-muted uppercase tracking-tighter">Soberania BYOK</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script is:inline>
+  // 2.2 Animated Counter
+  document.querySelectorAll('[data-counter]').forEach(el => {
+    const target = +el.dataset.counter;
+    const suffix = el.dataset.suffix || '';
+    const duration = 1500;
+    
+    const observer = new IntersectionObserver(([entry]) => {
+      if (!entry.isIntersecting) return;
+      observer.disconnect();
+
+      const startTime = performance.now();
+      const tick = (now) => {
+        const progress = Math.min((now - startTime) / duration, 1);
+        const ease = 1 - Math.pow(1 - progress, 3); // ease-out cubic
+        el.textContent = Math.floor(ease * target) + suffix;
+        if (progress < 1) requestAnimationFrame(tick);
+      };
+      requestAnimationFrame(tick);
+    }, { threshold: 0.5 });
+
+    observer.observe(el);
+  });
+</script>
