@@ -1,0 +1,41 @@
+---
+const pains = [
+  "Mandou 50 currículos. Recebeu 3 respostas. Se encaixava em todas as vagas.",
+  "Reescreve o CV do zero pra cada vaga. Nunca sabe se ficou bom.",
+  "Vê devs mais juniores sendo chamados pra entrevista.",
+  "O recrutador 'não viu' sua experiência. Que tá lá. Em letras garrafais.",
+  "Já copiou palavra-chave de tutorial no YouTube. Não mudou nada.",
+  "Sabe que está fazendo algo errado. Ninguém te explica o quê."
+];
+---
+
+<section class="py-20 lg:py-28 border-t border-border-subtle reveal">
+  <div class="container-kore">
+
+    <!-- Headline compacta -->
+    <div class="mb-12">
+      <p class="text-[10px] font-mono text-accent uppercase tracking-widest mb-4">IDENTIFICAÇÃO_DOR</p>
+      <h2 class="text-3xl md:text-4xl font-bold tracking-tighter">
+        Você já passou por isso<span class="text-accent">?</span>
+      </h2>
+    </div>
+
+    <!-- Grid de dores: 3 colunas no desktop, 2 no tablet, 1 no mobile -->
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-border-subtle border border-border-subtle">
+      {pains.map((text) => (
+        <div class="group relative bg-bg p-6 hover:bg-surface/40 transition-colors duration-200">
+          <p class="text-sm text-muted group-hover:text-text transition-colors leading-relaxed">
+            {text}
+          </p>
+          <div class="absolute bottom-0 left-0 w-0 group-hover:w-full h-px bg-accent transition-all duration-400"></div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Closing statement compacta -->
+    <p class="mt-10 text-base md:text-lg text-muted max-w-2xl leading-relaxed">
+      Não é falta de competência. <span class="text-text font-medium">É que ninguém te ensinou a falar a língua da máquina.</span>
+    </p>
+
+  </div>
+</section>

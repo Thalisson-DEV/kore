@@ -1,38 +1,47 @@
 ---
 const faqs = [
   {
-    q: "O que é BYOK?",
-    a: "Bring Your Own Key. Significa que você pode usar sua própria API Key da OpenAI para processar seus dados. Isso garante que você pague o preço de custo da API e mantenha controle total sobre o motor de IA."
+    q: "Quanto tempo eu gasto pra otimizar um currículo?",
+    a: "Em média 3 a 8 minutos por vaga, contando colar o link, revisar as sugestões e exportar."
   },
   {
-    q: "Como o Motor ATS funciona?",
-    a: "Nós simulamos o comportamento dos principais softwares de recrutamento do mercado (como Workday e Greenhouse). O sistema identifica lacunas semânticas e sugere melhorias estruturais para garantir que seu currículo seja lido corretamente."
+    q: "Serve pra quem é júnior? E pra sênior/tech lead?",
+    a: "Serve pros dois. O motor analisa a vaga e calibra o tom. Vaga sênior pede uma reescrita; vaga júnior pede outra. A KORE_ entende isso."
   },
   {
-    q: "Meus dados estão seguros?",
-    a: "Sim. Utilizamos criptografia AES-256-GCM no lado do cliente. Seus dados são salvos localmente e, se sincronizados, são transmitidos em um túnel criptografado onde nem nós temos a chave de decodificação."
+    q: "A IA vai inventar coisa que eu não fiz?",
+    a: "Não. O validador interno bloqueia qualquer mudança em datas, empresas ou cargos. E cada palavra-chave injetada cita a experiência sua que a justifica."
   },
   {
-    q: "A Kore faz a candidatura por mim?",
-    a: "No plano Premium Agent, sim. Nosso agente analisa seu perfil, as vagas abertas e realiza candidaturas estratégicas de forma autônoma, respeitando seus critérios de carreira."
+    q: "Como funciona o acesso?",
+    a: "Você cria conta, escolhe Free ou Pro, e já entra na ferramenta. Não tem download, não tem instalação. É web."
   },
   {
-    q: "Qual a diferença entre a Kore e um gerador de currículos?",
-    a: "Geradores focam em layout. A Kore foca em infraestrutura técnica e precisão algorítmica para vencer os filtros ATS que barram currículos antes mesmo de serem lidos por humanos."
+    q: "Posso cancelar quando quiser?",
+    a: "Sim. A qualquer momento, com 1 clique. Sem ligação, sem fluxo de retenção, sem ginástica."
+  },
+  {
+    q: "Quais formas de pagamento?",
+    a: "Cartão, Pix e boleto. Pro plano anual, Pix tem desconto adicional."
+  },
+  {
+    q: "E se eu não gostar?",
+    a: "Você nem precisou pagar pra testar — o Free é grátis pra sempre. E se assinou o Pro: 7 dias pra pedir reembolso, sem perguntas."
+  },
+  {
+    q: "Funciona com vagas em inglês?",
+    a: "Sim, em qualquer idioma. Se a vaga está em inglês, a KORE_ otimiza em inglês. Vaga gringa funciona igual vaga BR."
   }
 ];
 ---
 
-<section id="faq" class="section-gap bg-bg reveal">
+<section id="faq" class="py-32 lg:py-48 bg-bg reveal">
   <div class="container-kore">
     <!-- Separador -->
-    <div class="divider-label mb-24">
-      <span class="w-12 h-[1px] bg-border"></span>
-      FAQ
-      <span class="flex-grow h-[1px] bg-border"></span>
+    <div class="mb-20 lg:mb-28 max-w-2xl">
+      <p class="text-mono text-accent mb-6">FAQ</p>
+      <h2 class="text-section">Dúvidas?<br/>Respostas diretas<span class="text-accent">.</span></h2>
     </div>
-
-    <h2 class="text-section mb-20 max-w-2xl leading-tight">Dúvidas? Respostas diretas<span class="text-accent">.</span></h2>
 
     <div class="max-w-3xl space-y-6">
       {faqs.map(faq => (

@@ -2,10 +2,12 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Nav from '../components/astro/Nav.astro';
 import Hero from '../components/astro/Hero.astro';
-import FeatureGrid from '../components/astro/FeatureGrid.astro';
+import PainBlock from '../components/astro/PainBlock.astro';
 import Proposal from '../components/astro/Proposal.astro';
+import FeatureGrid from '../components/astro/FeatureGrid.astro';
 import Security from '../components/astro/Security.astro';
 import Pricing from '../components/react/Pricing';
+import Objections from '../components/astro/Objections.astro';
 import Roadmap from '../components/astro/Roadmap.astro';
 import Faq from '../components/astro/Faq.astro';
 import FooterCta from '../components/astro/FooterCta.astro';
@@ -18,12 +20,14 @@ import WorkspaceKanban from '../components/react/WorkspaceKanban';
 	<Nav />
 	<main>
 		<Hero />
-		<FeatureGrid />
+		<PainBlock />
 		<Proposal />
 		<LabSimulator client:visible />
+		<FeatureGrid />
 		<WorkspaceKanban client:visible />
 		<Security />
 		<Pricing client:visible />
+		<Objections />
 		<Roadmap />
 		<Faq />
 		<FooterCta />

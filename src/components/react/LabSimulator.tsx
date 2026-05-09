@@ -60,19 +60,14 @@ export default function LabSimulator() {
   }, [showResults]);
 
   return (
-    <section id="lab" className="section-gap bg-bg reveal">
+    <section id="lab" className="py-32 lg:py-48 bg-bg reveal">
       <div className="container-kore">
-        <div className="divider-label mb-24">
-          <span className="w-12 h-[1px] bg-border"></span>
-          LAB SIMULATOR
-          <span className="flex-grow h-[1px] bg-border"></span>
-        </div>
-
-        <div className="grid lg:grid-cols-2 gap-20 items-center">
+        <div className="grid lg:grid-cols-2 gap-20 lg:gap-28 items-center">
           <div>
-            <h2 className="text-section mb-10 leading-tight">O motor que vence o silêncio do RH<span className="text-accent">.</span></h2>
-            <p className="text-body text-muted mb-12 max-w-lg leading-relaxed">
-              Cole a URL de uma vaga técnica e veja nossa infraestrutura decompor os requisitos algorítmicos e injetar os vetores semânticos necessários para sua aprovação.
+            <p className="text-[11px] font-mono text-accent uppercase tracking-widest mb-6">LAB_SIMULATOR</p>
+            <h2 className="text-section mb-8 leading-tight">Veja o score<br/>subir ao vivo<span className="text-accent">.</span></h2>
+            <p className="text-muted text-lg mb-12 leading-relaxed">
+              Cole a URL de qualquer vaga. A KORE_ analisa, reescreve e mostra o número subindo antes de você aplicar.
             </p>
 
             <form onSubmit={handleSimulate} className="relative max-w-lg">
@@ -81,12 +76,12 @@ export default function LabSimulator() {
                 value={url}
                 onChange={(e) => setUrl(e.target.value)}
                 placeholder="https://linkedin.com/jobs/..."
-                className="w-full px-6 py-5 bg-surface border border-border rounded-sm text-caption outline-none focus:border-accent transition-all font-mono tracking-tight"
+                className="w-full pl-6 pr-[110px] sm:pr-[140px] py-5 bg-surface border border-border rounded-sm text-caption outline-none focus:border-accent transition-all font-mono tracking-tight"
               />
               <button
                 type="submit"
                 disabled={isProcessing || !url}
-                className="btn-primary absolute right-3 top-3 px-6 py-2.5 text-bg text-[10px] font-bold rounded-sm transition-all disabled:opacity-50 uppercase tracking-widest"
+                className="btn-primary absolute right-3 top-3 px-4 py-2.5 sm:px-6 sm:py-2.5 text-bg text-[9px] sm:text-[10px] font-bold rounded-sm transition-all disabled:opacity-50 uppercase tracking-widest"
               >
                 {isProcessing ? 'SCANNING...' : 'SIMULAR'}
               </button>

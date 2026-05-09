@@ -52,9 +52,9 @@ export default function WorkspaceKanban() {
           <p className="text-body text-muted leading-relaxed max-w-xl">Gerencie suas candidaturas com a precisão e a física de um cockpit de elite. Reordene suas prioridades em tempo real.</p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="flex overflow-x-auto snap-x snap-mandatory md:grid md:grid-cols-3 gap-6 md:gap-8 pb-4">
           {Object.entries(columns).map(([id, items]) => (
-            <div key={id} className="bg-surface/30 border border-border p-6 rounded-sm flex flex-col min-h-[500px]">
+            <div key={id} className="min-w-[85vw] md:min-w-0 snap-center shrink-0 bg-surface/30 border border-border p-6 rounded-sm flex flex-col min-h-[500px]">
               <div className="flex items-center justify-between mb-8">
                 <h4 className="text-mono text-[10px] text-accent uppercase tracking-[0.2em] font-bold">{COLUMN_NAMES[id]}</h4>
                 <span className="text-[10px] font-mono text-faint bg-bg px-2 py-0.5 rounded-full border border-border-subtle">{items.length}</span>

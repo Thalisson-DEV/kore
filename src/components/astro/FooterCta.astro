@@ -1,201 +1,47 @@
 ---
-// FooterCta.astro
-const vagasRestantes = 47; // Atualizar manualmente conforme early adopters entram
+const vagasRestantes = 47;
 ---
 
-<section class="footer-cta reveal">
-  <!-- Hachura de fundo diferenciada -->
-  <div class="footer-cta-bg"></div>
+<section class="relative py-40 lg:py-56 overflow-hidden border-t border-border-subtle reveal">
+  <!-- Hachura de fundo -->
+  <div class="absolute inset-0 pointer-events-none" style="background-image: repeating-linear-gradient(-45deg, transparent, transparent 2px, rgba(59,130,246,0.02) 2px, rgba(59,130,246,0.02) 3px);"></div>
+  <!-- Glow central -->
+  <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-accent opacity-[0.03] blur-[160px] pointer-events-none"></div>
 
-  <!-- Separador superior com label -->
-  <div class="container-kore">
-    <div class="divider-label">
-      <span class="divider-line"></span>
-      <span>── ACESSO ANTECIPADO ──</span>
-      <span class="divider-line"></span>
-    </div>
-  </div>
-
-  <div class="container-kore footer-cta-content">
-
-    <!-- Contador de vagas -->
-    <div class="vacancy-counter">
-      <span class="vacancy-dot"></span>
-      <span class="vacancy-text">
-        <strong>{vagasRestantes}</strong> vagas beta restantes
-      </span>
+  <div class="container-kore relative z-10 flex flex-col items-center text-center">
+    <!-- Badge de urgência -->
+    <div class="inline-flex items-center gap-3 bg-danger/10 border border-danger/20 text-danger px-4 py-2 font-mono text-[11px] uppercase tracking-widest mb-12">
+      <span class="w-1.5 h-1.5 rounded-full bg-danger animate-pulse"></span>
+      {vagasRestantes} vagas beta restantes
     </div>
 
-    <!-- Headline principal -->
-    <h2 class="footer-cta-title">
-      Chegou até aqui.<br>
-      <span class="accent">Então garanta seu acesso.</span>
+    <!-- Headline enorme -->
+    <h2 class="text-section max-w-3xl mb-8">
+      Você não precisa de mais<br/>um curso de currículo<span class="text-accent">.</span>
     </h2>
 
-    <!-- Subline revisada -->
-    <p class="footer-cta-sub">
-      A lista fecha quando atingirmos a cota beta.<br>
-      Quem entra agora trava o preço de fundador para sempre.
+    <!-- Sub mínima -->
+    <p class="text-muted text-lg max-w-md mb-12 leading-relaxed">
+      8 minutos. Um link. O score subindo na tela.<br/>Antes de você aplicar.
     </p>
 
-    <!-- CTA redimensionado -->
-    <a href="#acesso" class="btn-primary btn-lg text-center flex items-center justify-center">
-      Garantir Acesso Antecipado
+    <!-- CTA -->
+    <a
+      href="#acesso"
+      class="btn-primary inline-flex items-center px-10 py-5 text-bg text-[13px] font-bold uppercase tracking-wider shadow-[0_0_60px_rgba(59,130,246,0.3)] mb-6"
+    >
+      Otimizar meu currículo grátis
     </a>
 
-    <!-- Social proof mínimo -->
-    <p class="footer-cta-proof">
-      Sem cartão. Sem compromisso. Cancele quando quiser.
+    <p class="text-[11px] font-mono text-faint uppercase tracking-widest">
+      3 otimizações por mês, pra sempre. Sem cartão.
     </p>
 
-  </div>
-
-  <!-- Separador inferior -->
-  <div class="container-kore">
-    <div class="divider-label" style="margin-top: 80px; margin-bottom: 0;">
-      <span class="divider-line"></span>
+    <!-- PS minimalista -->
+    <div class="mt-20 pt-10 border-t border-border-subtle max-w-xl">
+      <p class="text-sm text-faint leading-relaxed">
+        <span class="text-muted font-medium">PS:</span> O problema provavelmente não é seu CV. É como ele é lido por um software de filtragem que você nem sabia que existia. A KORE_ resolve isso. Sem inventar nada.
+      </p>
     </div>
   </div>
 </section>
-
-<style>
-  .footer-cta {
-    position: relative;
-    padding: 120px 0;
-    overflow: hidden;
-    background: var(--color-bg);
-  }
-
-  /* Hachura mais densa que o hero — visualmente distinta */
-  .footer-cta-bg {
-    position: absolute;
-    inset: 0;
-    background-image: repeating-linear-gradient(
-      -45deg,
-      transparent,
-      transparent 2px,
-      rgba(59, 130, 246, 0.025) 2px,
-      rgba(59, 130, 246, 0.025) 3px
-    );
-    pointer-events: none;
-  }
-
-  /* Borda superior e inferior da seção */
-  .footer-cta::before,
-  .footer-cta::after {
-    content: '';
-    position: absolute;
-    left: 0; right: 0;
-    height: 1px;
-    background: linear-gradient(
-      90deg,
-      transparent,
-      var(--color-border) 20%,
-      var(--color-border) 80%,
-      transparent
-    );
-    z-index: 2;
-  }
-  .footer-cta::before { top: 0; }
-  .footer-cta::after  { bottom: 0; }
-
-  .footer-cta-content {
-    position: relative;
-    z-index: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 24px;
-  }
-
-  /* Contador de vagas */
-  .vacancy-counter {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    background: rgba(239, 68, 68, 0.08);
-    border: 1px solid rgba(239, 68, 68, 0.2);
-    color: #ef4444;
-    padding: 8px 16px;
-    border-radius: 4px;
-    font-family: var(--font-mono);
-    font-size: 12px;
-    letter-spacing: 0.08em;
-  }
-  .vacancy-dot {
-    width: 6px; height: 6px;
-    background: #ef4444;
-    border-radius: 50%;
-    animation: pulse-red 1.5s ease-in-out infinite;
-  }
-  @keyframes pulse-red {
-    0%, 100% { opacity: 1; transform: scale(1); }
-    50%       { opacity: 0.4; transform: scale(0.85); }
-  }
-  .vacancy-text strong {
-    color: #ef4444;
-    font-weight: 700;
-  }
-
-  /* Headline */
-  .footer-cta-title {
-    font-family: var(--font-display);
-    font-size: clamp(36px, 5vw, 60px);
-    font-weight: 800;
-    line-height: 1.1;
-    letter-spacing: -0.03em;
-    color: var(--color-text);
-    max-width: 700px;
-  }
-  .footer-cta-title .accent {
-    color: var(--color-accent);
-  }
-
-  /* Subline */
-  .footer-cta-sub {
-    font-size: 16px;
-    line-height: 1.6;
-    color: var(--color-muted);
-    max-width: 480px;
-  }
-
-  /* CTA — tamanho controlado */
-  .btn-lg {
-    padding: 16px 40px;
-    font-size: 15px;
-    letter-spacing: 0.05em;
-    /* Não é enorme — é proporcional ao espaço */
-    max-width: 380px;
-    width: 100%;
-    font-weight: 700;
-    border-radius: 4px;
-    color: var(--color-bg);
-  }
-
-  /* Social proof */
-  .footer-cta-proof {
-    font-family: var(--font-mono);
-    font-size: 11px;
-    color: var(--color-faint);
-    letter-spacing: 0.06em;
-  }
-
-  /* Separador com label */
-  .divider-label {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    color: var(--color-faint);
-    font-family: var(--font-mono);
-    font-size: 10px;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    margin-bottom: 80px;
-  }
-  .divider-line {
-    flex: 1;
-    height: 1px;
-    background: var(--color-border);
-  }
-</style>

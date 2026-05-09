@@ -6,24 +6,40 @@ export default function Pricing() {
 
   const plans = [
     {
-      name: "Gratuito",
-      label: "BYOK (Soberania)",
-      status: "EM DEV.",
+      name: "Free",
+      label: "Sempre Grátis",
+      status: "GRÁTIS",
       price: 0,
+      priceLabel: "0",
       period: "/sempre",
-      features: ["Motor ATS Ilimitado", "Infraestrutura BYOK", "Local Encryption", "1 Persona Ativa"],
-      cta: "Indisponível",
-      disabled: true,
+      urgencyNote: null,
+      features: [
+        "3 otimizações por mês",
+        "Score de ATS completo",
+        "Kanban de candidaturas",
+        "Exportador de PDF"
+      ],
+      cta: "Começar grátis",
+      disabled: false,
       highlight: false
     },
     {
       name: "Kore Pro",
-      label: "Alta Performance",
+      label: "Beta — Preço Vitalício",
       status: "RECOMENDADO",
-      price: isAnnual ? 22 : 27,
+      price: isAnnual ? 11 : 14,
+      priceLabel: null,
       period: "/mês",
-      features: ["Motor IA Incluso (Haiku 4.5)", "20 Otimizações/mês", "5 Personas Ativas", "PDF Export Premium"],
-      cta: "Garantir Acesso",
+      urgencyNote: "Sobe pra R$ 27/mês quando o beta fechar",
+      features: [
+        "Otimizações ilimitadas",
+        "Personas múltiplas por currículo",
+        "Match analyzer com URL da vaga",
+        "Heatmap de relevância em tempo real",
+        "Exportador JSON Resume",
+        "Suporte prioritário"
+      ],
+      cta: "Quero entrar no beta",
       disabled: false,
       highlight: true
     },
@@ -32,8 +48,15 @@ export default function Pricing() {
       label: "Agente Autônomo",
       status: "EM DEV.",
       price: isAnnual ? 65 : 79,
+      priceLabel: null,
       period: "/mês",
-      features: ["Busca & Auto Candidatura", "Limite de 100 candidaturas/mês", "Análise Sonnet 4.6", "Suporte Prioritário 1:1"],
+      urgencyNote: null,
+      features: [
+        "Busca & Auto Candidatura",
+        "100 candidaturas/mês",
+        "Análise Sonnet 4.6",
+        "Suporte Prioritário 1:1"
+      ],
       cta: "Indisponível",
       disabled: true,
       highlight: false
@@ -41,89 +64,113 @@ export default function Pricing() {
   ];
 
   return (
-    <section id="precos" className="section-gap bg-bg reveal">
+    <section id="precos" className="py-32 lg:py-48 bg-bg reveal">
       <div className="container-kore">
-        <div className="divider-label mb-24">
-          <span className="w-12 h-[1px] bg-border"></span>
-          PREÇOS_FINANCE
-          <span className="flex-grow h-[1px] bg-border"></span>
-        </div>
-
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-12 mb-20">
+        {/* Header */}
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-10 mb-24 lg:mb-32">
           <div>
-            <h2 className="text-section max-w-xl leading-tight mb-4">Planos Disponíveis<span className="text-accent">.</span></h2>
-            <p className="text-caption text-muted font-mono uppercase tracking-widest">Câmbio ref: USD 1 = BRL 5,80</p>
+            <p className="text-[11px] font-mono text-accent uppercase tracking-widest mb-6">PREÇOS_FINANCE</p>
+            <h2 className="text-section max-w-lg">
+              Escolha seu plano<span className="text-accent">.</span>
+            </h2>
           </div>
-          
-          <div className="flex items-center gap-4 bg-surface/50 p-1 border border-border rounded-sm">
-            <button 
+
+          {/* Toggle */}
+          <div className="flex items-center gap-1 bg-surface/50 p-1 border border-border w-fit">
+            <button
               onClick={() => setIsAnnual(false)}
-              className={`px-6 py-2 text-[10px] font-mono font-bold uppercase tracking-widest transition-all ${!isAnnual ? 'bg-accent text-bg' : 'text-muted hover:text-text'}`}
+              className={`px-6 py-2 text-[10px] font-mono font-bold uppercase tracking-widest transition-all whitespace-nowrap ${!isAnnual ? 'bg-accent text-bg' : 'text-muted hover:text-text'}`}
             >
               Mensal
             </button>
-            <button 
+            <button
               onClick={() => setIsAnnual(true)}
-              className={`px-6 py-2 text-[10px] font-mono font-bold uppercase tracking-widest transition-all flex items-center gap-2 ${isAnnual ? 'bg-accent text-bg' : 'text-muted hover:text-text'}`}
+              className={`px-6 py-2 text-[10px] font-mono font-bold uppercase tracking-widest transition-all flex items-center gap-2 whitespace-nowrap ${isAnnual ? 'bg-accent text-bg' : 'text-muted hover:text-text'}`}
             >
               Anual
-              <span className={`text-[8px] px-1.5 py-0.5 rounded-full ${isAnnual ? 'bg-bg/20 text-bg' : 'bg-accent/10 text-accent'}`}>2 MESES OFF</span>
+              <span className={`text-[8px] px-1.5 py-0.5 ${isAnnual ? 'bg-bg/30 text-bg' : 'bg-accent/10 text-accent'}`}>-20%</span>
             </button>
           </div>
         </div>
 
-        <div className="grid lg:grid-cols-3 gap-8 items-stretch">
+        {/* Cards */}
+        <div className="grid lg:grid-cols-3 gap-6">
           {plans.map((plan, i) => (
-            <div 
-              key={i} 
-              className={`flex flex-col p-10 border transition-all duration-500 rounded-sm group card-hover ${plan.highlight ? 'border-accent bg-surface/40 shadow-[0_0_40px_rgba(59,130,246,0.05)] scale-[1.02]' : 'border-border bg-surface/20 opacity-90'}`}
+            <div
+              key={i}
+              className={`flex flex-col p-10 lg:p-12 border transition-all duration-300 ${
+                plan.highlight
+                  ? 'border-accent bg-surface/40 shadow-[0_0_60px_rgba(59,130,246,0.08)]'
+                  : 'border-border bg-surface/10 opacity-80'
+              }`}
             >
+              {/* Plan header */}
               <div className="flex justify-between items-start mb-10">
                 <div>
-                  <h3 className={`text-card uppercase font-bold tracking-tighter ${plan.highlight ? 'text-accent' : ''}`}>{plan.name}</h3>
-                  <p className={`text-[10px] font-mono mt-1 tracking-widest uppercase ${plan.highlight ? 'text-accent/70' : 'text-muted'}`}>{plan.label}</p>
+                  <h3 className={`text-lg font-bold tracking-tighter uppercase mb-1 ${plan.highlight ? 'text-accent' : 'text-text'}`}>
+                    {plan.name}
+                  </h3>
+                  <p className="text-[10px] font-mono text-faint uppercase tracking-widest">{plan.label}</p>
                 </div>
-                <span className={`px-2 py-1 border text-[9px] font-mono uppercase tracking-tighter ${plan.highlight ? 'border-accent bg-accent text-bg font-bold' : 'border-border text-muted'}`}>
+                <span className={`px-2 py-1 text-[9px] font-mono font-bold uppercase tracking-widest ${
+                  plan.highlight ? 'bg-accent text-bg' : 'border border-border text-faint'
+                }`}>
                   {plan.status}
                 </span>
               </div>
-              
-              <div className="mb-12 flex items-baseline gap-1">
-                <span className="text-5xl font-bold tracking-tighter">R$ </span>
-                <AnimatePresence mode="wait">
-                  <motion.span
-                    key={plan.price}
-                    initial={{ y: 10, opacity: 0 }}
-                    animate={{ y: 0, opacity: 1 }}
-                    exit={{ y: -10, opacity: 0 }}
-                    transition={{ duration: 0.2 }}
-                    className="text-5xl font-bold tracking-tighter"
-                  >
-                    {plan.price}
-                  </motion.span>
-                </AnimatePresence>
-                <span className="text-caption text-faint ml-2">{plan.period}</span>
+
+              {/* Price */}
+              <div className="mb-3">
+                <div className="flex items-baseline gap-1">
+                  <span className="text-xl font-mono text-faint">R$</span>
+                  <AnimatePresence mode="wait">
+                    <motion.span
+                      key={plan.price}
+                      initial={{ y: 8, opacity: 0 }}
+                      animate={{ y: 0, opacity: 1 }}
+                      exit={{ y: -8, opacity: 0 }}
+                      transition={{ duration: 0.15 }}
+                      className={`text-6xl font-bold tracking-tighter ${plan.highlight ? 'text-text' : 'text-muted'}`}
+                    >
+                      {plan.priceLabel ?? plan.price}
+                    </motion.span>
+                  </AnimatePresence>
+                  <span className="text-[13px] text-faint font-mono ml-1">{plan.period}</span>
+                </div>
               </div>
 
-              <ul className="space-y-5 mb-auto text-caption">
+              {plan.urgencyNote && (
+                <p className="text-[10px] font-mono text-accent mb-8 tracking-wide">{plan.urgencyNote}</p>
+              )}
+
+              {/* Features */}
+              <ul className={`space-y-4 mb-auto text-[13px] ${!plan.urgencyNote ? 'mt-6' : ''}`}>
                 {plan.features.map((feat, fi) => (
-                  <li key={fi} className={`flex items-center gap-3 ${plan.highlight ? 'text-text' : 'text-muted'}`}>
-                    <span className={plan.highlight ? 'text-accent font-bold' : 'text-faint'}>
-                      {plan.highlight ? '●' : '/'}
+                  <li key={fi} className={`flex items-start gap-3 ${plan.highlight ? 'text-text' : 'text-faint'}`}>
+                    <span className={`mt-0.5 text-xs ${plan.highlight ? 'text-accent' : 'text-faint'}`}>
+                      {plan.highlight ? '✓' : '—'}
                     </span>
                     {feat}
                   </li>
                 ))}
               </ul>
 
+              {/* CTA */}
               {plan.disabled ? (
-                <button disabled className="mt-12 w-full py-4 border border-border text-faint text-[11px] font-bold rounded-sm cursor-not-allowed uppercase tracking-widest">
+                <button
+                  disabled
+                  className="mt-12 w-full py-4 border border-border text-faint text-[11px] font-bold uppercase tracking-widest cursor-not-allowed opacity-40"
+                >
                   {plan.cta}
                 </button>
               ) : (
-                <a 
-                  href="#acesso" 
-                  className="btn-primary mt-12 w-full py-4 text-bg text-[11px] font-bold rounded-sm text-center transition-all uppercase tracking-widest shadow-[0_0_20px_rgba(59,130,246,0.2)]"
+                <a
+                  href="#acesso"
+                  className={`mt-12 w-full py-4 text-[11px] font-bold uppercase tracking-widest text-center transition-all ${
+                    plan.highlight
+                      ? 'btn-primary text-bg shadow-[0_0_30px_rgba(59,130,246,0.25)]'
+                      : 'border border-border text-muted hover:border-accent hover:text-accent'
+                  }`}
                 >
                   {plan.cta}
                 </a>

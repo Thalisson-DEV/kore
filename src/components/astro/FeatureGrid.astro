@@ -1,95 +1,88 @@
 ---
-// FeatureGrid.astro
 const features = [
   {
-    title: "Precisão Algorítmica",
-    value: "98",
+    title: "Determinístico",
+    value: "100",
     suffix: "%",
-    subtitle: "Match semântico de perfil e validação precisa de senioridade real.",
+    subtitle: "Score calculado por matemática, não por IA chutando.",
     icon: `<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>`
   },
   {
-    title: "Soberania Digital",
-    value: "100",
-    suffix: "%",
-    subtitle: "Seus dados, seu cofre. Modelo BYOK local-first com controle total.",
-    icon: `<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>`
-  },
-  {
-    title: "Criptografia de Elite",
-    value: "256",
-    suffix: "-BIT",
-    subtitle: "Criptografia AES-256-GCM em cada byte processado localmente.",
-    icon: `<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 11V7a4 4 0 118 0m-4 8v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2z"/></svg>`
-  },
-  {
-    title: "Injeção Vetorial",
-    value: "Engine",
+    title: "Invenções",
+    value: "0",
     suffix: "",
-    subtitle: "Supera filtros simples com contexto técnico e vetores semânticos.",
+    subtitle: "Validador bloqueia alterações em datas, empresas e cargos.",
+    icon: `<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636"/></svg>`
+  },
+  {
+    title: "Score ao Vivo",
+    value: "3",
+    suffix: "s",
+    subtitle: "Recalculado em tempo real após cada otimização.",
     icon: `<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>`
+  },
+  {
+    title: "Idiomas",
+    value: "3",
+    suffix: "+",
+    subtitle: "pt, en, es — vaga gringa, currículo gringo.",
+    icon: `<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129"/></svg>`
   }
 ];
 ---
 
-<section class="relative py-20 border-y border-border-subtle bg-surface/20 reveal">
-  <!-- Decorative background line -->
-  <div class="absolute top-0 left-1/2 -translate-x-1/2 w-px h-12 bg-gradient-to-b from-accent/50 to-transparent"></div>
-
+<section class="relative py-20 border-y border-border-subtle reveal">
   <div class="container-kore">
-    <div class="divider-label mb-16 justify-center">
-      <span class="w-12 h-[1px] bg-border"></span>
-      INFRAESTRUTURA_STATS
-      <span class="w-12 h-[1px] bg-border"></span>
-    </div>
+    <p class="text-mono text-faint mb-16 text-center">PRODUTO_STATS</p>
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-border border border-border rounded-sm overflow-hidden">
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-px bg-border-subtle border border-border-subtle rounded-sm overflow-hidden">
       {features.map((feat) => (
-        <div class="group relative bg-bg p-10 transition-all duration-500 hover:bg-surface/50">
-          <!-- Hover Glow Effect -->
-          <div class="absolute inset-0 bg-accent/0 group-hover:bg-accent/[0.02] transition-colors duration-500"></div>
-          
-          <div class="relative z-10 space-y-6">
-            <div class="w-10 h-10 rounded bg-accent/5 border border-accent/20 flex items-center justify-center text-accent group-hover:border-accent/50 group-hover:scale-110 transition-all duration-500 shadow-[0_0_15px_rgba(59,130,246,0.1)]">
-              <Fragment set:html={feat.icon} />
-            </div>
-
-            <div>
-              <div class="flex items-baseline gap-1 mb-2">
-                <span 
-                  class="text-3xl font-bold tracking-tighter text-text group-hover:text-accent transition-colors duration-500"
-                  data-counter={feat.value.match(/\d+/) ? feat.value : null}
-                  data-suffix={feat.suffix}
-                >
-                  {feat.value}{feat.suffix}
-                </span>
-              </div>
-              <h3 class="text-[11px] font-mono font-bold text-accent/80 uppercase tracking-[0.2em] mb-4">{feat.title}</h3>
-              <p class="text-sm text-muted leading-relaxed font-medium">{feat.subtitle}</p>
-            </div>
+        <div class="group relative bg-bg p-10 lg:p-14 transition-colors duration-300 hover:bg-surface/50">
+          <!-- Icon -->
+          <div class="w-8 h-8 flex items-center justify-center text-accent mb-8 opacity-60 group-hover:opacity-100 transition-opacity">
+            <Fragment set:html={feat.icon} />
           </div>
 
-          <!-- Bottom Border Active State -->
-          <div class="absolute bottom-0 left-0 w-0 h-[2px] bg-accent group-hover:w-full transition-all duration-700 ease-in-out"></div>
+          <!-- Big stat -->
+          <div class="flex items-baseline gap-0.5 mb-3">
+            <span
+              class="text-display font-bold text-text group-hover:text-accent transition-colors duration-500"
+              data-counter={feat.value.match(/\d+/) ? feat.value : null}
+              data-suffix={feat.suffix}
+            >
+              {feat.value}{feat.suffix}
+            </span>
+          </div>
+
+          <h3 class="text-[11px] font-mono font-bold text-accent/70 uppercase tracking-[0.2em] mb-3">{feat.title}</h3>
+          <p class="text-sm text-faint leading-relaxed">{feat.subtitle}</p>
+
+          <!-- Bottom accent -->
+          <div class="absolute bottom-0 left-0 w-0 h-[2px] bg-accent group-hover:w-full transition-all duration-700"></div>
         </div>
       ))}
     </div>
   </div>
 </section>
 
+<style>
+  .text-display {
+    font-size: clamp(36px, 5vw, 64px);
+    font-weight: 800;
+    line-height: 0.9;
+    letter-spacing: -0.04em;
+  }
+</style>
+
 <script is:inline>
-  // 2.2 Animated Counter with Intersectional Observer
   document.querySelectorAll('[data-counter]').forEach(el => {
     const target = +el.dataset.counter;
     if (isNaN(target)) return;
-
     const suffix = el.dataset.suffix || '';
     const duration = 1500;
-    
     const observer = new IntersectionObserver(([entry]) => {
       if (!entry.isIntersecting) return;
       observer.unobserve(el);
-
       const startTime = performance.now();
       const tick = (now) => {
         const progress = Math.min((now - startTime) / duration, 1);
@@ -99,7 +92,6 @@ const features = [
       };
       requestAnimationFrame(tick);
     }, { threshold: 0.5 });
-
     observer.observe(el);
   });
 </script>

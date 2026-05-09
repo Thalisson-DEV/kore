@@ -1,112 +1,152 @@
 ---
 ---
 
-<section class="relative min-h-screen lg:min-h-[100svh] flex items-center overflow-hidden">
-  <!-- 2.4 Gradient Mesh Background -->
+<section class="relative min-h-screen flex items-center overflow-hidden">
+  <!-- Gradient mesh -->
   <div class="absolute inset-0 pointer-events-none -z-10">
-    <div class="blob-1 absolute w-[600px] h-[600px] bg-accent opacity-[0.05] blur-[120px] top-[-10%] left-[-10%]"></div>
-    <div class="blob-2 absolute w-[500px] h-[500px] bg-accent-dim opacity-[0.03] blur-[100px] bottom-[-10%] right-[-10%]"></div>
+    <div class="absolute w-[700px] h-[700px] bg-accent opacity-[0.04] blur-[160px] top-[-10%] left-[-5%]"></div>
+    <div class="absolute w-[400px] h-[400px] bg-accent opacity-[0.03] blur-[120px] bottom-[-10%] right-[-5%]"></div>
   </div>
 
-  <div class="container-kore relative z-10 w-full">
-    <div class="grid lg:grid-cols-2 gap-12 items-center">
-      <!-- Coluna da Esquerda: Conteúdo -->
-      <div class="flex flex-col items-start text-left max-w-2xl">
-        
-        <!-- 2.3 Typing Effect Label -->
-        <div class="hero-label inline-flex items-center gap-2.5 px-3 py-1 bg-surface border border-border rounded-full mb-8 transition-colors duration-300">
-          <span class="w-1 h-1 rounded-full bg-accent/60 shadow-[0_0_8px_rgba(59,130,246,0.3)]"></span>
-          <span id="hero-label-text" class="text-mono text-[9px] md:text-[10px] text-muted tracking-[0.25em] uppercase font-bold" data-type="KORE_ · INFRAESTRUTURA TÉCNICA"></span>
-          <span class="cursor-blink text-accent/80 text-[10px] -ml-1.5 font-light">|</span>
+  <div class="container-kore w-full pt-20 pb-16">
+    <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+
+      <!-- Coluna esquerda: texto + CTA -->
+      <div class="flex flex-col items-start text-left">
+
+        <!-- Label -->
+        <div class="hero-label flex items-center gap-3 mb-7">
+          <span class="w-6 h-px bg-accent"></span>
+          <span class="text-[10px] font-mono text-accent uppercase tracking-widest">ATS Score Optimizer</span>
         </div>
 
-        <h1 class="hero-title text-hero mb-6 tracking-tighter text-balance">
-          Domine o ATS. Eleve sua carreira técnica<span class="text-accent">.</span>
+        <!-- Headline -->
+        <h1 class="hero-title text-[42px] md:text-[56px] lg:text-[68px] font-bold tracking-tighter leading-[1.05] mb-6">
+          Seu currículo é descartado<br/>
+          antes de um humano ler<span class="text-accent">.</span>
         </h1>
 
-        <p class="hero-sub text-lg md:text-xl text-muted mb-10 leading-relaxed max-w-xl">
-          Vença filtros algorítmicos com injeção semântica. O controle total da sua narrativa profissional, protegido por criptografia total.
+        <!-- Sub -->
+        <p class="hero-sub text-base md:text-lg text-muted mb-8 leading-relaxed max-w-md">
+          A KORE_ reescreve seu CV pra passar pelo ATS. Sem mentir. Sem chute. Sem template bonitinho.
         </p>
 
-        <div class="hero-ctas flex flex-col sm:flex-row items-center gap-5 w-full sm:w-auto mb-16">
-          <a 
-            href="#acesso" 
-            class="btn-primary w-full sm:w-auto px-10 py-4 text-bg text-body font-bold rounded-sm transition-all text-center shadow-[0_0_30px_rgba(59,130,246,0.2)] uppercase tracking-tighter"
+        <!-- CTAs -->
+        <div class="hero-ctas flex flex-col sm:flex-row items-start gap-3 mb-8">
+          <a
+            href="#acesso"
+            class="btn-primary px-7 py-3.5 text-bg text-[12px] font-bold rounded-sm transition-all shadow-[0_0_30px_rgba(59,130,246,0.2)] uppercase tracking-wider whitespace-nowrap"
           >
-            Começar Agora
+            Otimizar meu currículo grátis
           </a>
-          <a 
-            href="#lab" 
-            class="w-full sm:w-auto px-10 py-4 border border-border hover:border-muted text-text text-body font-medium rounded-sm transition-all text-center uppercase tracking-tighter flex items-center justify-center gap-2 group"
+          <a
+            href="#lab"
+            class="px-7 py-3.5 border border-border hover:border-accent/40 text-muted hover:text-text text-[12px] font-medium rounded-sm transition-all uppercase tracking-wider flex items-center gap-2 group whitespace-nowrap"
           >
-            Ver o Lab <span class="group-hover:translate-x-1 transition-transform">→</span>
+            Ver meu score de ATS
+            <span class="group-hover:translate-x-1 transition-transform">→</span>
           </a>
         </div>
 
-        <!-- Hero Badges -->
-        <div class="hero-badges flex flex-wrap items-center gap-x-8 gap-y-4 pt-10 border-t border-border-subtle w-full transition-colors duration-300">
-          <div class="flex items-center gap-2" data-tooltip="Dados encriptados localmente com AES-256">
-            <span class="text-accent text-[10px]">✓</span>
-            <span class="text-[10px] md:text-[11px] font-mono text-muted uppercase tracking-wider">Criptografia E2E</span>
+        <!-- Badges -->
+        <div class="hero-badges flex flex-wrap items-center gap-x-6 gap-y-2 pt-6 border-t border-border-subtle w-full">
+          <span class="flex items-center gap-2">
+            <span class="w-1 h-1 rounded-full bg-accent"></span>
+            <span class="text-[10px] font-mono text-faint uppercase tracking-widest">Score em tempo real</span>
+          </span>
+          <span class="flex items-center gap-2">
+            <span class="w-1 h-1 rounded-full bg-accent"></span>
+            <span class="text-[10px] font-mono text-faint uppercase tracking-widest">3 otimizações grátis/mês</span>
+          </span>
+          <span class="flex items-center gap-2">
+            <span class="w-1 h-1 rounded-full bg-accent"></span>
+            <span class="text-[10px] font-mono text-faint uppercase tracking-widest">Sem cartão</span>
+          </span>
+        </div>
+      </div>
+
+      <!-- Coluna direita: mockup -->
+      <div class="hero-visual w-full">
+        <div class="relative bg-surface/60 border border-border rounded-sm backdrop-blur-sm overflow-hidden shadow-[0_0_60px_rgba(0,0,0,0.4)]">
+          <!-- Top bar -->
+          <div class="flex items-center gap-2 px-4 py-3 border-b border-border-subtle bg-surface/40">
+            <span class="w-2 h-2 rounded-full bg-danger/60"></span>
+            <span class="w-2 h-2 rounded-full bg-warning/60"></span>
+            <span class="w-2 h-2 rounded-full bg-success/60"></span>
+            <span class="text-[10px] font-mono text-faint ml-3">kore.app / optimizer</span>
           </div>
-          <div class="flex items-center gap-2" data-tooltip="Análise semântica de senioridade">
-            <span class="text-accent text-[10px]">✓</span>
-            <span class="text-[10px] md:text-[11px] font-mono text-muted uppercase tracking-wider">Motor ATS Nativo</span>
+
+          <!-- Scores -->
+          <div class="grid grid-cols-2 divide-x divide-border">
+            <div class="p-6 flex flex-col gap-1">
+              <span class="text-[10px] font-mono text-faint uppercase tracking-widest">Antes</span>
+              <span class="text-5xl font-bold font-mono text-faint/30 tracking-tighter leading-none mt-2">41</span>
+              <span class="text-[10px] font-mono text-faint mt-1">score ATS</span>
+            </div>
+            <div class="p-6 flex flex-col gap-1 bg-accent/[0.03]">
+              <span class="text-[10px] font-mono text-accent uppercase tracking-widest">Depois</span>
+              <span class="text-5xl font-bold font-mono text-accent tracking-tighter leading-none mt-2">87</span>
+              <div class="flex items-center gap-2 mt-1">
+                <span class="text-[10px] font-mono text-accent">+46 pts</span>
+                <span class="text-[10px] font-mono text-faint">· 6 min</span>
+              </div>
+            </div>
           </div>
-          <div class="flex items-center gap-2" data-tooltip="Bring Your Own Key Model">
-            <span class="text-accent text-[10px]">✓</span>
-            <span class="text-[10px] md:text-[11px] font-mono text-muted uppercase tracking-wider">Soberania BYOK</span>
+
+          <!-- Match bar -->
+          <div class="px-6 py-4 border-t border-border-subtle">
+            <div class="flex justify-between text-[10px] font-mono text-faint mb-2">
+              <span class="uppercase tracking-widest">Match com a vaga</span>
+              <span class="text-accent font-bold">87%</span>
+            </div>
+            <div class="h-1 bg-border rounded-full overflow-hidden">
+              <div class="h-full bg-accent rounded-full" style="width: 87%"></div>
+            </div>
+          </div>
+
+          <!-- Keywords injetadas -->
+          <div class="px-6 py-4 border-t border-border-subtle">
+            <p class="text-[10px] font-mono text-faint uppercase tracking-widest mb-3">Keywords injetadas</p>
+            <div class="flex flex-wrap gap-2">
+              <span class="keyword-tag keyword-tag--accent">React 19</span>
+              <span class="keyword-tag keyword-tag--accent">TypeScript</span>
+              <span class="keyword-tag keyword-tag--accent">CI/CD</span>
+              <span class="keyword-tag">+4 mais</span>
+            </div>
           </div>
         </div>
       </div>
 
-      <!-- Coluna da Direita: Espaço para futura imagem -->
-      <div class="hidden lg:flex justify-end pointer-events-none opacity-0 lg:opacity-100 transition-opacity duration-1000">
-        <!-- Placeholder ou elemento decorativo sutil -->
-        <div class="w-full max-w-md aspect-square bg-gradient-to-tr from-accent/5 to-transparent rounded-full blur-3xl"></div>
-      </div>
     </div>
   </div>
 </section>
 
 <style>
-  /* 1.4 Staggered Reveal Animations */
-  .hero-label  { animation: fadeUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both; }
-  .hero-title  { animation: fadeUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.2s both; }
-  .hero-sub    { animation: fadeUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.3s both; }
-  .hero-ctas   { animation: fadeUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.4s both; }
-  .hero-badges { animation: fadeUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) 0.5s both; }
+  .hero-label  { animation: fadeUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) 0.05s both; }
+  .hero-title  { animation: fadeUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.15s both; }
+  .hero-sub    { animation: fadeUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.25s both; }
+  .hero-ctas   { animation: fadeUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) 0.35s both; }
+  .hero-badges { animation: fadeUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) 0.45s both; }
+  .hero-visual { animation: fadeUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.25s both; }
 
   @keyframes fadeUp {
     from { opacity: 0; transform: translateY(12px); }
     to   { opacity: 1; transform: translateY(0); }
   }
 
-  .cursor-blink {
-    animation: blink 1.2s step-end infinite;
+
+  .keyword-tag {
+    padding: 2px 8px;
+    font-size: 10px;
+    font-family: var(--font-mono);
+    color: var(--color-faint);
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
   }
-  @keyframes blink {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0; }
+
+  .keyword-tag--accent {
+    color: var(--color-accent);
+    background: rgba(59, 130, 246, 0.08);
+    border-color: rgba(59, 130, 246, 0.2);
   }
 </style>
-
-<script is:inline>
-  (function() {
-    const el = document.getElementById('hero-label-text');
-    if (!el) return;
-    
-    const fullText = el.getAttribute('data-type');
-    let index = 0;
-    el.textContent = "";
-
-    const type = () => {
-      if (index <= fullText.length) {
-        el.textContent = fullText.slice(0, index);
-        index++;
-        setTimeout(type, 50);
-      }
-    };
-    setTimeout(type, 650);
-  })();
-</script>
