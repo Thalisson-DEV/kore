@@ -1,47 +1,198 @@
 ---
-const vagasRestantes = 47;
+import FooterCtaVisual, { FooterStats } from '../react/FooterCtaVisual';
 ---
 
-<section class="relative py-40 lg:py-56 overflow-hidden border-t border-border-subtle reveal">
-  <!-- Hachura de fundo -->
-  <div class="absolute inset-0 pointer-events-none" style="background-image: repeating-linear-gradient(-45deg, transparent, transparent 2px, rgba(59,130,246,0.02) 2px, rgba(59,130,246,0.02) 3px);"></div>
-  <!-- Glow central -->
-  <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-accent opacity-[0.03] blur-[160px] pointer-events-none"></div>
+<section id="acesso" class="relative py-32 lg:py-48 overflow-hidden border-t border-border-subtle">
+  <!-- Aurora animated background -->
+  <div class="absolute inset-0 pointer-events-none -z-10 overflow-hidden">
+    <div class="aurora aurora-1"></div>
+    <div class="aurora aurora-2"></div>
+    <div class="aurora aurora-3"></div>
+  </div>
+
+  <!-- Hachura sutil -->
+  <div
+    class="absolute inset-0 pointer-events-none -z-10 opacity-60"
+    style="background-image: repeating-linear-gradient(-45deg, transparent, transparent 2px, rgba(59,130,246,0.025) 2px, rgba(59,130,246,0.025) 3px);"
+  ></div>
+
+  <!-- Spotlight central -->
+  <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[900px] -z-10 pointer-events-none">
+    <div class="w-full h-full bg-accent opacity-[0.05] blur-[180px] rounded-full"></div>
+  </div>
 
   <div class="container-kore relative z-10 flex flex-col items-center text-center">
-    <!-- Badge de urgência -->
-    <div class="inline-flex items-center gap-3 bg-danger/10 border border-danger/20 text-danger px-4 py-2 font-mono text-[11px] uppercase tracking-widest mb-12">
-      <span class="w-1.5 h-1.5 rounded-full bg-danger animate-pulse"></span>
-      {vagasRestantes} vagas beta restantes
-    </div>
 
-    <!-- Headline enorme -->
-    <h2 class="text-section max-w-3xl mb-8">
-      Você não precisa de mais<br/>um curso de currículo<span class="text-accent">.</span>
+    <!-- Live seats counter (React island) -->
+    <FooterCtaVisual client:visible />
+
+    <!-- Eyebrow label -->
+    <p class="divider-label mb-6 justify-center">
+      <span class="w-8 h-px bg-faint"></span>
+      <span>último passo</span>
+      <span class="w-8 h-px bg-faint"></span>
+    </p>
+
+    <!-- Headline gigante -->
+    <h2 class="text-section max-w-4xl mb-8 text-balance">
+      Chegou até aqui<span class="text-accent">?</span><br/>
+      <span class="text-muted font-bold">Então é porque você</span><br/>
+      sabe que vai fazer diferença<span class="text-accent">.</span>
     </h2>
 
     <!-- Sub mínima -->
     <p class="text-muted text-lg max-w-md mb-12 leading-relaxed">
-      8 minutos. Um link. O score subindo na tela.<br/>Antes de você aplicar.
+      8 minutos. Um link. O score subindo na tela.<br/>
+      <span class="text-text font-medium">Antes de você aplicar.</span>
     </p>
 
-    <!-- CTA -->
-    <a
-      href="#acesso"
-      class="btn-primary inline-flex items-center px-10 py-5 text-bg text-[13px] font-bold uppercase tracking-wider shadow-[0_0_60px_rgba(59,130,246,0.3)] mb-6"
-    >
-      Otimizar meu currículo grátis
-    </a>
+    <!-- CTA primário com ring orbital -->
+    <div class="relative mb-6">
+      <!-- Ring orbital pulsante -->
+      <div class="cta-orbit-ring"></div>
+      <a
+        href="#acesso"
+        class="cta-mega group relative inline-flex items-center justify-center gap-3 px-12 py-6 text-bg text-[14px] font-bold uppercase tracking-wider"
+      >
+        <span class="relative z-10 flex items-center gap-3">
+          Garantir minha vaga beta
+          <svg class="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1.5" viewBox="0 0 16 16" fill="none">
+            <path d="M3 8h10m0 0L9 4m4 4l-4 4" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+      </a>
+    </div>
 
-    <p class="text-[11px] font-mono text-faint uppercase tracking-widest">
-      3 otimizações por mês, pra sempre. Sem cartão.
+    <!-- Last objection handler -->
+    <p class="text-[11px] font-mono text-faint uppercase tracking-widest mb-16">
+      Sem cartão · Sem trial · Sem letra miúda
     </p>
+
+    <!-- Stats compactos como prova social -->
+    <FooterStats client:visible />
 
     <!-- PS minimalista -->
-    <div class="mt-20 pt-10 border-t border-border-subtle max-w-xl">
+    <div class="mt-20 max-w-xl">
       <p class="text-sm text-faint leading-relaxed">
-        <span class="text-muted font-medium">PS:</span> O problema provavelmente não é seu CV. É como ele é lido por um software de filtragem que você nem sabia que existia. A KORE_ resolve isso. Sem inventar nada.
+        <span class="text-muted font-medium">PS:</span> O problema provavelmente não é seu CV — é como ele é lido por um software de filtragem que você nem sabia que existia. A KORE_ resolve isso. Sem inventar nada.
       </p>
     </div>
+
   </div>
 </section>
+
+<style>
+  /* Aurora animated mesh */
+  .aurora {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(140px);
+    opacity: 0.18;
+    will-change: transform;
+  }
+  .aurora-1 {
+    width: 50vw; height: 50vw;
+    background: var(--color-accent);
+    top: -10%; left: -10%;
+    animation: aurora-drift-1 18s ease-in-out infinite;
+  }
+  .aurora-2 {
+    width: 45vw; height: 45vw;
+    background: var(--color-accent-dim);
+    bottom: -15%; right: -10%;
+    animation: aurora-drift-2 22s ease-in-out infinite;
+    opacity: 0.15;
+  }
+  .aurora-3 {
+    width: 30vw; height: 30vw;
+    background: var(--color-accent);
+    top: 30%; left: 50%;
+    transform: translateX(-50%);
+    animation: aurora-drift-3 20s ease-in-out infinite;
+    opacity: 0.1;
+  }
+
+  @keyframes aurora-drift-1 {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    50%      { transform: translate(40px, 30px) scale(1.1); }
+  }
+  @keyframes aurora-drift-2 {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    50%      { transform: translate(-50px, -20px) scale(1.15); }
+  }
+  @keyframes aurora-drift-3 {
+    0%, 100% { transform: translateX(-50%) translateY(0) scale(1); }
+    50%      { transform: translateX(-50%) translateY(-30px) scale(1.05); }
+  }
+
+  /* CTA mega — versão do footer */
+  .cta-mega {
+    background: var(--color-accent);
+    color: var(--color-bg);
+    border-radius: 6px;
+    box-shadow:
+      0 0 0 1px rgba(59, 130, 246, 0.4),
+      0 16px 48px -12px rgba(59, 130, 246, 0.6),
+      0 0 80px -10px rgba(59, 130, 246, 0.5);
+    transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease;
+    overflow: hidden;
+    isolation: isolate;
+  }
+  .cta-mega::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(105deg, transparent 35%, rgba(255,255,255,0.4) 50%, transparent 65%);
+    transform: translateX(-100%);
+    transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .cta-mega:hover {
+    transform: translateY(-3px);
+    box-shadow:
+      0 0 0 1px rgba(59, 130, 246, 0.6),
+      0 24px 60px -14px rgba(59, 130, 246, 0.7),
+      0 0 100px -10px rgba(59, 130, 246, 0.65);
+  }
+  .cta-mega:hover::before {
+    transform: translateX(100%);
+  }
+
+  /* Ring orbital pulsante atrás do CTA */
+  .cta-orbit-ring {
+    position: absolute;
+    top: 50%; left: 50%;
+    width: 100%;
+    height: 100%;
+    transform: translate(-50%, -50%);
+    border-radius: 999px;
+    pointer-events: none;
+  }
+  .cta-orbit-ring::before,
+  .cta-orbit-ring::after {
+    content: '';
+    position: absolute;
+    inset: -8px;
+    border-radius: 999px;
+    border: 1px solid rgba(59, 130, 246, 0.3);
+    animation: orbit-pulse 2.4s ease-out infinite;
+  }
+  .cta-orbit-ring::after {
+    animation-delay: 1.2s;
+  }
+
+  @keyframes orbit-pulse {
+    0% {
+      inset: -4px;
+      opacity: 0.6;
+    }
+    100% {
+      inset: -32px;
+      opacity: 0;
+    }
+  }
+
+  /* Justify divider-label content */
+  .divider-label.justify-center {
+    justify-content: center;
+  }
+</style>
