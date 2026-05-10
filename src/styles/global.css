@@ -194,6 +194,74 @@
   100% { left: 200%; }
 }
 
+/* Fix autofill — navegador (Chrome/Safari/Edge) aplica bg branco/amarelo
+   por padrão. Forçar cores do tema. */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+  -webkit-text-fill-color: var(--color-text) !important;
+  -webkit-box-shadow: 0 0 0 1000px var(--color-surface) inset !important;
+  box-shadow: 0 0 0 1000px var(--color-surface) inset !important;
+  caret-color: var(--color-text) !important;
+  transition: background-color 9999s ease-in-out 0s;
+}
+
+/* Lab Simulator — CTA + pulse acento */
+.lab-cta {
+  background: var(--color-accent);
+  color: var(--color-bg);
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  box-shadow:
+    0 0 0 1px rgba(59, 130, 246, 0.3),
+    0 8px 24px -8px rgba(59, 130, 246, 0.45);
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s ease;
+}
+.lab-cta::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(105deg, transparent 35%, rgba(255, 255, 255, 0.3) 50%, transparent 65%);
+  transform: translateX(-100%);
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none;
+}
+.lab-cta:not(:disabled):hover {
+  transform: translateY(-1px);
+  box-shadow:
+    0 0 0 1px rgba(59, 130, 246, 0.5),
+    0 12px 28px -10px rgba(59, 130, 246, 0.55);
+}
+.lab-cta:not(:disabled):hover::before {
+  transform: translateX(100%);
+}
+
+.lab-pulse {
+  position: relative;
+  color: var(--color-accent);
+  display: inline-block;
+}
+.lab-pulse::after {
+  content: '';
+  position: absolute;
+  left: -2%;
+  right: -2%;
+  bottom: 0.05em;
+  height: 6px;
+  background: var(--color-accent);
+  opacity: 0.18;
+  border-radius: 2px;
+  animation: lab-pulse-glow 2.4s ease-in-out infinite;
+}
+@keyframes lab-pulse-glow {
+  0%, 100% { opacity: 0.15; }
+  50%      { opacity: 0.4; }
+}
+
 /* Escala Tipográfica Customizada */
 .text-hero {
   font-size: clamp(52px, 9vw, 116px);

@@ -1,61 +1,245 @@
 ---
+const steps = [
+  {
+    num: '01',
+    tag: 'captura',
+    title: 'Cola a URL da vaga',
+    body: 'O motor extrai requisitos, soft-signals e keywords críticas — sem você decifrar.',
+    stat: { value: '~23', unit: 'keywords/vaga' },
+  },
+  {
+    num: '02',
+    tag: 'diagnóstico',
+    title: 'Onde seu CV está fraco',
+    body: 'Compara vetores semânticos da vaga com o que o ATS lê do seu CV. Sem chute.',
+    stat: { value: '6s', unit: 'score determinístico' },
+  },
+  {
+    num: '03',
+    tag: 'tradução',
+    title: 'Injeção semântica',
+    body: 'Cada keyword é citável: aponta a experiência que justifica. Bloqueia invenções.',
+    stat: { value: '0', unit: 'invenções' },
+  },
+  {
+    num: '04',
+    tag: 'aplicação',
+    title: 'Exporta · acompanha',
+    body: 'PDF, JSON ou HTML. A vaga vai pro Workspace — kanban privado até o callback.',
+    stat: { value: '3', unit: 'formatos export' },
+  },
+];
 ---
 
-<section id="proposito" class="section-gap bg-bg reveal">
+<section id="proposito" class="relative py-28 lg:py-40 overflow-hidden reveal">
+
+  <!-- Background grid sutil -->
+  <div
+    class="absolute inset-0 pointer-events-none -z-10 opacity-[0.35]"
+    style="background-image: linear-gradient(rgba(228,228,240,0.025) 1px, transparent 1px), linear-gradient(90deg, rgba(228,228,240,0.025) 1px, transparent 1px); background-size: 80px 80px; mask-image: radial-gradient(ellipse 70% 50% at 50% 50%, black 30%, transparent 80%);"
+  ></div>
+
   <div class="container-kore">
+
     <!-- Header -->
-    <div class="mb-24 lg:mb-32 max-w-3xl">
-      <p class="text-mono text-accent mb-6">COMO_FUNCIONA</p>
-      <h2 class="text-section">
-        Diagnóstico<br/>vira tratamento<span class="text-accent">.</span>
+    <div class="mb-20 lg:mb-28 max-w-3xl">
+      <p class="divider-label mb-6">
+        <span class="w-8 h-px bg-faint"></span>
+        <span>como_funciona</span>
+      </p>
+      <h2 class="text-section mb-6 text-balance">
+        Da URL ao callback<span class="text-accent">.</span><br/>
+        4 etapas. Sem mistério.
       </h2>
+      <p class="text-lg text-muted leading-relaxed max-w-2xl">
+        O motor que reescreve seu CV não é um modelo gerativo solto.
+        <span class="text-text font-medium">É um pipeline com validação, injeção semântica e acompanhamento.</span>
+        Cada decisão é citável.
+      </p>
     </div>
 
-    <!-- Steps — horizontal flow -->
-    <div class="relative">
-      <!-- Connecting line (desktop) -->
-      <div class="hidden lg:block absolute top-8 left-0 right-0 h-px bg-border" style="top: 2rem;"></div>
+    <!-- Steps grid -->
+    <div id="steps-container" class="relative">
 
-      <div class="grid lg:grid-cols-3 gap-12 lg:gap-8">
-        <!-- Step 01 -->
-        <div class="relative">
-          <div class="flex items-center gap-4 mb-10">
-            <div class="relative z-10 w-16 h-16 flex items-center justify-center bg-bg border border-accent text-accent font-mono text-sm font-bold shadow-[0_0_24px_rgba(59,130,246,0.15)]">
-              01
+      <!-- Connecting line (desktop only, atrás dos cards) -->
+      <div class="hidden lg:block absolute top-[88px] left-0 right-0 h-px pointer-events-none">
+        <div class="absolute inset-0 bg-border-subtle"></div>
+        <div id="steps-progress" class="absolute inset-y-0 left-0 w-0 bg-gradient-to-r from-accent-dim via-accent to-accent transition-[width] duration-1000 ease-out"></div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-4 gap-3 lg:gap-4 items-stretch">
+        {steps.map((step, i) => (
+          <article
+            class="step-card group relative bg-surface/40 border border-border-subtle hover:border-accent/30 transition-all duration-300 p-6 lg:p-7 flex flex-col h-full"
+            style={`--step-i: ${i};`}
+          >
+            <!-- Header: number + tag -->
+            <div class="flex items-center gap-3 mb-6">
+              <span class="step-num relative z-10 inline-flex items-center justify-center w-10 h-10 bg-bg border border-border text-text font-mono text-sm font-bold rounded-sm">
+                {step.num}
+              </span>
+              <span class="text-[10px] font-mono text-faint uppercase tracking-widest">[{step.tag}]</span>
             </div>
-          </div>
-          <h3 class="text-card mb-4">Cola o Link</h3>
-          <p class="text-muted leading-relaxed">
-            LinkedIn, Glassdoor, Gupy — você cola a URL da vaga. A KORE_ extrai o que o ATS vai procurar.
-          </p>
+
+            <!-- Mini visual (varia por step) -->
+            <div class="mb-6 h-20 flex items-center">
+              {i === 0 && (
+                <!-- Browser URL bar mock -->
+                <div class="w-full bg-bg/60 border border-border-subtle rounded-sm overflow-hidden">
+                  <div class="flex items-center gap-1.5 px-2.5 py-1.5 border-b border-border-subtle">
+                    <span class="w-1 h-1 rounded-full bg-danger/40"></span>
+                    <span class="w-1 h-1 rounded-full bg-warning/40"></span>
+                    <span class="w-1 h-1 rounded-full bg-success/40"></span>
+                  </div>
+                  <div class="px-3 py-2.5 flex items-center gap-2">
+                    <svg class="w-3 h-3 text-faint flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/>
+                    </svg>
+                    <span class="text-[10px] font-mono text-muted truncate">linkedin.com/jobs/<span class="text-accent">react-sr-2026</span></span>
+                  </div>
+                </div>
+              )}
+
+              {i === 1 && (
+                <!-- Match progress -->
+                <div class="w-full">
+                  <div class="flex items-baseline justify-between mb-2">
+                    <span class="text-[10px] font-mono text-faint uppercase tracking-widest">match atual</span>
+                    <span class="text-2xl font-mono font-bold text-text tabular-nums">47<span class="text-faint text-base">%</span></span>
+                  </div>
+                  <div class="h-1.5 bg-border/60 rounded-full overflow-hidden">
+                    <div class="step-bar h-full bg-gradient-to-r from-warning to-accent rounded-full" style="width: 47%;"></div>
+                  </div>
+                  <p class="text-[10px] font-mono text-faint uppercase tracking-widest mt-2">12 keywords detectadas · 11 faltando</p>
+                </div>
+              )}
+
+              {i === 2 && (
+                <!-- Keywords sendo injetadas -->
+                <div class="w-full flex flex-wrap gap-1.5">
+                  <span class="px-2 py-0.5 text-[10px] font-mono text-accent bg-accent/[0.08] border border-accent rounded-sm">+ React 19</span>
+                  <span class="px-2 py-0.5 text-[10px] font-mono text-accent bg-accent/[0.08] border border-accent rounded-sm">+ Suspense</span>
+                  <span class="px-2 py-0.5 text-[10px] font-mono text-accent bg-accent/[0.08] border border-accent rounded-sm">+ A/B test</span>
+                  <span class="px-2 py-0.5 text-[10px] font-mono text-success bg-success/[0.08] border border-success rounded-sm flex items-center gap-1">
+                    <svg class="w-2.5 h-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+                    </svg>
+                    citável
+                  </span>
+                </div>
+              )}
+
+              {i === 3 && (
+                <!-- Mini kanban -->
+                <div class="w-full grid grid-cols-3 gap-1">
+                  <div class="bg-bg/60 border border-border-subtle rounded-sm p-1.5 flex flex-col gap-1">
+                    <span class="text-[8px] font-mono text-faint uppercase">aplicado</span>
+                    <div class="h-1 bg-border/60 rounded-full"></div>
+                    <div class="h-1 bg-border/60 rounded-full w-2/3"></div>
+                  </div>
+                  <div class="bg-bg/60 border border-accent rounded-sm p-1.5 flex flex-col gap-1">
+                    <span class="text-[8px] font-mono text-accent uppercase">entrevista</span>
+                    <div class="h-1 bg-accent/40 rounded-full"></div>
+                    <div class="h-1 bg-accent/40 rounded-full w-3/4"></div>
+                  </div>
+                  <div class="bg-bg/60 border border-border-subtle rounded-sm p-1.5 flex flex-col gap-1">
+                    <span class="text-[8px] font-mono text-faint uppercase">offer</span>
+                    <div class="h-1 bg-border/60 rounded-full w-1/2"></div>
+                  </div>
+                </div>
+              )}
+            </div>
+
+            <!-- Title + body -->
+            <h3 class="text-lg lg:text-xl font-bold text-text leading-snug mb-3">{step.title}</h3>
+            <p class="text-sm text-muted leading-relaxed">{step.body}</p>
+
+            <!-- Stat footer (sempre na base do card) -->
+            <div class="mt-auto pt-5 border-t border-border-subtle flex items-baseline gap-2">
+              <span class="text-2xl font-bold font-mono text-accent tabular-nums tracking-tighter leading-none">
+                {step.stat.value}
+              </span>
+              <span class="text-[10px] font-mono text-faint uppercase tracking-widest">{step.stat.unit}</span>
+            </div>
+
+            <!-- Hover accent -->
+            <div class="absolute bottom-0 left-0 w-0 h-px bg-accent group-hover:w-full transition-all duration-500"></div>
+          </article>
+        ))}
+      </div>
+    </div>
+
+    <!-- Bridge / closing -->
+    <div class="mt-20 lg:mt-24 max-w-3xl">
+      <div class="flex items-start gap-6">
+        <div class="hidden lg:flex flex-col items-center pt-2">
+          <div class="w-px h-12 bg-gradient-to-b from-transparent to-accent"></div>
+          <div class="w-2 h-2 rounded-full bg-accent shadow-[0_0_12px_rgba(59,130,246,0.6)]"></div>
         </div>
-
-        <!-- Step 02 -->
-        <div class="relative">
-          <div class="flex items-center gap-4 mb-10">
-            <div class="relative z-10 w-16 h-16 flex items-center justify-center bg-bg border border-border text-muted font-mono text-sm font-bold">
-              02
-            </div>
-          </div>
-          <h3 class="text-card mb-4">Score + Reescrita</h3>
-          <p class="text-muted leading-relaxed">
-            Identifica o que está quebrando seu score e reescreve cada seção — citando qual experiência sua justifica cada mudança.
+        <div class="flex-1">
+          <p class="text-xl md:text-2xl font-bold text-text leading-snug mb-3 text-balance">
+            Não é magia. <span class="text-muted font-medium">É engenharia.</span>
           </p>
-        </div>
-
-        <!-- Step 03 -->
-        <div class="relative">
-          <div class="flex items-center gap-4 mb-10">
-            <div class="relative z-10 w-16 h-16 flex items-center justify-center bg-bg border border-border text-muted font-mono text-sm font-bold">
-              03
-            </div>
-          </div>
-          <h3 class="text-card mb-4">Score Recalculado</h3>
-          <p class="text-muted leading-relaxed">
-            O número sobe na tela. Você vê antes de aplicar — não depois de três dias rezando por uma resposta.
+          <p class="text-sm text-faint leading-relaxed max-w-xl">
+            Score determinístico, validação de invenções e citação de evidência em cada keyword reescrita.
+            <a href="#lab" class="text-accent hover:text-text transition-colors underline-offset-4 hover:underline">Veja rodando no Lab →</a>
           </p>
         </div>
       </div>
     </div>
+
   </div>
 </section>
+
+<style>
+  /* Stagger reveal nos steps quando seção entra em viewport */
+  .step-card {
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1) calc(var(--step-i, 0) * 0.12s),
+                transform 0.6s cubic-bezier(0.16, 1, 0.3, 1) calc(var(--step-i, 0) * 0.12s),
+                border-color 0.3s ease;
+  }
+  .reveal.active .step-card {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Step number ganha accent quando ativo */
+  .reveal.active .step-card .step-num {
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+    box-shadow: 0 0 16px rgba(59, 130, 246, 0.2);
+    transition: all 0.4s ease calc(var(--step-i, 0) * 0.12s + 0.2s);
+  }
+
+  /* Mini bar do step 02 — anima quando ativo */
+  .step-bar {
+    width: 0% !important;
+    transition: width 1.2s cubic-bezier(0.16, 1, 0.3, 1) calc(var(--step-i, 0) * 0.12s + 0.4s);
+  }
+  .reveal.active .step-bar {
+    width: 47% !important;
+  }
+</style>
+
+<script is:inline>
+  // Anima a linha de progresso quando seção entra na viewport
+  const proposalSection = document.getElementById('proposito');
+  const stepsProgress = document.getElementById('steps-progress');
+
+  if (proposalSection && stepsProgress) {
+    const obs = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            stepsProgress.style.width = '100%';
+            obs.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.25 }
+    );
+    obs.observe(proposalSection);
+  }
+</script>

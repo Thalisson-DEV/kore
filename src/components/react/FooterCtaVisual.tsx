@@ -15,7 +15,7 @@ const STATS: Stat[] = [
   { label: 'Tempo médio', value: 6, suffix: ' min' },
 ];
 
-function CountUp({ to, suffix = '', prefix = '', duration = 1.6 }: { to: number; suffix?: string; prefix?: string; duration?: number }) {
+export function CountUp({ to, suffix = '', prefix = '', duration = 1.6 }: { to: number; suffix?: string; prefix?: string; duration?: number }) {
   const [val, setVal] = useState(0);
   const ref = useRef<HTMLSpanElement>(null);
   const inView = useInView(ref, { once: true, margin: '-50px' });
