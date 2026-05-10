@@ -383,7 +383,7 @@ function ResultState({ job, animatedScore }: { job: JobExample; animatedScore: n
             </span>
           </div>
         </div>
-        <div className="mt-5 inline-flex items-center gap-2 px-3 py-1.5 bg-success/10 border border-success/30 rounded-full">
+        <div className="mt-5 inline-flex items-center gap-2 px-3 py-1.5 bg-success/10 border border-success rounded-full">
           <span className="text-[11px] font-mono text-success font-bold">+{delta} pts</span>
           <span className="text-[10px] font-mono text-success/60">vs. {job.beforeScore}</span>
         </div>

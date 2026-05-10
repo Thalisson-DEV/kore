@@ -1,7 +1,7 @@
 ---
 ---
 
-<section id="roadmap" class="py-32 lg:py-48 hatch-bg border-y border-border-subtle reveal">
+<section id="roadmap" class="relative py-32 lg:py-48 hatch-bg reveal">
   <div class="container-kore">
     <!-- Header -->
     <div class="mb-24 lg:mb-32 max-w-2xl">
@@ -13,10 +13,10 @@
 
     <!-- Timeline -->
     <div class="relative flex flex-col md:flex-row gap-16 md:gap-0">
-      <!-- Linha conectora desktop -->
-      <div class="absolute top-8 left-0 w-full h-px bg-border hidden md:block"></div>
+      <!-- Linha conectora desktop (tracejada) -->
+      <div class="absolute top-8 left-0 w-full border-t border-dashed border-border hidden md:block"></div>
 
-      <!-- Etapa 1 — Ativa -->
+      <!-- Etapa 1 — Ativa (mantém solid, hierarquia) -->
       <div class="flex-1 relative z-10 md:pr-12">
         <div class="w-16 h-16 bg-bg border border-accent flex items-center justify-center mb-10 shadow-[0_0_24px_rgba(59,130,246,0.15)]">
           <span class="text-[11px] font-mono text-accent font-bold">01</span>
@@ -28,7 +28,7 @@
 
       <!-- Etapa 2 -->
       <div class="flex-1 relative z-10 md:px-8">
-        <div class="w-12 h-12 bg-bg border border-border flex items-center justify-center mb-10">
+        <div class="w-12 h-12 bg-bg border border-dashed border-border flex items-center justify-center mb-10">
           <span class="text-[11px] font-mono text-faint font-bold">02</span>
         </div>
         <p class="text-mono text-faint mb-4">Q3 2026</p>
@@ -38,7 +38,7 @@
 
       <!-- Etapa 3 -->
       <div class="flex-1 relative z-10 md:px-8">
-        <div class="w-12 h-12 bg-bg border border-border flex items-center justify-center mb-10">
+        <div class="w-12 h-12 bg-bg border border-dashed border-border flex items-center justify-center mb-10">
           <span class="text-[11px] font-mono text-faint font-bold">03</span>
         </div>
         <p class="text-mono text-faint mb-4">2027</p>
@@ -48,7 +48,7 @@
 
       <!-- Marco final -->
       <div class="flex-1 relative z-10 md:pl-8">
-        <div class="w-12 h-12 bg-surface border border-border-subtle flex items-center justify-center mb-10">
+        <div class="w-12 h-12 bg-surface border border-dashed border-border flex items-center justify-center mb-10">
           <span class="text-accent text-sm">★</span>
         </div>
         <p class="text-mono text-faint mb-4">Goal</p>

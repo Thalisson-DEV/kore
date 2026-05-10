@@ -31,11 +31,15 @@ const features = [
 ];
 ---
 
-<section class="relative py-20 border-y border-border-subtle reveal">
+<section class="relative py-20 reveal bg-dot-grid">
   <div class="container-kore">
     <p class="text-mono text-faint mb-16 text-center">PRODUTO_STATS</p>
 
-    <div class="grid grid-cols-2 lg:grid-cols-4 gap-px bg-border-subtle border border-border-subtle rounded-sm overflow-hidden">
+    <div class="dashed-card-grid mobile-2col relative grid-cols-2 lg:grid-cols-4 border border-dashed border-border rounded-sm overflow-hidden">
+      <span class="cross-marker corner-tl"></span>
+      <span class="cross-marker corner-tr"></span>
+      <span class="cross-marker corner-bl"></span>
+      <span class="cross-marker corner-br"></span>
       {features.map((feat) => (
         <div class="group relative bg-bg p-10 lg:p-14 transition-colors duration-300 hover:bg-surface/50">
           <!-- Icon -->

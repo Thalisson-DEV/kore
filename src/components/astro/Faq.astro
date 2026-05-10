@@ -35,7 +35,7 @@ const faqs = [
 ];
 ---
 
-<section id="faq" class="py-32 lg:py-48 bg-bg reveal">
+<section id="faq" class="relative py-32 lg:py-48 bg-bg reveal">
   <div class="container-kore">
     <!-- Separador -->
     <div class="mb-20 lg:mb-28 max-w-2xl">
@@ -45,7 +45,7 @@ const faqs = [
 
     <div class="max-w-3xl space-y-6">
       {faqs.map(faq => (
-        <details class="group border border-border bg-surface/10 rounded-sm overflow-hidden transition-all hover:border-border-subtle">
+        <details class="group border border-dashed border-border bg-surface/10 rounded-sm overflow-hidden transition-all hover:border-solid hover:border-accent/30">
           <summary class="flex items-center justify-between p-8 cursor-pointer list-none hover:bg-surface/30 transition-colors">
             <span class="text-body font-semibold pr-8 leading-tight">{faq.q}</span>
             <span class="text-accent text-2xl group-open:rotate-45 transition-transform duration-500 inline-block font-mono">+</span>

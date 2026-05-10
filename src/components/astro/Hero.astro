@@ -3,17 +3,15 @@ import HeroVisual from '../react/HeroVisual';
 ---
 
 <section class="relative min-h-[100svh] flex items-center overflow-hidden pt-24 lg:pt-28 pb-20 lg:pb-32">
-  <!-- Grid pattern -->
+
+  <!-- Glow radial: inferior-direito → centro (azul accent) -->
+  <div class="hero-radial-glow"></div>
+
+  <!-- Grid pattern sutil -->
   <div
     class="absolute inset-0 pointer-events-none -z-10 opacity-[0.4]"
     style="background-image: linear-gradient(rgba(228,228,240,0.025) 1px, transparent 1px), linear-gradient(90deg, rgba(228,228,240,0.025) 1px, transparent 1px); background-size: 56px 56px; mask-image: radial-gradient(ellipse 70% 60% at 50% 30%, black 30%, transparent 80%);"
   ></div>
-
-  <!-- Aurora glow -->
-  <div class="absolute inset-0 pointer-events-none -z-10 overflow-hidden">
-    <div class="absolute w-[800px] h-[800px] bg-accent opacity-[0.06] blur-[180px] top-[-20%] left-[-10%] rounded-full"></div>
-    <div class="absolute w-[500px] h-[500px] bg-accent-dim opacity-[0.05] blur-[140px] top-[10%] right-[-5%] rounded-full"></div>
-  </div>
 
   <div class="container-kore w-full relative z-10">
     <div class="grid lg:grid-cols-[1.1fr_1fr] gap-14 lg:gap-20 items-center">
@@ -22,29 +20,26 @@ import HeroVisual from '../react/HeroVisual';
       <div class="flex flex-col items-start text-left">
 
         <!-- Live social proof badge -->
-        <div class="hero-eyebrow inline-flex items-center gap-2 px-3 py-1.5 mb-8 bg-surface/60 border border-border rounded-full backdrop-blur-sm">
+        <div class="hero-eyebrow inline-flex items-center gap-2 px-3 py-1.5 mb-8 bg-surface/60 border border-dashed border-border rounded-full backdrop-blur-sm">
           <span class="relative flex w-1.5 h-1.5">
             <span class="absolute inline-flex w-full h-full rounded-full bg-success opacity-75 animate-ping"></span>
             <span class="relative inline-flex w-1.5 h-1.5 rounded-full bg-success"></span>
           </span>
           <span class="text-[10px] font-mono text-muted uppercase tracking-widest">
-            <span class="text-text font-bold">1.247</span> devs otimizaram esta semana
+            <span class="text-text font-bold">0</span> devs otimizaram esta semana
           </span>
         </div>
 
-        <!-- Headline -->
+        <!-- Headline 2-linhas (estilo AbacatePay) -->
         <h1 class="hero-title text-[clamp(40px,7vw,76px)] font-bold tracking-tighter leading-[1.02] mb-6 text-balance">
-          <span class="block">Seu currículo é</span>
-          <span class="block">
-            <span class="hero-strike">descartado</span>
-          </span>
-          <span class="block">antes do RH abrir<span class="text-accent">.</span></span>
+          <span class="block">Vença o ATS.</span>
+          <span class="block">Antes do RH <span class="pain-underline">abrir</span>.</span>
         </h1>
 
         <!-- Sub -->
-        <p class="hero-sub text-lg text-muted mb-10 leading-relaxed max-w-[440px]">
-          88% das candidaturas morrem no <span class="text-text font-medium">filtro ATS</span>.
-          A KORE_ reescreve seu CV para passar — sem mentir, sem chute, sem template bonitinho.
+        <p class="hero-sub text-lg text-muted mb-10 leading-relaxed max-w-[460px]">
+          Motor de otimização ATS com injeção semântica de keywords.
+          <span class="text-text font-medium">Seu currículo passa</span> antes de qualquer humano ler.
         </p>
 
         <!-- CTAs -->
@@ -54,7 +49,7 @@ import HeroVisual from '../react/HeroVisual';
             class="cta-primary group relative inline-flex items-center justify-center px-7 py-4 text-bg text-[12px] font-bold uppercase tracking-wider whitespace-nowrap"
           >
             <span class="relative z-10 flex items-center gap-2">
-              Otimizar meu currículo grátis
+              Otimizar grátis
               <svg class="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-1" viewBox="0 0 16 16" fill="none">
                 <path d="M3 8h10m0 0L9 4m4 4l-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
@@ -62,41 +57,43 @@ import HeroVisual from '../react/HeroVisual';
           </a>
           <a
             href="#lab"
-            class="group inline-flex items-center justify-center gap-2 px-6 py-4 border border-border hover:border-accent/50 text-muted hover:text-text text-[12px] font-medium uppercase tracking-wider transition-all whitespace-nowrap"
+            class="cta-link group inline-flex items-center justify-center gap-2 px-4 py-4 text-muted hover:text-text text-[12px] font-medium uppercase tracking-wider transition-colors whitespace-nowrap"
           >
-            <span class="relative flex w-1.5 h-1.5">
-              <span class="absolute inline-flex w-full h-full rounded-full bg-accent opacity-60 animate-ping"></span>
-              <span class="relative inline-flex w-1.5 h-1.5 rounded-full bg-accent"></span>
-            </span>
-            Testar score grátis
+            Por que usar?
+            <svg class="w-3 h-3 opacity-50 group-hover:opacity-100 transition-opacity" viewBox="0 0 16 16" fill="none">
+              <path d="M6 12l4-4-4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
           </a>
         </div>
 
-        <!-- Trust strip -->
-        <div class="hero-badges flex flex-wrap items-center gap-x-6 gap-y-3 pt-8 border-t border-border-subtle w-full">
-          <div class="flex items-center gap-2">
-            <svg class="w-3.5 h-3.5 text-accent" viewBox="0 0 20 20" fill="currentColor">
-              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-            </svg>
-            <span class="text-[11px] font-mono text-muted uppercase tracking-widest">3 otimizações grátis/mês</span>
+        <!-- 2 feature badges (estilo foto: ícone + título + descrição) -->
+        <div class="hero-badges grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-10 pt-8 border-t border-dashed border-border w-full max-w-[460px]">
+          <div class="flex items-start gap-3">
+            <div class="flex items-center justify-center w-9 h-9 border border-dashed border-border rounded-md text-accent shrink-0 mt-0.5">
+              <svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor">
+                <path d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z"/>
+              </svg>
+            </div>
+            <div>
+              <div class="text-[13px] font-semibold text-text mb-0.5">Rápido</div>
+              <div class="text-[12px] text-muted leading-relaxed">Score em 8 minutos.</div>
+            </div>
           </div>
-          <div class="flex items-center gap-2">
-            <svg class="w-3.5 h-3.5 text-accent" viewBox="0 0 20 20" fill="currentColor">
-              <path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd"/>
-            </svg>
-            <span class="text-[11px] font-mono text-muted uppercase tracking-widest">AES-256 local</span>
-          </div>
-          <div class="flex items-center gap-2">
-            <svg class="w-3.5 h-3.5 text-accent" viewBox="0 0 20 20" fill="currentColor">
-              <path d="M10 12a2 2 0 100-4 2 2 0 000 4z"/>
-              <path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"/>
-            </svg>
-            <span class="text-[11px] font-mono text-muted uppercase tracking-widest">Sem cartão</span>
+          <div class="flex items-start gap-3">
+            <div class="flex items-center justify-center w-9 h-9 border border-dashed border-border rounded-md text-accent shrink-0 mt-0.5">
+              <svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd"/>
+              </svg>
+            </div>
+            <div>
+              <div class="text-[13px] font-semibold text-text mb-0.5">Seguro</div>
+              <div class="text-[12px] text-muted leading-relaxed">De ponta a ponta.</div>
+            </div>
           </div>
         </div>
       </div>
 
-      <!-- Coluna direita: visual interativo -->
+      <!-- Coluna direita: visual interativo (placeholder até mockup chegar) -->
       <div class="hero-visual w-full">
         <HeroVisual client:visible />
       </div>
@@ -115,31 +112,6 @@ import HeroVisual from '../react/HeroVisual';
   @keyframes fadeUp {
     from { opacity: 0; transform: translateY(14px); }
     to   { opacity: 1; transform: translateY(0); }
-  }
-
-  /* Strike-through effect on "descartado" */
-  .hero-strike {
-    position: relative;
-    color: var(--color-faint);
-    display: inline-block;
-  }
-  .hero-strike::after {
-    content: '';
-    position: absolute;
-    left: -2%;
-    right: -2%;
-    top: 52%;
-    height: 6px;
-    background: var(--color-accent);
-    transform: scaleX(0);
-    transform-origin: left center;
-    animation: strike 0.7s cubic-bezier(0.7, 0, 0.3, 1) 0.9s forwards;
-    border-radius: 2px;
-  }
-
-  @keyframes strike {
-    from { transform: scaleX(0); }
-    to   { transform: scaleX(1); }
   }
 
   /* Magnetic CTA primary */
@@ -175,5 +147,53 @@ import HeroVisual from '../react/HeroVisual';
   }
   .cta-primary:active {
     transform: translateY(0);
+  }
+
+  /* Hero corners alinhados ao container-kore (24/48/80px) */
+  .hero-corner-tl,
+  .hero-corner-tr,
+  .hero-corner-bl,
+  .hero-corner-br { z-index: 5; }
+  .hero-corner-tl { top: 88px; left: 24px; }
+  .hero-corner-tr { top: 88px; right: 24px; }
+  .hero-corner-bl { bottom: 24px; left: 24px; }
+  .hero-corner-br { bottom: 24px; right: 24px; }
+  @media (min-width: 768px) {
+    .hero-corner-tl { left: 48px; }
+    .hero-corner-tr { right: 48px; }
+    .hero-corner-bl { left: 48px; }
+    .hero-corner-br { right: 48px; }
+  }
+  @media (min-width: 1024px) {
+    .hero-corner-tl { left: 80px; }
+    .hero-corner-tr { right: 80px; }
+    .hero-corner-bl { left: 80px; }
+    .hero-corner-br { right: 80px; }
+  }
+  @media (min-width: 1360px) {
+    .hero-corner-tl { left: max(80px, calc((100vw - 1200px) / 2)); }
+    .hero-corner-tr { right: max(80px, calc((100vw - 1200px) / 2)); }
+    .hero-corner-bl { left: max(80px, calc((100vw - 1200px) / 2)); }
+    .hero-corner-br { right: max(80px, calc((100vw - 1200px) / 2)); }
+  }
+
+  .cta-link {
+    position: relative;
+  }
+  .cta-link::after {
+    content: '';
+    position: absolute;
+    left: 16px;
+    right: 32px;
+    bottom: 12px;
+    height: 1px;
+    background: var(--color-faint);
+    transform: scaleX(0);
+    transform-origin: left center;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .cta-link:hover::after {
+    transform: scaleX(1);
+    background: var(--color-text);
   }
 </style>

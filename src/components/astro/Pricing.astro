@@ -1,26 +1,30 @@
 ---
 ---
 
-<section id="precos" class="section-gap bg-bg reveal">
+<section id="precos" class="relative section-gap bg-bg reveal">
   <div class="container-kore">
     <!-- Separador -->
     <div class="divider-label mb-24">
-      <span class="w-12 h-[1px] bg-border"></span>
+      <span class="w-12 border-t border-dashed border-border"></span>
       PREÇOS
-      <span class="flex-grow h-[1px] bg-border"></span>
+      <span class="flex-grow border-t border-dashed border-border"></span>
     </div>
 
     <h2 class="text-section mb-20">Planos Disponíveis<span class="text-accent">.</span></h2>
 
     <div class="grid lg:grid-cols-3 gap-8 items-stretch">
       <!-- Gratuito -->
-      <div class="flex flex-col p-10 border border-border bg-surface/20 rounded-sm">
+      <div class="relative flex flex-col p-10 border border-dashed border-border bg-surface/20 rounded-sm">
+        <span class="cross-marker corner-tl"></span>
+        <span class="cross-marker corner-tr"></span>
+        <span class="cross-marker corner-bl"></span>
+        <span class="cross-marker corner-br"></span>
         <div class="flex justify-between items-start mb-10">
           <div>
             <h3 class="text-card uppercase font-bold tracking-tighter">Gratuito</h3>
             <p class="text-[10px] font-mono text-muted mt-1 tracking-widest uppercase">BYOK</p>
           </div>
-          <span class="px-2 py-1 border border-border text-[9px] font-mono text-muted uppercase tracking-tighter">EM DESENVOLVIMENTO</span>
+          <span class="px-2 py-1 border border-dashed border-border text-[9px] font-mono text-muted uppercase tracking-tighter">EM DESENVOLVIMENTO</span>
         </div>
         
         <div class="mb-12">
@@ -34,7 +38,7 @@
           <li class="flex items-center gap-3"><span class="text-faint">/</span> Local Encryption</li>
         </ul>
 
-        <button disabled class="mt-12 w-full py-4 border border-border text-faint text-[11px] font-bold rounded-sm cursor-not-allowed uppercase tracking-widest">Indisponível</button>
+        <button disabled class="mt-12 w-full py-4 border border-dashed border-border text-faint text-[11px] font-bold rounded-sm cursor-not-allowed uppercase tracking-widest">Indisponível</button>
       </div>
 
       <!-- Pro -->
@@ -62,13 +66,17 @@
       </div>
 
       <!-- Premium -->
-      <div class="flex flex-col p-8 border border-border bg-surface/20 rounded-sm opacity-80">
+      <div class="relative flex flex-col p-8 border border-dashed border-border bg-surface/20 rounded-sm opacity-80">
+        <span class="cross-marker corner-tl"></span>
+        <span class="cross-marker corner-tr"></span>
+        <span class="cross-marker corner-bl"></span>
+        <span class="cross-marker corner-br"></span>
         <div class="flex justify-between items-start mb-8">
           <div>
             <h3 class="text-card uppercase font-bold tracking-tighter">Kore Agent</h3>
             <p class="text-[10px] font-mono text-muted mt-1 tracking-widest uppercase">Autônomo</p>
           </div>
-          <span class="px-2 py-0.5 border border-border text-[9px] font-mono text-muted uppercase">EM DESENVOLVIMENTO</span>
+          <span class="px-2 py-0.5 border border-dashed border-border text-[9px] font-mono text-muted uppercase">EM DESENVOLVIMENTO</span>
         </div>
         
         <div class="mb-12">
@@ -82,7 +90,7 @@
           <li class="flex items-center gap-2"><span>-</span> Suporte 1:1</li>
         </ul>
 
-        <button disabled class="mt-12 w-full py-3 border border-border text-faint text-caption font-bold rounded-sm cursor-not-allowed uppercase">Indisponível</button>
+        <button disabled class="mt-12 w-full py-3 border border-dashed border-border text-faint text-caption font-bold rounded-sm cursor-not-allowed uppercase">Indisponível</button>
       </div>
     </div>
   </div>

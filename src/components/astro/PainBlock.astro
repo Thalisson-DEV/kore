@@ -41,10 +41,7 @@ const pains = [
 ];
 ---
 
-<section class="relative py-28 lg:py-40 border-t border-border-subtle reveal overflow-hidden">
-
-  <!-- Sutil gradient overlay no topo (transição com Hero) -->
-  <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-border to-transparent pointer-events-none"></div>
+<section class="relative py-28 lg:py-40 reveal overflow-hidden">
 
   <!-- Hachura -->
   <div
@@ -76,7 +73,7 @@ const pains = [
       {pains.map((pain, i) => (
         <article
           class:list={[
-            "pain-card group relative bg-surface/40 border border-border-subtle p-6 hover:border-accent/30 transition-all duration-300",
+            "pain-card group relative bg-surface/40 border border-dashed border-border p-6 hover:border-accent/40 hover:border-solid transition-all duration-300",
             pain.highlight && "lg:col-span-2 lg:row-span-1 bg-surface/60",
           ]}
           style={`--pain-delay: ${i * 0.08}s`}

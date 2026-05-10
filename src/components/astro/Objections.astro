@@ -15,7 +15,7 @@ const objections = [
 ];
 ---
 
-<section class="py-32 lg:py-48 border-t border-border-subtle reveal">
+<section class="relative py-32 lg:py-48 reveal bg-dot-grid">
   <div class="container-kore">
     <!-- Header -->
     <div class="mb-24 lg:mb-32 max-w-2xl">
@@ -28,7 +28,7 @@ const objections = [
     <!-- Objeções como accordion visual -->
     <div class="max-w-4xl space-y-px">
       {objections.map((obj, i) => (
-        <div class="group relative border border-border bg-surface/10 hover:bg-surface/30 transition-all duration-300">
+        <div class="group relative border border-dashed border-border bg-surface/10 hover:bg-surface/30 hover:border-solid transition-all duration-300">
           <div class="p-10 lg:p-12">
             <div class="flex items-start gap-6">
               <span class="text-[11px] font-mono text-faint mt-1 flex-shrink-0">0{i + 1}</span>

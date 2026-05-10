@@ -62,15 +62,15 @@ const steps = [
     <div id="steps-container" class="relative">
 
       <!-- Connecting line (desktop only, atrás dos cards) -->
-      <div class="hidden lg:block absolute top-[88px] left-0 right-0 h-px pointer-events-none">
-        <div class="absolute inset-0 bg-border-subtle"></div>
-        <div id="steps-progress" class="absolute inset-y-0 left-0 w-0 bg-gradient-to-r from-accent-dim via-accent to-accent transition-[width] duration-1000 ease-out"></div>
+      <div class="hidden lg:block absolute top-[88px] left-0 right-0 pointer-events-none">
+        <div class="absolute inset-x-0 top-0 border-t border-dashed border-border"></div>
+        <div id="steps-progress" class="absolute top-0 left-0 w-0 h-px bg-gradient-to-r from-accent-dim via-accent to-accent transition-[width] duration-1000 ease-out"></div>
       </div>
 
       <div class="grid grid-cols-1 lg:grid-cols-4 gap-3 lg:gap-4 items-stretch">
         {steps.map((step, i) => (
           <article
-            class="step-card group relative bg-surface/40 border border-border-subtle hover:border-accent/30 transition-all duration-300 p-6 lg:p-7 flex flex-col h-full"
+            class="step-card group relative bg-surface/40 border border-dashed border-border hover:border-accent/40 hover:border-solid transition-all duration-300 p-6 lg:p-7 flex flex-col h-full"
             style={`--step-i: ${i};`}
           >
             <!-- Header: number + tag -->

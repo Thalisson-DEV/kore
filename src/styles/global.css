@@ -28,6 +28,11 @@
   --font-display: 'Geist', sans-serif;
   --font-body: 'Geist', sans-serif;
   --font-mono: 'Geist Mono', monospace;
+
+  /* Blueprint — variáveis centralizadas (cinza neutro com touch de azul) */
+  --bp-line: rgba(228, 228, 240, 0.16);   /* "+" markers + bordas dashed */
+  --bp-stripe: rgba(228, 228, 240, 0.06); /* listras hachuradas das faixas */
+  --bp-dot: rgba(228, 228, 240, 0.08);    /* dot grid */
 }
 
 :root[data-theme="light"] {
@@ -43,6 +48,11 @@
   --color-accent: #2563eb;
   --color-accent-dim: #1d4ed8;
   --color-accent-glow: rgba(37, 99, 235, 0.08);
+
+  /* Blueprint — light mode */
+  --bp-line: rgba(9, 9, 11, 0.22);
+  --bp-stripe: rgba(9, 9, 11, 0.05);
+  --bp-dot: rgba(9, 9, 11, 0.10);
 }
 
 @layer base {
@@ -87,6 +97,157 @@
 
   .divider {
     border-top: 1px solid var(--color-border);
+  }
+
+  /* Blueprint dashed divider — horizontal entre seções */
+  .divider-dashed {
+    border-top: 1px dashed var(--color-border);
+  }
+  :root[data-theme="light"] .divider-dashed {
+    border-top-color: var(--color-border);
+  }
+
+  /* Variante mais visível em dark mode quando o border padrão somer */
+  .divider-dashed-strong {
+    border-top: 1px dashed rgba(228, 228, 240, 0.14);
+  }
+  :root[data-theme="light"] .divider-dashed-strong {
+    border-top-color: rgba(9, 9, 11, 0.18);
+  }
+
+  /* Linha vertical tracejada — entre cards em grids */
+  .divider-dashed-v {
+    border-left: 1px dashed var(--color-border);
+  }
+
+  /* Cross marker (+) — desenho técnico nos cantos */
+  .cross-marker {
+    position: absolute;
+    width: 11px;
+    height: 11px;
+    pointer-events: none;
+    color: var(--bp-line);
+    z-index: 2;
+  }
+  .cross-marker::before,
+  .cross-marker::after {
+    content: '';
+    position: absolute;
+    background: currentColor;
+  }
+  .cross-marker::before {
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 1px;
+    transform: translateY(-50%);
+  }
+  .cross-marker::after {
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    transform: translateX(-50%);
+  }
+  .cross-marker.corner-tl { top: -5.5px; left: -5.5px; }
+  .cross-marker.corner-tr { top: -5.5px; right: -5.5px; }
+  .cross-marker.corner-bl { bottom: -5.5px; left: -5.5px; }
+  .cross-marker.corner-br { bottom: -5.5px; right: -5.5px; }
+
+  /* Hatched stripe band — faixa hachurada horizontal entre seções */
+  .hatched-band {
+    position: relative;
+    width: 100%;
+    height: 48px;
+    background-image: repeating-linear-gradient(
+      -45deg,
+      transparent 0,
+      transparent 9px,
+      var(--bp-stripe) 9px,
+      var(--bp-stripe) 10px
+    );
+  }
+  @media (min-width: 768px) {
+    .hatched-band { height: 80px; }
+  }
+  /* Linhas finas no topo e base da faixa, com 4 cross markers nas extremidades */
+  .hatched-band::before,
+  .hatched-band::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: var(--bp-line);
+  }
+  .hatched-band::before { top: 0; }
+  .hatched-band::after  { bottom: 0; }
+
+  /* Dot grid — fundo de papel quadriculado pontilhado */
+  .bg-dot-grid {
+    background-image: radial-gradient(
+      circle,
+      var(--bp-dot) 1px,
+      transparent 1px
+    );
+    background-size: 24px 24px;
+  }
+
+  /* Frame blueprint — wrapper com borda dashed (4 cross markers via spans filhos) */
+  .frame-blueprint {
+    position: relative;
+    border: 1px dashed var(--color-border);
+  }
+
+  /* Grid de cards com divisores tracejados internos
+     Substitui o antigo gap-px bg-border-subtle.
+     Variantes: padrão (linha única, lg+) ou .mobile-2col (2x2 em mobile, 1xN em lg). */
+  .dashed-card-grid {
+    display: grid;
+  }
+  .dashed-card-grid > * + * {
+    border-left: 1px dashed var(--color-border);
+  }
+  /* Variante 2-col mobile: aplica borda top na 2ª linha e remove left da 1ª coluna */
+  @media (max-width: 1023px) {
+    .dashed-card-grid.mobile-2col > *:nth-child(2n+1) {
+      border-left: none;
+    }
+    .dashed-card-grid.mobile-2col > *:nth-child(n+3) {
+      border-top: 1px dashed var(--color-border);
+    }
+  }
+  /* Variante 1-col mobile (3-card desktop) */
+  @media (max-width: 767px) {
+    .dashed-card-grid.mobile-1col > * + * {
+      border-left: none;
+      border-top: 1px dashed var(--color-border);
+    }
+  }
+
+  /* Hero — glow radial inferior-direito → centro */
+  .hero-radial-glow {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: -1;
+    background:
+      radial-gradient(
+        ellipse 80% 70% at 88% 92%,
+        rgba(59, 130, 246, 0.22) 0%,
+        rgba(59, 130, 246, 0.10) 28%,
+        rgba(59, 130, 246, 0.04) 50%,
+        transparent 70%
+      );
+  }
+  :root[data-theme="light"] .hero-radial-glow {
+    background:
+      radial-gradient(
+        ellipse 80% 70% at 88% 92%,
+        rgba(37, 99, 235, 0.14) 0%,
+        rgba(37, 99, 235, 0.06) 30%,
+        transparent 65%
+      );
   }
 
   .divider-label {
