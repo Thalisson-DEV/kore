@@ -412,7 +412,7 @@ function ResultState({ job, animatedScore }: { job: JobExample; animatedScore: n
                 initial={{ opacity: 0, scale: 0.85, y: 4 }}
                 animate={{ opacity: 1, scale: 1, y: 0 }}
                 transition={{ delay: 0.3 + i * 0.05, duration: 0.3 }}
-                className="px-2.5 py-1 text-[11px] font-mono text-accent bg-accent/[0.08] border border-accent/25 rounded-sm"
+                className="px-2.5 py-1 text-[11px] font-mono text-accent bg-accent/[0.08] border border-accent rounded-sm"
               >
                 {kw}
               </motion.span>
