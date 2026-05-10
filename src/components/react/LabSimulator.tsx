@@ -177,7 +177,7 @@ export default function LabSimulator() {
           <h2 className="text-section mb-6 text-balance">
             Cole uma vaga<span className="text-accent">.</span>
             <br />
-            Veja seu score em <span className="lab-pulse">6 segundos</span>.
+            Veja seu score em <span className="pain-underline">6 segundos</span>.
           </h2>
           <p className="text-lg text-muted leading-relaxed max-w-2xl">
             Sem cadastro, sem upload. Cole uma URL ou clique num exemplo.
