@@ -2,197 +2,109 @@
 import FooterCtaVisual, { FooterStats } from '../react/FooterCtaVisual';
 ---
 
-<section id="acesso" class="relative py-32 lg:py-48 overflow-hidden">
-  <!-- Aurora animated background -->
-  <div class="absolute inset-0 pointer-events-none -z-10 overflow-hidden">
-    <div class="aurora aurora-1"></div>
-    <div class="aurora aurora-2"></div>
-    <div class="aurora aurora-3"></div>
-  </div>
+<section id="acesso" class="relative py-32 lg:py-52 overflow-hidden bg-bg">
 
-  <!-- Hachura sutil -->
+  <!-- Dot grid with radial fade -->
   <div
-    class="absolute inset-0 pointer-events-none -z-10 opacity-60"
-    style="background-image: repeating-linear-gradient(-45deg, transparent, transparent 2px, rgba(59,130,246,0.025) 2px, rgba(59,130,246,0.025) 3px);"
+    class="absolute inset-0 pointer-events-none -z-10"
+    style="
+      background-image: radial-gradient(circle, rgba(59,130,246,0.18) 1px, transparent 1px);
+      background-size: 28px 28px;
+      mask-image: radial-gradient(ellipse 80% 85% at 50% 50%, black 0%, transparent 75%);
+      -webkit-mask-image: radial-gradient(ellipse 80% 85% at 50% 50%, black 0%, transparent 75%);
+    "
   ></div>
 
-  <!-- Spotlight central -->
-  <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[900px] -z-10 pointer-events-none">
-    <div class="w-full h-full bg-accent opacity-[0.05] blur-[180px] rounded-full"></div>
-  </div>
+  <!-- Central atmospheric glow -->
+  <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[560px] h-[280px] bg-accent opacity-[0.09] blur-[100px] rounded-full pointer-events-none -z-10"></div>
+
+  <!-- Top accent line -->
+  <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-accent/40 to-transparent"></div>
 
   <div class="container-kore relative z-10 flex flex-col items-center text-center">
 
-    <!-- Live seats counter (React island) -->
+    <!-- Live counter + progress bar (React island) -->
     <FooterCtaVisual client:visible />
 
-    <!-- Eyebrow label -->
-    <p class="divider-label mb-6 justify-center">
-      <span class="w-8 border-t border-dashed border-faint"></span>
-      <span>último passo</span>
-      <span class="w-8 border-t border-dashed border-faint"></span>
-    </p>
-
-    <!-- Headline gigante -->
-    <h2 class="text-section max-w-4xl mb-8 text-balance">
-      Chegou até aqui<span class="text-accent">?</span><br/>
-      <span class="text-muted font-bold">Então é porque você</span><br/>
-      sabe que vai fazer diferença<span class="text-accent">.</span>
+    <!-- Headline — 3 atos: fato, problema, solução -->
+    <h2 class="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tighter leading-[1.05] max-w-3xl mb-6">
+      <span class="text-text">Seu currículo existe.</span><br/>
+      <span class="text-muted">O ATS não te vê.</span><br/>
+      <span class="text-accent">A Kore muda isso.</span>
     </h2>
 
-    <!-- Sub mínima -->
-    <p class="text-muted text-lg max-w-md mb-12 leading-relaxed">
-      8 minutos. Um link. O score subindo na tela.<br/>
-      <span class="text-text font-medium">Antes de você aplicar.</span>
+    <!-- Subline -->
+    <p class="text-muted text-lg max-w-sm mb-10 leading-relaxed">
+      Motor ATS + otimização semântica + exportação PDF.<br/>
+      <span class="text-text font-medium">Resultados em 8 minutos. Sem adivinhação.</span>
     </p>
 
-    <!-- CTA primário com ring orbital -->
-    <div class="relative mb-6">
-      <!-- Ring orbital pulsante -->
+    <!-- CTA -->
+    <div class="relative mb-5">
       <div class="cta-orbit-ring"></div>
       <a
         href="#acesso"
-        class="cta-mega group relative inline-flex items-center justify-center gap-3 px-12 py-6 text-bg text-[14px] font-bold uppercase tracking-wider"
+        class="cta-mega group relative inline-flex items-center justify-center gap-3 px-12 py-5 text-bg text-[13px] font-bold uppercase tracking-wider"
       >
         <span class="relative z-10 flex items-center gap-3">
-          Garantir minha vaga beta
+          Garantir minha vaga
           <svg class="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1.5" viewBox="0 0 16 16" fill="none">
-            <path d="M3 8h10m0 0L9 4m4 4l-4 4" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M3 8h10m0 0L9 4m4 4l-4 4" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
         </span>
       </a>
     </div>
 
-    <!-- Last objection handler -->
-    <p class="text-[11px] font-mono text-faint uppercase tracking-widest mb-16">
-      Sem cartão · Sem trial · Sem letra miúda
-    </p>
-
-    <!-- Stats compactos como prova social -->
-    <FooterStats client:visible />
-
-    <!-- PS minimalista -->
-    <div class="mt-20 max-w-xl">
-      <p class="text-sm text-faint leading-relaxed">
-        <span class="text-muted font-medium">PS:</span> O problema provavelmente não é seu CV — é como ele é lido por um software de filtragem que você nem sabia que existia. A KORE_ resolve isso. Sem inventar nada.
-      </p>
+    <!-- Trust signals — direto abaixo do CTA para reduzir fricção -->
+    <div class="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 mb-16 text-[10px] font-mono text-faint uppercase tracking-widest">
+      <span>✓ Sem cartão de crédito</span>
+      <span class="hidden sm:block w-px h-3 bg-border-subtle"></span>
+      <span>✓ Cancele quando quiser</span>
+      <span class="hidden sm:block w-px h-3 bg-border-subtle"></span>
+      <span>✓ AES-256</span>
     </div>
+
+    <!-- Stats + Testimonial (React island) -->
+    <!-- <FooterStats client:visible /> -->
 
   </div>
 </section>
 
 <style>
-  /* Aurora animated mesh */
-  .aurora {
-    position: absolute;
-    border-radius: 50%;
-    filter: blur(140px);
-    opacity: 0.18;
-    will-change: transform;
-  }
-  .aurora-1 {
-    width: 50vw; height: 50vw;
-    background: var(--color-accent);
-    top: -10%; left: -10%;
-    animation: aurora-drift-1 18s ease-in-out infinite;
-  }
-  .aurora-2 {
-    width: 45vw; height: 45vw;
-    background: var(--color-accent-dim);
-    bottom: -15%; right: -10%;
-    animation: aurora-drift-2 22s ease-in-out infinite;
-    opacity: 0.15;
-  }
-  .aurora-3 {
-    width: 30vw; height: 30vw;
-    background: var(--color-accent);
-    top: 30%; left: 50%;
-    transform: translateX(-50%);
-    animation: aurora-drift-3 20s ease-in-out infinite;
-    opacity: 0.1;
-  }
-
-  @keyframes aurora-drift-1 {
-    0%, 100% { transform: translate(0, 0) scale(1); }
-    50%      { transform: translate(40px, 30px) scale(1.1); }
-  }
-  @keyframes aurora-drift-2 {
-    0%, 100% { transform: translate(0, 0) scale(1); }
-    50%      { transform: translate(-50px, -20px) scale(1.15); }
-  }
-  @keyframes aurora-drift-3 {
-    0%, 100% { transform: translateX(-50%) translateY(0) scale(1); }
-    50%      { transform: translateX(-50%) translateY(-30px) scale(1.05); }
-  }
-
-  /* CTA mega — versão do footer */
   .cta-mega {
     background: var(--color-accent);
     color: var(--color-bg);
-    border-radius: 6px;
+    border-radius: 4px;
     box-shadow:
       0 0 0 1px rgba(59, 130, 246, 0.4),
-      0 16px 48px -12px rgba(59, 130, 246, 0.6),
-      0 0 80px -10px rgba(59, 130, 246, 0.5);
-    transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease;
-    overflow: hidden;
-    isolation: isolate;
-  }
-  .cta-mega::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(105deg, transparent 35%, rgba(255,255,255,0.4) 50%, transparent 65%);
-    transform: translateX(-100%);
-    transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+      0 12px 32px -8px rgba(59, 130, 246, 0.5);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   }
   .cta-mega:hover {
-    transform: translateY(-3px);
+    transform: translateY(-2px);
     box-shadow:
       0 0 0 1px rgba(59, 130, 246, 0.6),
-      0 24px 60px -14px rgba(59, 130, 246, 0.7),
-      0 0 100px -10px rgba(59, 130, 246, 0.65);
-  }
-  .cta-mega:hover::before {
-    transform: translateX(100%);
+      0 20px 48px -10px rgba(59, 130, 246, 0.65);
   }
 
-  /* Ring orbital pulsante atrás do CTA */
   .cta-orbit-ring {
     position: absolute;
     top: 50%; left: 50%;
-    width: 100%;
-    height: 100%;
+    width: 100%; height: 100%;
     transform: translate(-50%, -50%);
-    border-radius: 999px;
     pointer-events: none;
   }
-  .cta-orbit-ring::before,
-  .cta-orbit-ring::after {
+  .cta-orbit-ring::before {
     content: '';
     position: absolute;
-    inset: -8px;
-    border-radius: 999px;
-    border: 1px solid rgba(59, 130, 246, 0.3);
-    animation: orbit-pulse 2.4s ease-out infinite;
-  }
-  .cta-orbit-ring::after {
-    animation-delay: 1.2s;
+    inset: -4px;
+    border-radius: 4px;
+    border: 1px solid rgba(59, 130, 246, 0.2);
+    animation: orbit-pulse 2s ease-out infinite;
   }
 
   @keyframes orbit-pulse {
-    0% {
-      inset: -4px;
-      opacity: 0.6;
-    }
-    100% {
-      inset: -32px;
-      opacity: 0;
-    }
-  }
-
-  /* Justify divider-label content */
-  .divider-label.justify-center {
-    justify-content: center;
+    0%   { inset: -4px;  opacity: 0.8; }
+    100% { inset: -20px; opacity: 0; }
   }
 </style>
